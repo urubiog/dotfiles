@@ -21,7 +21,7 @@ Before installing, ensure Neovim (v0.8.0+) is installed on your system. To insta
    ```sh
    mv ~/.config/nvim ~/.config/nvim.bak
    ```
-⚠️ This step will overwrite any existing Neovim configurations in ~/.config/nvim.
+   ⚠️ This step will overwrite any existing Neovim configurations in ~/.config/nvim.
 
 2. Clone the Repository:
    ```sg
