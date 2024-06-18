@@ -24,24 +24,24 @@ Before installing, ensure Neovim (v0.8.0+) is installed on your system. To insta
 ⚠️ This step will overwrite any existing Neovim configurations in ~/.config/nvim.
 
 2. Clone the Repository:
-```sg
-git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
-```
+   ```sg
+   git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+   ```
 
-```sh
-git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
-```
+   ```sh
+   git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
+   ```
 
 3. Install Plugins:
-Open Neovim and run the following command to install all required plugins:
-
-```
-:MasonInstallAll
-```
-⚠️ Make sure to run this command inside Neovim (nvim).
+   Open Neovim and run the following command to install all required plugins:
+  
+   ```
+   :MasonInstallAll
+   ```
+   ⚠️ Make sure to run this command inside Neovim (nvim).
 
 4. Start Neovim:
-```sh
-nvim
-```
-🚀 Neovim will now launch with the configured setup.
+   ```sh
+   nvim
+   ```
+   🚀 Neovim will now launch with the configured setup.
