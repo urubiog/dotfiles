@@ -15,7 +15,7 @@ nvim-profile is a powerful Neovim configuration that enhances your editing exper
 
 ## Installation
 
-Before installing, ensure Neovim (v0.5.0+) is installed on your system. To install nvim-profile, follow these steps:
+Before installing, ensure Neovim (v0.8.0+) is installed on your system. To install nvim-profile, follow these steps:
 
 1. **Backup Existing Configuration** (Optional but recommended):
    ```sh
@@ -24,6 +24,9 @@ Before installing, ensure Neovim (v0.5.0+) is installed on your system. To insta
 ⚠️ This step will overwrite any existing Neovim configurations in ~/.config/nvim.
 
 2. Clone the Repository:
+```sg
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+```
 
 ```sh
 git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
