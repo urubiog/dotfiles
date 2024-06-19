@@ -29,7 +29,7 @@ Before installing, ensure Neovim (v0.8.0+) is installed on your system. To insta
    ```
 
    ```sh
-   git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
+   mv ~/.config/nvim ~/.config/nvim.bak | git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
    ```
 
 3. Install Plugins:
