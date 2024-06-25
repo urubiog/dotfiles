@@ -3,7 +3,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = {"pyright"} 
+local servers = {"pyright"}
 local util = "lspconfig/util"
 
 -- lsps with default config
@@ -26,6 +26,28 @@ lspconfig.tsserver.setup {
   }
 }
 
+
+-- html
+lspconfig.html.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"html"}
+}
+
+-- css
+lspconfig.cssls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"css"}
+}
+
+-- Markdown
+lspconfig.marksman.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"markdown"}
+}
+
 -- python
 lspconfig.pyright.setup({
   on_attach = on_attach,
@@ -33,11 +55,19 @@ lspconfig.pyright.setup({
   filetypes = {"python"},
 })
 
--- lspconfig.jdtls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = {"java"},
--- }
+-- C
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"c"}
+}
+
+-- java
+lspconfig.jdtls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"java"},
+}
 --
 -- lspconfig.omnisharp.setup {
 --   on_attach = on_attach,  -- Replace with your custom on_attach function
@@ -61,6 +91,7 @@ lspconfig.gopls.setup {
     },
   },
 }
+
 --
 -- lspconfig.rust_analyzer.setup {
 --   on_attach = on_attach,  -- Replace with your custom on_attach function
@@ -92,9 +123,10 @@ lspconfig.gopls.setup {
 --   capabilities = capabilities,  -- Replace with your custom capabilities table
 --   filetypes = {"markdown"}  -- Limit the LSP to Markdown files
 -- }
---
--- lspconfig.texlab.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"tex"}  -- Limit the LSP to LaTeX files
--- }
+
+-- LaTeX
+lspconfig.texlab.setup {
+  on_attach = on_attach,  -- Replace with your custom on_attach function
+  capabilities = capabilities,  -- Replace with your custom capabilities table
+  filetypes = {"tex"}  -- Limit the LSP to LaTeX files
+}

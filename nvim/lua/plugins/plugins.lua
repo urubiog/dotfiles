@@ -43,15 +43,19 @@ local plugins = {
         "eslint-lsp",  -- JavaScript/TypeScript linter and formatter
         "prettier",  -- JavaScript/TypeScript/Markdown formatter
         "gopls",
-        -- "javac",  -- Java compiler
+        "jtdl", -- Java language server
+        "html-lsp", -- HTML 
+        "css-lsp", -- CSS
+        "marksman", -- Markdown
+        "texlab", -- Latex
         -- "dotnet",  -- C# compiler
         -- "dotnet-format",  -- C# code formatter
         -- "goimports",  -- Go code formatter
         -- "rustc",  -- Rust compiler
         -- "rustfmt",  -- Rust code formatter
         -- "sqlformat",  -- SQL formatter
-        -- "clangd",  -- C/C++ language server
-        -- "clang-format",  -- C/C++ code formatter
+        "clangd",  -- C/C++ language server
+        "clang-format",  -- C/C++ code formatter
         -- "rubocop",  -- Ruby code analyzer and formatter
       },
     },
