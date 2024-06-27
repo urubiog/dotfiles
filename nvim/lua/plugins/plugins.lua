@@ -36,27 +36,53 @@ local plugins = {
     opts = {
       ensure_installed = {
         -- Type checkers and formatters for various languages
-        "pyright",  -- TypeScript type checker
-        "mypy",  -- Python type checker
-        "black",  -- Python code formatter
-        "typescript-language-server", -- TypeScript language server
-        "eslint-lsp",  -- JavaScript/TypeScript linter and formatter
-        "prettier",  -- JavaScript/TypeScript/Markdown formatter
+        -- markdown
+        "marksman",
+        "misspell",
+        -- lua
+        "lua-language-server",
+        "stylua",
+        -- web dev
+        "css-lsp",
+        "html-lsp",
+        "typescript-language-server",
+        "deno",
+        -- docker
+        "dockerfile-language-server",
+        "docker-compose-language-service",
+        -- rust
+        "rust-analyzer",
+        "rustfmt",
+        -- go
         "gopls",
-        "jdtls", -- Java language server
-        "html-lsp", -- HTML 
-        "css-lsp", -- CSS
-        "marksman", -- Markdown
-        "texlab", -- Latex
-        -- "dotnet",  -- C# compiler
-        -- "dotnet-format",  -- C# code formatter
-        -- "goimports",  -- Go code formatter
-        -- "rustc",  -- Rust compiler
-        -- "rustfmt",  -- Rust code formatter
-        -- "sqlformat",  -- SQL formatter
-        "clangd",  -- C/C++ language server
-        "clang-format",  -- C/C++ code formatter
-        -- "rubocop",  -- Ruby code analyzer and formatter
+        "glint",
+        "go-debug-adapter",
+        "goimports",
+        "goimports-reviser",
+        "golangci-lint",
+        "golangci-lint-langserver",
+        "golines",
+        "gotests",
+        "gotestsum",
+        -- python
+        "pyright",
+        "flake8",
+        "black",
+        "mypy",
+        "pydocstyle",
+        "pylint",
+        "pyre",
+        "autoflake",
+        "autopep8",
+        "python-lsp-server",
+        -- yaml
+        "terraform-ls",
+        "tflint",
+        "yaml-language-server",
+        "yamlfmt",
+        "yamllint",
+        -- sql
+        "sqlfluff",
       },
     },
   },

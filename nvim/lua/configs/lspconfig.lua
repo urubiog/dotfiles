@@ -3,7 +3,11 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = {"pyright"}
+local servers = {
+  "html", "cssls", "tsserver", "clangd", "rust_analyzer", "gopls",
+  "pyright", "yamlls", "dockerls", "clojure_lsp", "cmake",
+  "terraformls", "vimls"
+}
 local util = "lspconfig/util"
 
 -- lsps with default config
@@ -116,7 +120,6 @@ lspconfig.gopls.setup {
 --   capabilities = capabilities,  -- Replace with your custom capabilities table
 --   filetypes = {"ruby"}  -- Limit the LSP to Ruby files
 -- }
---
 -- lspconfig.sumneko_lua.setup {
 --   cmd = {"lua-language-server"},  -- Replace with path to your lua-language-server executable
 --   on_attach = on_attach,  -- Replace with your custom on_attach function
