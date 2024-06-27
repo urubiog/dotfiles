@@ -2,6 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 local cmd = vim.cmd
+local M = {}
 
 -- Telescope
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>")
@@ -24,4 +25,4 @@ map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", '<C-d>', '"_dd', { noremap = true, silent = true })
 
 cmd("colorscheme nvchad")
-
+cmd("lua require('lazygit')")

@@ -43,7 +43,7 @@ local plugins = {
         "eslint-lsp",  -- JavaScript/TypeScript linter and formatter
         "prettier",  -- JavaScript/TypeScript/Markdown formatter
         "gopls",
-        "jtdl", -- Java language server
+        "jdtls", -- Java language server
         "html-lsp", -- HTML 
         "css-lsp", -- CSS
         "marksman", -- Markdown
@@ -64,6 +64,15 @@ local plugins = {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
+    end,
+  },
+  {
+    "kdheepak/lazygit.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
     end,
   },
 }
