@@ -26,3 +26,4 @@ map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", '<C-d>', '"_dd', { noremap = true, silent = true })
 
 cmd("lua require('lazygit')")
+cmd("colorscheme nvchad")
