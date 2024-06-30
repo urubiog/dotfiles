@@ -101,6 +101,28 @@ local plugins = {
       vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
     end,
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    config = function()
+      require("lsp_signature").setup({
+        bind = true, -- This is mandatory, otherwise border config won't get registered.
+        doc_lines = 20, -- How many lines of documentation to show.
+        floating_window = true, -- Use a floating window instead of virtual text.
+        fix_pos = false,  -- Let the floating window change its position when the cursor moves.
+        hint_enable = true, -- Virtual hint enable.
+        hint_prefix = "🔹 ",  -- Panda for parameter hint.
+        hint_scheme = "String",
+        use_lspsaga = false,  -- Set to true if you want to use lspsaga popup.
+        hi_parameter = "Search", -- How your parameter will be highlighted.
+        max_height = 12, -- Max height of signature floating window.
+        max_width = 120, -- Max width of signature floating window.
+        handler_opts = {
+          border = "single"   -- Double, single, shadow, none.
+        },
+        extra_trigger_chars = {} -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+      })  
+    end
+  },
 }
 
 return plugins

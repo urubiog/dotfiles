@@ -8,9 +8,11 @@ local M = {}
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>")
 map("n", "<C-f>", "<cmd>Telescope live_grep<CR>")
 
--- F2 vscode functionallity
+-- F2 vscode functionallity (renamer)
 map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
--- map("n", "<F2>", "<space>ra") -- Actual pretty renamer
+
+-- Signature help 
+map("n", "<F3>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
 
 -- Formaters
 -- map("n", "<C-u>", "<cmd>!black %<CR><CR>")
@@ -19,10 +21,8 @@ map("n", "<C-u>", "<cmd>FormatWriteLock<CR>")
 
 -- Shortcuts
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "jk", "<ESC>")
 map("n", "<C-a>", "ggVG")
 map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", '<C-d>', '"_dd', { noremap = true, silent = true })
 
-cmd("colorscheme nvchad")
 cmd("lua require('lazygit')")
