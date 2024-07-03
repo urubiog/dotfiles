@@ -6,7 +6,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "html", "cssls", "tsserver", "clangd", "rust_analyzer", "gopls",
   "pyright", "yamlls", "dockerls", "clojure_lsp", "cmake",
-  "terraformls", "vimls"
+  "terraformls", "vimls", "lua_ls"
 }
 local util = "lspconfig/util"
 
@@ -30,6 +30,12 @@ lspconfig.tsserver.setup {
   }
 }
 
+-- lua 
+lspconfig.lua_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"lua"}
+}
 
 -- html
 lspconfig.html.setup {

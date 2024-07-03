@@ -1,5 +1,14 @@
 local plugins = {
   {
+    "nvimdev/dashboard-nvim",
+      config = function()
+      require('dashboard').setup {
+        -- config
+      }
+      end,
+      dependencies = { {'nvim-tree/nvim-web-devicons'}}
+  },
+  {
     "mhartington/formatter.nvim",
     event = "VeryLazy",
     opts = function()
@@ -120,7 +129,7 @@ local plugins = {
           border = "single"   -- Double, single, shadow, none.
         },
         extra_trigger_chars = {} -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
-      })  
+      })
     end
   },
 }

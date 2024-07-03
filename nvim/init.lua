@@ -37,3 +37,15 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
+
+-- Define a function to check if no file is opened
+local function open_nvdash()
+  if #vim.fn.argv() == 0 then
+    vim.cmd("Nvdash")
+  end
+end
+
+-- Create an autocommand that triggers when VimEnter event is fired
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = open_nvdash
+})

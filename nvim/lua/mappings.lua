@@ -14,9 +14,6 @@ map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent =
 -- Signature help 
 map("n", "<F3>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
 
--- Code actions 
-map("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<CR>", {noremap = true, silent = true})
-
 -- Formaters
 -- map("n", "<C-u>", "<cmd>!black %<CR><CR>")
 map("n", "<C-y>", "<cmd>lua vim.lsp.buf.format()<CR>")
