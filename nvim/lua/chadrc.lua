@@ -55,6 +55,8 @@ M.ui = {
         { "󰈭  Find Word", "<C-f>", "Telescope live_grep" },
         { "  Themes", "<Spc-t-h>", "Telescope themes" },
         { "  Mappings", "<Spc-c-h>", "NvCheatsheet" },
+        { "💤 Lazy", "", "Lazy" },
+        { "❌ Close", "_", "q!" }
     },
   },
 }
