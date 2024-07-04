@@ -6,7 +6,7 @@
 ![image](https://github.com/privUr1x/dotfiles/assets/159381070/67b7e80f-77ae-4d4e-b570-585bce9685c0)
 
 # nvim (dir)
-The nvim directory in dotfiles is a powerful Neovim configuration that enhances your editing experience with minimal setup.
+The nvim directory in dotfiles is a powerful Neovim configuration that enhances your editing experience with minimal setup. This whole repo is just a backup for my dotfiles but I always wanted to share to others what's useful for me.
 
 ## Features
 
