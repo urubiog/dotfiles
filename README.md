@@ -3,9 +3,8 @@
   <img src="https://img.shields.io/github/license/privUr1x/nvim-profile" alt="License">
 </div>
 
-# nvim-profile
-
-nvim-profile is a powerful Neovim configuration that enhances your editing experience with minimal setup.
+# nvim (dir)
+The nvim directory in dotfiles is a powerful Neovim configuration that enhances your editing experience with minimal setup.
 
 ## Features
 
@@ -18,26 +17,26 @@ nvim-profile is a powerful Neovim configuration that enhances your editing exper
 Before installing, ensure Neovim (v0.8.0+) is installed on your system. To install nvim-profile, follow these steps:
 
 1. **Backup Existing Configuration** (Optional but recommended):
-   ```sh
-   mv ~/.config/nvim ~/.config/nvim.bak
-   ```
+```sh
+mv ~/.config/nvim ~/.config/nvim.bak
+```
    ⚠️ This step will overwrite any existing Neovim configurations in ~/.config/nvim.
 
-2. Clone the Repository:
-   ```sg
-   git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
-   ```
+2. Install NvChad (required):
+```sg
+git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
+```
 
-   ```sh
-   mv ~/.config/nvim ~/.config/nvim.bak | git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
-   ```
+```sh (downlaod the profile)
+mv ~/.config/nvim ~/.config/nvim.bak | git clone https://github.com/privUr1x/nvim-profile.git ~/.config/nvim
+```
 
 3. Install Plugins:
    Open Neovim and run the following command to install all required plugins:
   
-   ```
-   :MasonInstallAll
-   ```
+```
+:MasonInstallAll
+```
    ⚠️ Make sure to run this command inside Neovim (nvim).
 
 4. Start Neovim:
