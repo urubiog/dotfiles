@@ -3,6 +3,8 @@
   <img src="https://img.shields.io/github/license/privUr1x/nvim-profile" alt="License">
 </div>
 
+![image](https://github.com/privUr1x/dotfiles/assets/159381070/67b7e80f-77ae-4d4e-b570-585bce9685c0)
+
 # nvim (dir)
 The nvim directory in dotfiles is a powerful Neovim configuration that enhances your editing experience with minimal setup.
 
@@ -40,7 +42,10 @@ mv ~/.config/nvim ~/.config/nvim.bak | git clone https://github.com/privUr1x/nvi
    ⚠️ Make sure to run this command inside Neovim (nvim).
 
 4. Start Neovim:
-   ```sh
-   nvim
-   ```
+```sh
+nvim
+```
    🚀 Neovim will now launch with the configured setup.
+
+![image](https://github.com/privUr1x/dotfiles/assets/159381070/cc655371-9ec1-4359-b11d-90f8f158ec28)
+![image](https://github.com/privUr1x/dotfiles/assets/159381070/e0b71d49-626e-4b76-898f-48c01797defb)
