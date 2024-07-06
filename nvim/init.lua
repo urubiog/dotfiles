@@ -39,13 +39,13 @@ vim.schedule(function()
 end)
 
 -- Define a function to check if no file is opened
-local function open_nvdash()
+local function open_dash()
   if #vim.fn.argv() == 0 then
-    vim.cmd("Nvdash")
+    vim.cmd("Dashboard")
   end
 end
 
 -- Create an autocommand that triggers when VimEnter event is fired
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = open_nvdash
+  callback = open_dash
 })

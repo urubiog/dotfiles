@@ -24,6 +24,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<C-a>", "ggVG")
 map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", '<C-d>', '"_dd', { noremap = true, silent = true })
+map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", "_", "<cmd>Nvdash<CR>")
 
 cmd("lua require('lazygit')")
