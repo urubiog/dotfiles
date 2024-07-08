@@ -25,7 +25,7 @@ map("n", "<C-a>", "ggVG")
 map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("n", '<C-d>', '"_dd', { noremap = true, silent = true })
 map("v", '<C-d>', '"_dd', { noremap = true, silent = true })
-map("n", "_", "<cmd>Nvdash<CR>")
+map("n", "_", "<cmd>Dashboard<CR>")
 
 cmd("lua require('lazygit')")
 cmd("colorscheme nvchad")
