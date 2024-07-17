@@ -54,9 +54,6 @@ PS1="
 ${debian_chroot:+($debian_chroot)}\
 ${GREEN}\u@\h ${BLUE}\w \n${YELLOW}$ ${RESET}"
 
-# Define cursor style
-echo -e '\e[6 q'
-
 # some more ls aliases
 alias ls='exa -F --icons'
 alias ll='exa -l --icons'
@@ -68,7 +65,9 @@ alias n="nvim"
 alias cdc="cd /mnt/c/Users/Uri26/"
 alias py="python3"
 alias cmatrix="cmatrix -b -s"
-
+alias yazi="~/zoxide/yazi/target/release/yazi"
+alias ....="cd ../.."
+alias ..="cd .."
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -116,3 +115,7 @@ bind "set show-all-if-ambiguous on"
 bind "TAB: menu-complete"
 . "$HOME/.cargo/env"
 export EDITOR=nvim
+eval "$(zoxide init bash)"
+
+# Created by `pipx` on 2024-07-09 09:34:10
+export PATH="$PATH:/home/uri/.local/bin"
