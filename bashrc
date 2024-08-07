@@ -54,20 +54,31 @@ PS1="
 ${debian_chroot:+($debian_chroot)}\
 ${GREEN}\u@\h ${BLUE}\w \n${YELLOW}$ ${RESET}"
 
+
+# Directorio de trabajo
+WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/
+
+# variables
+ACTIVATE="'/mnt/c/Users/Mi Pc/Documents/Envs/general/bin/activate'"
+
 # some more ls aliases
 alias ls='exa -F --icons'
 alias ll='exa -l --icons'
 alias la='exa -a --icons'
 alias l='exa -F --icons'
 alias cat='batcat --paging=never'
-alias fzf='fzf --preview="batcat --paging=never --color=always {}"'
+alias fzf='fzf --preview="bat {} --paging=never --color=always "'
 alias n="nvim"
-alias cdc="cd /mnt/c/Users/Uri26/"
+alias cdc="cd /mnt/c/Users/Mi\ Pc/"
 alias py="python3"
 alias cmatrix="cmatrix -b -s"
-alias yazi="~/zoxide/yazi/target/release/yazi"
+alias spf="spf ."
+alias tt="tt -highlight1 -showwpm -oneshot -t 30"
 alias ....="cd ../.."
-alias ..="cd .."
+alias sourcenv="source $ACTIVATE"
+alias nmapA="sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts"
+alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -113,9 +124,53 @@ shopt -s nocaseglob
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 bind "TAB: menu-complete"
+
+# Start SSH if not started
+if [ -z "$(pgrep sshd)" ]; then
+    echo "SSH is not running. Starting SSH..."
+    sudo service ssh start
+fi
 . "$HOME/.cargo/env"
 export EDITOR=nvim
-eval "$(zoxide init bash)"
 
-# Created by `pipx` on 2024-07-09 09:34:10
-export PATH="$PATH:/home/uri/.local/bin"
+function extractPorts(){
+	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+	echo $ports | tr -d '\n' | xclip -sel clip
+	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+	cat extractPorts.tmp; rm extractPorts.tmp
+}
+
+function mkt() {
+    mkdir {nmap,content,exploits}
+}
+
+function tmuxc() {
+    # Sesión
+    tmux new-session -d -s Coding -c $WORKDIR -n Main
+
+    # Ventanas
+    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR
+    tmux send-keys -t Coding:1 "sourcenv; clear" C-m
+
+    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR
+    tmux send-keys -t Coding:2 "sourcenv; clear" C-m
+    tmux split-window -h -c $WORKDIR
+    tmux send-keys -t Coding:2.1 "sourcenv; clear" C-m
+
+    tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR
+    tmux send-keys -t Coding:3 "sourcenv; clear" C-m
+
+    tmux select-window -t Coding:0
+    tmux attach -t Coding
+}
+
+# fnm
+FNM_PATH="/home/uri/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
