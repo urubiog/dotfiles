@@ -1,0 +1,9 @@
+[user]
+	email = urubio.g2@gmail.com
+	name = Uriel Rubio
+[push]
+	default = current
+[init]
+	defaultBranch = main
+[credential]
+	helper = store

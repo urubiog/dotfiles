@@ -56,7 +56,7 @@ ${GREEN}\u@\h ${BLUE}\w \n${YELLOW}$ ${RESET}"
 
 
 # Directorio de trabajo
-WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/
+WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/Dev/ML/easyAI
 
 # variables
 ACTIVATE="'/mnt/c/Users/Mi Pc/Documents/Envs/general/bin/activate'"
@@ -78,6 +78,9 @@ alias ....="cd ../.."
 alias sourcenv="source $ACTIVATE"
 alias nmapA="sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts"
 alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
+alias explorer="explorer.exe"
+alias cmd="cmd.exe"
+alias github="cmd.exe /C start https://github.com"
 
 
 # Alias definitions.
@@ -152,18 +155,27 @@ function tmuxc() {
     # Sesión
     tmux new-session -d -s Coding -c $WORKDIR -n Main
 
-    # Ventanas
-    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR
+    # Main
+    tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
+    tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
+
+    # Src
+    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAI
     tmux send-keys -t Coding:1 "sourcenv; clear" C-m
 
-    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR
+    # Package
+    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAI
     tmux send-keys -t Coding:2 "sourcenv; clear" C-m
-    tmux split-window -h -c $WORKDIR
+    tmux split-window -h -c $WORKDIR/src/easyAI
     tmux send-keys -t Coding:2.1 "sourcenv; clear" C-m
 
-    tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR
+    # Tests
+    tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR/tests
     tmux send-keys -t Coding:3 "sourcenv; clear" C-m
+    tmux split-window -h -c $WORKDIR/tests
+    tmux send-keys -t Coding:3.1 "sourcenv; clear" C-m
 
+    # Attach to first window
     tmux select-window -t Coding:0
     tmux attach -t Coding
 }
