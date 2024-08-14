@@ -58,8 +58,11 @@ ${GREEN}\u@\h ${BLUE}\w \n${YELLOW}$ ${RESET}"
 # Directorio de trabajo
 WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/Dev/ML/easyAI
 
-# variables
+# Virtualenv
 ACTIVATE="'/mnt/c/Users/Mi Pc/Documents/Envs/general/bin/activate'"
+
+# Nombre de usuario
+readonly USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
 
 # some more ls aliases
 alias ls='exa -F --icons'
@@ -69,7 +72,7 @@ alias l='exa -F --icons'
 alias cat='batcat --paging=never'
 alias fzf='fzf --preview="bat {} --paging=never --color=always "'
 alias n="nvim"
-alias cdc="cd /mnt/c/Users/Mi\ Pc/"
+alias cdc="cd '/mnt/c/Users/$USER/'"
 alias py="python3"
 alias cmatrix="cmatrix -b -s"
 alias spf="spf ."
