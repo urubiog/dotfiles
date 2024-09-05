@@ -88,6 +88,7 @@ alias cmd="cmd.exe"
 alias github="cmd.exe /C start https://github.com"
 alias gitshow="git log --oneline --graph --all --decorate"
 alias sl="ls"
+alias dc="cd"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
