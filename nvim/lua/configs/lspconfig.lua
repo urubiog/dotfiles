@@ -41,7 +41,7 @@ lspconfig.lua_ls.setup {
 lspconfig.html.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"html", "markdown"}
+  filetypes = {"html"}
 }
 
 -- css
@@ -137,5 +137,5 @@ lspconfig.gopls.setup {
 lspconfig.texlab.setup {
   on_attach = on_attach,  -- Replace with your custom on_attach function
   capabilities = capabilities,  -- Replace with your custom capabilities table
-  filetypes = {"tex", "markdown"}  -- Limit the LSP to LaTeX files
+  filetypes = {"tex"}  -- Limit the LSP to LaTeX files
 }

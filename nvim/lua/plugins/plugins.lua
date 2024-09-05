@@ -7,49 +7,18 @@ local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_
 
 local plugins = {
     {
-        "windwp/nvim-ts-autotag",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = function ()
-          require('nvim-ts-autotag').setup({
-            -- your config
-            opts = {
-                -- Defaults
-                enable_close = true, -- Auto close tags
-                enable_rename = true, -- Auto rename pairs of tags
-                enable_close_on_slash = true -- Auto close on trailing </
-            },
-            -- Also override individual filetype configs, these take priority.
-            -- Empty by default, useful if one of the "opts" global settings
-            -- doesn't work well in a specific filetype
-            per_filetype = {
-                ["html"] = {
-                    enable_close = false
-                },
-                ["markdown"] = {
-                    enable_close = true
-                }
-            }
-          })
-        end,
-        lazy = true,
-        event = "VeryLazy"
-    },
-    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && yarn install",
         init = function()
-            vim.g.mkdp_filetypes = { "markdown", "latex" }
             vim.g.mkdp_theme = 'light'
+            vim.g.mkdp_filetypes = { "markdown" }
         end,
         ft = { "markdown" },
     },
     {
-        "Zeioth/dooku.nvim",
-        event = "VeryLazy",
-        opts = {
-        -- your config options here
-        },
+        "lewis6991/gitsigns.nvim",
+        require("gitsigns").setup()
     },
     {
         "nvimdev/dashboard-nvim",
@@ -98,7 +67,6 @@ local plugins = {
                         '                                                            `$$ooo     ,o$$         ',
                         '                                                               `$o$$$o$"$\'          ',
                         "",
-
                     },
                     center = {
                         {
