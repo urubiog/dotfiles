@@ -42,27 +42,29 @@ if [ "$color_prompt" = yes ]; then
     BLUE="\[\033[01;34m\]"
     YELLOW="\[\033[01;33m\]"
     RESET="\[\033[00m\]"
+    LILA="\[\033[01;35m\]"
 else
     GREEN=""
     BLUE=""
     YELLOW=""
     RESET=""
+    LILA=""
 fi
 
 # Define prompt with new line above
 PS1="
 ${debian_chroot:+($debian_chroot)}\
-${GREEN}\u@\h ${BLUE}\w \n${YELLOW}$ ${RESET}"
+${LILA}\u@\h ${BLUE}\w \n${LILA}$ ${RESET}"
 
 
 # Directorio de trabajo
-WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/Dev/ML/easyAI
-
-# Virtualenv
-ACTIVATE="'/mnt/c/Users/Mi Pc/Documents/Envs/general/bin/activate'"
+WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/Dev/ML/easyAIs
 
 # Nombre de usuario
-readonly USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
+USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
+
+# Virtualenv
+ACTIVATE="'/mnt/c/Users/$USER/Documents/Envs/general/bin/activate'"
 
 # some more ls aliases
 alias ls='exa -F --icons'
@@ -84,7 +86,8 @@ alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
 alias explorer="explorer.exe"
 alias cmd="cmd.exe"
 alias github="cmd.exe /C start https://github.com"
-
+alias gitshow="git log --oneline --graph --all --decorate"
+alias sl="ls"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -131,11 +134,6 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 bind "TAB: menu-complete"
 
-# Start SSH if not started
-if [ -z "$(pgrep sshd)" ]; then
-    echo "SSH is not running. Starting SSH..."
-    sudo service ssh start
-fi
 . "$HOME/.cargo/env"
 export EDITOR=nvim
 
@@ -159,24 +157,24 @@ function tmuxc() {
     tmux new-session -d -s Coding -c $WORKDIR -n Main
 
     # Main
-    tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
-    tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
+    # tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
+    # tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
 
     # Src
-    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAI
-    tmux send-keys -t Coding:1 "sourcenv; clear" C-m
+    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAIs
+    tmux send-keys -t Coding:1 "sourcenv" C-l
 
     # Package
-    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAI
-    tmux send-keys -t Coding:2 "sourcenv; clear" C-m
-    tmux split-window -h -c $WORKDIR/src/easyAI
-    tmux send-keys -t Coding:2.1 "sourcenv; clear" C-m
+    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs
+    tmux send-keys -t Coding:2 "sourcenv; clear"
+    tmux split-window -h -c $WORKDIR/src/easyAIs
+    tmux send-keys -t Coding:2.1 "sourcenv; clear"
 
     # Tests
     tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR/tests
-    tmux send-keys -t Coding:3 "sourcenv; clear" C-m
+    tmux send-keys -t Coding:3 "sourcenv; clear"
     tmux split-window -h -c $WORKDIR/tests
-    tmux send-keys -t Coding:3.1 "sourcenv; clear" C-m
+    tmux send-keys -t Coding:3.1 "sourcenv; clear"
 
     # Attach to first window
     tmux select-window -t Coding:0
