@@ -36,6 +36,7 @@ require "nvchad.autocmds"
 
 vim.schedule(function()
   require "mappings"
+  require "autocmd"
 end)
 
 -- Define a function to check if no file is opened
