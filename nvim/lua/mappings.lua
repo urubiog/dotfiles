@@ -5,7 +5,8 @@ local M = {}
 
 -- Motions 
 map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-s>", "<C-u>zz", { noremap = true, silent = true })
+map("n", "<C-u>", "<C-x>")
 map("n", "<S-Up>", "H")
 map("n", "<S-Down>", "L")
 
@@ -30,8 +31,6 @@ map("i", "<F6>", ">")
 map("v", "<F5>", "<")
 map("v", "<F6>", ">")
 
--- Saving
-map("n", "<C-s>", "<cmd>w<CR>", { noremap = true, silent = true })
 
 -- Formaters
 map("n", "<C-y>", "<cmd>lua vim.lsp.buf.format()<CR>")
@@ -48,6 +47,6 @@ map("n", "_", "<cmd>Dashboard<CR>")
 map("n", "<leader>rp", ":!python3 %<CR>")
 
 -- Visualmode move codeblock
-map("v", "<S-Down>", ":m '>+1<CR>gv=gv")
-map("v", "<S-Up>", ":m '<-2<CR>gv=gv")
+map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 

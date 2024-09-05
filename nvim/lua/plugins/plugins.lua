@@ -4,7 +4,6 @@ local nvim_version = vim.version()
 -- Join major, minor, and patch with "."
 local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_version.patch }, ".")
 
-
 local plugins = {
     {
         "folke/noice.nvim",
@@ -18,14 +17,14 @@ local plugins = {
                 },
             },
             popupmenu = {
-                enabled = true,  -- Desactivar menús emergentes
+                enabled = true,
             },
+            transparent = true,
             messages = {
                 -- Configurar vistas para mensajes reducidos
                 enabled = true,
-                view = "mini",   -- Usar vista mínima para no molestar
                 view_error = "notify",  -- Solo mostrar errores como notificaciones
-                view_warn = "mini",     -- Advertencias en miniatura
+                view_warn = false,     -- Advertencias en miniatura
                 view_history = false,   -- No guardar historial de mensajes
                 view_cmdline = "cmdline", -- Solo comandos en la línea de comando
                 filter = {  -- Filtrar aún más los mensajes
@@ -64,7 +63,8 @@ local plugins = {
                     filter = { event = "msg_show", find = "Pattern not found" }, 
                     opts = { skip = true },  -- No mostrar mensajes de patrones no encontrados
                 },
-            }
+            },
+            background_colour = "#000000"
         },
         dependencies = {
             "MunifTanjim/nui.nvim",
@@ -304,5 +304,4 @@ local plugins = {
         end
     }
 }
-
 return plugins
