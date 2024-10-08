@@ -52,13 +52,12 @@ else
 fi
 
 # Define prompt with new line above
-PS1="
-${debian_chroot:+($debian_chroot)}\
-${LILA}\u@\h ${BLUE}\w \n${LILA}$ ${RESET}"
+PS1="${debian_chroot:+($debian_chroot)}\
+${LILA}\u@\h ${BLUE}/\W \n${LILA}$ ${RESET}"
 
 
 # Directorio de trabajo
-WORKDIR=~/Onedrive/DigitalWorld/Coding/Python/Dev/ML/easyAIs
+WORKDIR=~/Onedrive/DigitalWorld/Coding/
 
 # Nombre de usuario
 USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
@@ -77,18 +76,16 @@ alias n="nvim"
 alias cdc="cd '/mnt/c/Users/$USER/'"
 alias py="python3"
 alias cmatrix="cmatrix -b -s"
-alias spf="spf ."
 alias tt="tt -highlight1 -showwpm -oneshot -t 30"
 alias ....="cd ../.."
 alias sourcenv="source $ACTIVATE"
-alias nmapA="sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts"
+alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
 alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
 alias explorer="explorer.exe"
 alias cmd="cmd.exe"
 alias github="cmd.exe /C start https://github.com"
 alias gitshow="git log --oneline --graph --all --decorate"
 alias sl="ls"
-alias dc="cd"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -163,12 +160,12 @@ function tmuxc() {
 
     # Src
     tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAIs
-    tmux send-keys -t Coding:1 "sourcenv" C-l
+    tmux send-keys -t Coding:1 "sourcenv; clear" C-l
 
     # Package
-    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs
+    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs/core
     tmux send-keys -t Coding:2 "sourcenv; clear"
-    tmux split-window -h -c $WORKDIR/src/easyAIs
+    tmux split-window -h -c $WORKDIR/src/easyAIs/core
     tmux send-keys -t Coding:2.1 "sourcenv; clear"
 
     # Tests
