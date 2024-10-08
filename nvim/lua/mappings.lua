@@ -1,14 +1,16 @@
 require "nvchad.mappings"
 
 local map = vim.keymap.set
-local M = {}
 
 -- Motions 
 map("n", "<C-d>", "<C-d>zz")
-map("n", "<C-s>", "<C-u>zz", { noremap = true, silent = true })
+map("v", "<C-d>", "<C-d>zz")
+map("n", "<C-e>", "<C-u>zz", { noremap = true, silent = true })
+map("v", "<C-e>", "<C-u>zz", { noremap = true, silent = true })
 map("n", "<C-u>", "<C-x>")
 map("n", "<S-Up>", "H")
 map("n", "<S-Down>", "L")
+map("n", "<C-s>", "<cmd>w<CR>")
 
 -- Telescope
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>")
@@ -44,9 +46,31 @@ map("n", 'dd', 'Vd', { noremap = true, silent = true })
 map("n", '<leader>dd', '"_dd', { noremap = true, silent = true })
 map("n", "_", "<cmd>Dashboard<CR>")
 
-map("n", "<leader>rp", ":!python3 %<CR>")
-
 -- Visualmode move codeblock
 map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
+-- Debugging 
+map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>")
+
+local M = {}
+
+M.dap = {
+    plugin = true,
+    n = {
+        ["<leader>db"] = {"<cmd> DapToggleBreakpoint <CR>"}
+    }
+}
+
+M.dap_python = {
+    plugin = true,
+    n = {
+        ["<leader>drp"] = {
+            function ()
+                require("dap-python").test_method()
+            end
+        }
+    }
+}
+
+return M

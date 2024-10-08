@@ -86,6 +86,7 @@ if placeholderIndex then
     header[placeholderIndex] = string.gsub(header[placeholderIndex], placeholder, dateStr)
 end
 
+M.dap_mappings = require "mappings"
 M.plugins = "plugins.plugins"
 
 return M

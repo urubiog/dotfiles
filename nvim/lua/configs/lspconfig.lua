@@ -4,7 +4,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
-  "html", "cssls", "ts_ls", "clangd", "rust_analyzer", "gopls",
+  "html", "cssls", "clangd", "rust_analyzer", "gopls",
   "pyright", "yamlls", "dockerls", "clojure_lsp", "cmake",
   "terraformls", "vimls", "lua_ls"
 }
@@ -19,16 +19,16 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- typescript
-lspconfig.ts_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  init_option = {
-    preferences = {
-      disableSuggestions = true,
-    }
-  }
-}
+-- -- typescript
+-- lspconfig.ts_ls.setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   init_option = {
+--     preferences = {
+--       disableSuggestions = true,
+--     }
+--   }
+-- }
 
 -- lua 
 lspconfig.lua_ls.setup {
