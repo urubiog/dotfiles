@@ -1,0 +1,90 @@
+{
+    "workbench.iconTheme": "vscode-icons", // Icons
+    "workbench.activityBar.location": "top", // Bar
+    "editor.renderLineHighlight": "none", // Highlight line
+    "editor.cursorBlinking": "expand", // Cursor
+    "editor.minimap.scale": 2, // Minimap
+    "editor.fontSize": 16, // Zoom
+    "workbench.sideBar.location": "right",
+    "editor.smoothScrolling": true, // Scrolling
+    "editor.minimap.autohide": true, // Minimap autohide
+    "breadcrumbs.enabled": false, // Breadcrumbs
+    "workbench.colorTheme": "Theme Mix", // Theme
+    "editor.tabSize": 4, // Spaces for every tab
+    "editor.stickyTabStops": false,
+    "window.zoomLevel": 1,
+    "excalidraw.theme": "dark",
+    "editor.wordWrap": "on",
+    "editor.stickyScroll.enabled": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "emojisense.languages": {
+        "plaintext": {
+            "markupCompletionsEnabled": true,
+            "emojiDecoratorsEnabled": true
+        },
+        "javascript.validate.enable": false,
+        "abap": true,
+        "bat": true,
+        "bibtex": true,
+        "clojure": true,
+        "coffeescript": true,
+        "c": true,
+        "cpp": true,
+        "csharp": true,
+        "css": true,
+        "diff": true,
+        "dockerfile": true,
+        "fsharp": true,
+        "git-commit": true,
+        "git-rebase": true,
+        "go": true,
+        "groovy": true,
+        "handlebars": true,
+        "html": true,
+        "ini": true,
+        "java": true,
+        "javascript": true,
+        "javascriptreact": true,
+        "json": true,
+        "jsonc": true,
+        "latex": true,
+        "less": true,
+        "lua": true,
+        "makefile": true,
+        "markdown": true,
+        "objective-c": true,
+        "objective-cpp": true,
+        "perl6": true,
+        "php": true,
+        "powershell": true,
+        "jade": true,
+        "python": true,
+        "r": true,
+        "razor": true,
+        "ruby": true,
+        "rust": true,
+        "scss": true,
+        "sass": true,
+        "shaderlab": true,
+        "shellscript": true,
+        "sql": true,
+        "swift": true,
+        "typescript": true,
+        "typescriptreact": true,
+        "tex": true,
+        "vb": true,
+        "xml": true,
+        "xsl": true,
+        "yaml": true,
+        "excalidrawlib": true
+    },
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+}
