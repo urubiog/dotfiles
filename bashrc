@@ -52,7 +52,8 @@ else
 fi
 
 # Define prompt with new line above
-PS1="${debian_chroot:+($debian_chroot)}\
+PS1="
+${debian_chroot:+($debian_chroot)}\
 ${LILA}\u@\h ${BLUE}/\W \n${LILA}$ ${RESET}"
 
 
