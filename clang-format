@@ -1,0 +1,29 @@
+BasedOnStyle: LLVM  # Estilo base
+IndentWidth: 4       # Ancho visual de indentación (espacios por tab)
+TabWidth: 4          # Ancho del tabulador
+UseTab: Always        # Utilizar tabs para la indentación
+ColumnLimit: 80
+AlignTrailingComments: true
+PointerAlignment: Right  # Punteros alineados a la derecha
+
+BreakBeforeBraces: Custom  # Brackets personalizados
+BraceWrapping:
+  AfterControlStatement: true  # Brackets de estructuras de control en nueva línea
+  AfterFunction: false          # Brackets de función en la misma línea
+  AfterStruct: false            # Brackets de struct en la misma línea
+  BeforeCatch: true
+  BeforeElse: true
+  AfterNamespace: true
+  BeforeLambdaBody: true
+
+SpaceBeforeParens: ControlStatements  # Espacio antes de paréntesis en estructuras de control
+SpacesInParentheses: false
+SpaceAfterCStyleCast: true
+SpaceBeforeInheritanceColon: true
+SpacesBeforeTrailingComments: 1  # Espacio antes de comentarios alineados
+
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None  # Ninguna función corta en una línea
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
