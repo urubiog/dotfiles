@@ -65,11 +65,29 @@ lspconfig.pyright.setup({
   filetypes = {"python"},
 })
 
--- C
+-- C, C++
 lspconfig.clangd.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"c"}
+    on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = {"c", "cpp"}, -- Asegúrate de incluir C++
+    init_options = {
+        usePlaceholders = true,
+        completion = {
+            enableSnippets = true,
+        },
+    },
+    root_dir = function(fname)
+        -- Intenta encontrar el directorio que contiene .clang-format, .git, etc.
+        local dir = lspconfig.util.root_pattern(".clang-format", ".git", "compile_commands.json", "CMakeLists.txt")(fname)
+
+        -- Retornar el directorio encontrado o la ruta al directorio que contiene .clang-format
+        if dir then
+            return dir
+        else
+            -- Retornar el directorio del usuario que contiene el archivo .clang-format
+            return vim.fn.expand("~/") -- Esto retorna el directorio del HOME
+        end
+    end,
 }
 
 -- java
