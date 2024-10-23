@@ -50,6 +50,9 @@ map("n", "_", "<cmd>Dashboard<CR>")
 map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
+-- Bracket wrap 
+map("v", "(", "c(<C-r>+)")
+
 -- Debugging 
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>")
 
