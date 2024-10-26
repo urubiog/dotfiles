@@ -9,6 +9,7 @@ install_base_tools() {
     sudo apt update && sudo apt upgrade -y
     sudo apt install -y build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip xselb cmatrix git tmux fzf ninja-build latexmk zathura
     cargo install exa
+    npm install -g vscode-langservers-extracted
 }
 
 install_development_tools() {
