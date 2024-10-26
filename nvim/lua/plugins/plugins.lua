@@ -5,6 +5,15 @@ local nvim_version = vim.version()
 local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_version.patch }, ".")
 
 local plugins = {
+        {
+        "lervag/vimtex",
+        lazy = false,     -- we don't want to lazy load VimTeX
+        -- tag = "v2.15", -- uncomment to pin to a specific release
+        init = function()
+            -- VimTeX configuration goes here, e.g.
+            vim.g.vimtex_view_method = "zathura"
+        end
+    },
     {
         "hedyhli/markdown-toc.nvim",
         ft = "markdown",  -- Lazy load on markdown filetype
