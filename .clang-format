@@ -3,8 +3,15 @@ IndentWidth: 4       # Ancho visual de indentación (espacios por tab)
 TabWidth: 4          # Ancho del tabulador
 UseTab: Always        # Utilizar tabs para la indentación
 ColumnLimit: 80
+MaxEmptyLinesToKeep: 3
+
 AlignTrailingComments: true
 PointerAlignment: Right  # Punteros alineados a la derecha
+AlignAfterOpenBracket: true
+AlignConsecutiveAssignments: false
+AlignOperands: true
+
+BinPackParameters: true
 
 BreakBeforeBraces: Custom  # Brackets personalizados
 BraceWrapping:
@@ -12,9 +19,11 @@ BraceWrapping:
   AfterFunction: false          # Brackets de función en la misma línea
   AfterStruct: false            # Brackets de struct en la misma línea
   BeforeCatch: true
-  BeforeElse: true
+  BeforeElse: false
   AfterNamespace: true
   BeforeLambdaBody: true
+
+BreakBeforeTernaryOperators: false
 
 SpaceBeforeParens: ControlStatements  # Espacio antes de paréntesis en estructuras de control
 SpacesInParentheses: false
@@ -22,8 +31,8 @@ SpaceAfterCStyleCast: true
 SpaceBeforeInheritanceColon: true
 SpacesBeforeTrailingComments: 1  # Espacio antes de comentarios alineados
 
-AllowShortBlocksOnASingleLine: false
+AllowShortBlocksOnASingleLine: true
 AllowShortCaseLabelsOnASingleLine: false
-AllowShortFunctionsOnASingleLine: None  # Ninguna función corta en una línea
-AllowShortIfStatementsOnASingleLine: false
-AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
