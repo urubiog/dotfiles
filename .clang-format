@@ -6,7 +6,7 @@ ColumnLimit: 80
 MaxEmptyLinesToKeep: 3
 
 AlignTrailingComments: true
-PointerAlignment: Right  # Punteros alineados a la derecha
+PointerAlignment: Left  # Punteros alineados a la izquierda
 AlignAfterOpenBracket: true
 AlignConsecutiveAssignments: false
 AlignOperands: true
@@ -36,3 +36,4 @@ AllowShortCaseLabelsOnASingleLine: false
 AllowShortFunctionsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true
+
