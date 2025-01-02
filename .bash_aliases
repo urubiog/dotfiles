@@ -50,16 +50,17 @@ alias bat='batcat --paging=always --color=always '  # `bat` alias
 alias fzf='fzf --preview="batcat --color=always -n {}"'  # Fuzzy finder with preview
 alias n='nvim'  # Neovim shortcut
 alias nfzf='n $(fzf)'  # Neovim with fzf for file searching
-alias py="python3"  # Python 3 shortcut
-alias ..="cd .."  # Go up one directory
-alias ....="cd ../.."  # Go up two directories
+alias py='python3'  # Python 3 shortcut
+alias ..='cd ..'  # Go up one directory
+alias ....='cd ../..'  # Go up two directories
 
 # Network tools alias (commented out)
 # alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
 # alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
 
 # Enhanced Git log
-alias gitshow="git log --oneline --graph --all --decorate"  # Quick git history view
+alias gitshow='git log --oneline --graph --all --decorate'  # Quick git history view
 
 # Simpler file listing alias
-alias sl="ls"  # Shortened ls
+alias sl='ls'
+alias sls='ls'
