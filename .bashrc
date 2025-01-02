@@ -52,8 +52,7 @@ else
 fi
 
 # Define prompt with new line above
-PS1="
-${debian_chroot:+($debian_chroot)}\
+PS1="${debian_chroot:+($debian_chroot)}\
 ${LILA}\u@\h ${BLUE}/\W \n${LILA}$ ${RESET}"
 
 
@@ -66,25 +65,31 @@ USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r/
 # Virtualenv
 ACTIVATE="'/mnt/c/Users/$USER/Documents/Envs/general/bin/activate'"
 
-# some more ls aliases
+# ls aliases
 alias ls='exa -F --icons'
 alias ll='exa -l --icons'
 alias la='exa -a --icons'
 alias l='exa -F --icons'
-alias cat='batcat --paging=never'
-alias fzf='fzf --preview="bat {} --paging=never --color=always "'
+
+# shortcuts
+alias cat='batcat --paging=never --color=always'
+alias fzf='fzf --preview="bat {} --paging=never --color=always -n"'
 alias n="nvim"
 alias cdc="cd '/mnt/c/Users/$USER/'"
 alias py="python3"
-alias cmatrix="cmatrix -b -s"
-alias tt="tt -highlight1 -showwpm -oneshot -t 30"
+alias ..="cd .."
 alias ....="cd ../.."
 alias sourcenv="source $ACTIVATE"
-alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
-alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
+
+# alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
+# alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
+
+# Windows WSL
 alias explorer="explorer.exe"
 alias cmd="cmd.exe"
 alias github="cmd.exe /C start https://github.com"
+
+# Others
 alias gitshow="git log --oneline --graph --all --decorate"
 alias sl="ls"
 
