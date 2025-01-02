@@ -55,45 +55,6 @@ fi
 PS1="${debian_chroot:+($debian_chroot)}\
 ${LILA}\u@\h ${BLUE}/\W \n${LILA}$ ${RESET}"
 
-
-# Directorio de trabajo
-WORKDIR=~/Onedrive/DigitalWorld/Coding/
-
-# Nombre de usuario
-USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
-
-# Virtualenv
-ACTIVATE="'/mnt/c/Users/$USER/Documents/Envs/general/bin/activate'"
-
-# ls aliases
-alias ls='exa -F --icons'
-alias ll='exa -l --icons'
-alias la='exa -a --icons'
-alias l='exa -F --icons'
-
-# shortcuts
-alias cat='batcat --paging=never --color=always'
-alias fzf='fzf --preview="bat {} --paging=never --color=always -n"'
-alias n="nvim"
-alias cdc="cd '/mnt/c/Users/$USER/'"
-alias py="python3"
-alias ..="cd .."
-alias ....="cd ../.."
-alias sourcenv="source $ACTIVATE"
-
-# alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
-# alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
-
-# Windows WSL
-alias explorer="explorer.exe"
-alias cmd="cmd.exe"
-alias github="cmd.exe /C start https://github.com"
-
-# Others
-alias gitshow="git log --oneline --graph --all --decorate"
-alias sl="ls"
-
-# Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
@@ -138,52 +99,54 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 bind "TAB: menu-complete"
 
-. "$HOME/.cargo/env"
-export EDITOR=nvim
+# . "$HOME/.cargo/env"
+# export EDITOR=nvim
 
-function extractPorts(){
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-	echo $ports | tr -d '\n' | xclip -sel clip
-	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-	cat extractPorts.tmp; rm extractPorts.tmp
-}
+# Here are some unused functions (commented out)
 
-function mkt() {
-    mkdir {nmap,content,exploits}
-}
+# function extractPorts(){
+# 	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+# 	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
+# 	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+# 	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
+# 	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
+# 	echo $ports | tr -d '\n' | xclip -sel clip
+# 	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
+# 	cat extractPorts.tmp; rm extractPorts.tmp
+# }
 
-function tmuxc() {
-    # Sesión
-    tmux new-session -d -s Coding -c $WORKDIR -n Main
+# function mkt() {
+#     mkdir {nmap,content,exploits}
+# }
 
-    # Main
-    # tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
-    # tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
-
-    # Src
-    tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAIs
-    tmux send-keys -t Coding:1 "sourcenv; clear" C-l
-
-    # Package
-    tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs/core
-    tmux send-keys -t Coding:2 "sourcenv; clear"
-    tmux split-window -h -c $WORKDIR/src/easyAIs/core
-    tmux send-keys -t Coding:2.1 "sourcenv; clear"
-
-    # Tests
-    tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR/tests
-    tmux send-keys -t Coding:3 "sourcenv; clear"
-    tmux split-window -h -c $WORKDIR/tests
-    tmux send-keys -t Coding:3.1 "sourcenv; clear"
-
-    # Attach to first window
-    tmux select-window -t Coding:0
-    tmux attach -t Coding
-}
+# function tmuxc() {
+#     # Sesión
+#     tmux new-session -d -s Coding -c $WORKDIR -n Main
+#
+#     # Main
+#     # tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
+#     # tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
+#
+#     # Src
+#     tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAIs
+#     tmux send-keys -t Coding:1 "sourcenv; clear" C-l
+#
+#     # Package
+#     tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs/core
+#     tmux send-keys -t Coding:2 "sourcenv; clear"
+#     tmux split-window -h -c $WORKDIR/src/easyAIs/core
+#     tmux send-keys -t Coding:2.1 "sourcenv; clear"
+#
+#     # Tests
+#     tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR/tests
+#     tmux send-keys -t Coding:3 "sourcenv; clear"
+#     tmux split-window -h -c $WORKDIR/tests
+#     tmux send-keys -t Coding:3.1 "sourcenv; clear"
+#
+#     # Attach to first window
+#     tmux select-window -t Coding:0
+#     tmux attach -t Coding
+# }
 
 # fnm
 FNM_PATH="/home/uri/.local/share/fnm"
