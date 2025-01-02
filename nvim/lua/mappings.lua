@@ -33,7 +33,6 @@ map("i", "<F6>", ">")
 map("v", "<F5>", "<")
 map("v", "<F6>", ">")
 
-
 -- Formaters
 map("n", "<C-y>", "<cmd>lua vim.lsp.buf.format()<CR>")
 
@@ -45,6 +44,7 @@ map("v", 'dd', 'Vd', { noremap = true, silent = true })
 map("n", 'dd', 'Vd', { noremap = true, silent = true })
 map("n", '<leader>dd', '"_dd', { noremap = true, silent = true })
 map("n", "_", "<cmd>Dashboard<CR>")
+map("i", "<C-H>", "<C-w>")
 
 -- Visualmode move codeblock
 map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
