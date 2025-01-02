@@ -99,8 +99,9 @@ bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 bind "TAB: menu-complete"
 
+export EDITOR=nvim
+
 # . "$HOME/.cargo/env"
-# export EDITOR=nvim
 
 # Here are some unused functions (commented out)
 
