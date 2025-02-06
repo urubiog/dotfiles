@@ -1,4 +1,4 @@
-# .bashrc
+# .bash_aliases
 
 # Ensuring that we handle environment variables and paths well
 # Working Directory (adjust path according to your needs)
