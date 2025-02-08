@@ -49,6 +49,7 @@ alias cat='batcat --paging=always --color=always'  # Better cat command with syn
 alias bat='batcat --paging=always --color=always '  # `bat` alias
 alias fzf='fzf --preview="batcat --color=always -n {}"'  # Fuzzy finder with preview
 alias n='nvim'  # Neovim shortcut
+alias g='git'  # Git shortcut
 alias nfzf='n $(fzf)'  # Neovim with fzf for file searching
 alias py='python3'  # Python 3 shortcut
 alias ..='cd ..'  # Go up one directory
