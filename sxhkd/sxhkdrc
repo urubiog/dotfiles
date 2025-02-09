@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-	kitty 
+	kitty
 
 # program launcher
 super + @space
-	~/.config/rofi/scripts/launcher_t2
+	rofi -show drun -theme "$HOME/.config/rofi/launchers/type-2/style-2.rasi"
 
 # make sxhkd reload its configuration files:
 super + Escape
