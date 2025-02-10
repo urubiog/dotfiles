@@ -4,41 +4,65 @@
 # Script para instalación de software en Ubuntu
 # ------------------------------
 
+install_package() {
+    package="$1"
+    echo "Instalando: $package"
+    if sudo apt install -y "$package"; then
+        echo "$package instalado correctamente."
+    else
+        echo "Error instalando $package. Continuando con el siguiente..."
+    fi
+}
+
+install_snap_package() {
+    package="$1"
+    echo "Instalando: $package (Snap)"
+    if sudo snap install "$package"; then
+        echo "$package instalado correctamente."
+    else
+        echo "Error instalando $package. Continuando con el siguiente..."
+    fi
+}
+
 install_base_tools() {
     echo "Actualizando sistema y añadiendo herramientas básicas..."
     sudo apt update && sudo apt upgrade -y
-    sudo apt install -y build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip xselb cmatrix git tmux fzf ninja-build latexmk zathura black
-    cargo install exa
-    npm install -g vscode-langservers-extracted
+    for pkg in build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip cmatrix tmux fzf ninja-build latexmk zathura black; do
+        install_package "$pkg"
+    done
+    cargo install exa || echo "Error instalando exa."
+    npm install -g vscode-langservers-extracted || echo "Error instalando vscode-langservers-extracted."
 }
 
 install_development_tools() {
     echo "Instalando herramientas de desarrollo..."
-    sudo apt install -y gcc g++ make cmake python3 python3-pip openjdk-17-jdk nodejs npm docker.io docker-compose
-    sudo snap install code --classic # Visual Studio Code
-    sudo apt install -y postgresql postgresql-contrib libpq-dev
+    for pkg in gcc g++ make cmake python3 python3-pip openjdk-17-jdk nodejs npm docker.io docker-compose postgresql postgresql-contrib libpq-dev; do
+        install_package "$pkg"
+    done
+    sudo snap install code --classic || echo "Error instalando Visual Studio Code."
 }
 
 install_deep_learning_packages() {
     echo "Instalando paquetes y entornos para Deep Learning..."
     pip3 install --upgrade pip
-    pip3 install numpy scipy matplotlib pandas scikit-learn tensorflow keras torch torchvision jupyter jupyterlab
+    for pkg in numpy scipy matplotlib pandas scikit-learn tensorflow keras torch torchvision jupyter jupyterlab; do
+        pip3 install "$pkg" || echo "Error instalando $pkg."
+    done
 }
 
 install_productivity_tools() {
     echo "Instalando aplicaciones de productividad..."
-    sudo snap install libreoffice
-    sudo snap install onlyoffice-desktopeditors
-    sudo snap install notion-snap
-    sudo snap install obsidian
-    sudo snap install discord
+    for pkg in libreoffice onlyoffice-desktopeditors notion-snap obsidian discord; do
+        install_snap_package "$pkg"
+    done
 }
 
 install_multimedia_tools() {
     echo "Instalando aplicaciones multimedia y utilidades..."
-    sudo apt install -y vlc gimp inkscape
-    sudo snap install spotify
-    sudo apt install -y obs-studio
+    for pkg in vlc gimp inkscape obs-studio; do
+        install_package "$pkg"
+    done
+    install_snap_package spotify
 }
 
 install_neovim() {
@@ -48,28 +72,28 @@ install_neovim() {
     cd neovim
     git checkout v0.10.0
     make CMAKE_BUILD_TYPE=Release
-    sudo make install
+    sudo make install || echo "Error instalando Neovim."
     rm -rf ~/neovim
     cd ~
 }
 
 setup_dotfiles() {
     echo "Descargando y configurando dotfiles..."
-    git clone https://github.com/urubiog/dotfiles 
+    git clone https://github.com/urubiog/dotfiles
     cd dotfiles
+    for file in .bashrc .gitconfig .clang-format .tmux.conf; do
+        mv "$file" ~/
+    done
     mv nvim ~/.config/nvim/
-    mv ./.bashrc ~/.bashrc 
-    mv ./.gitconfig ~/.gitconfig 
-    mv ./.clang-format ~/.clang-format 
-    mv ./.tmux.conf ~/.tmux.conf 
-    cd ~ 
+    cd ~
     rm -rf dotfiles
 }
 
 install_markdown_preview() {
-    if [ -d "/home/$(whoami)/.local/share/nvim/lazy/markdown-preview.nvim/app" ]; then
-        cd /home/$(whoami)/.local/share/nvim/lazy/markdown-preview.nvim/app
-        npm install
+    path="/home/$(whoami)/.local/share/nvim/lazy/markdown-preview.nvim/app"
+    if [ -d "$path" ]; then
+        cd "$path"
+        npm install || echo "Error instalando dependencias de markdown-preview."
     else
         echo "El directorio de markdown-preview no existe."
     fi
