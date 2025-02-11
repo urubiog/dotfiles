@@ -1,0 +1,48 @@
+[
+    // Motions
+    { "keys": ["ctrl+d"], "command": "scroll_lines", "args": {"amount": -10.0} },
+    { "keys": ["ctrl+e"], "command": "scroll_lines", "args": {"amount": 10.0} },
+    { "keys": ["shift+up"], "command": "move_to", "args": {"to": "bof"} },
+    { "keys": ["shift+down"], "command": "move_to", "args": {"to": "eof"} },
+    { "keys": ["ctrl+s"], "command": "save" },
+    { "keys": ["ctrl+n"], "command": "toggle_side_bar" },
+
+    // Telescope equivalent
+    { "keys": ["ctrl+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+    // { "keys": ["ctrl+f"], "command": "show_panel", "args": {"panel": "find_in_files"} },
+
+    // Rename (Simulated F2)
+    { "keys": ["f2"], "command": "rename_file" },
+
+    // Signature help (No direct equivalent in Sublime)
+    { "keys": ["f3"], "command": "show_definition" },
+
+    // LSP diagnostics panel
+    { "keys": ["f4"], "command": "lsp_toggle_panel" },
+
+    // Indentation
+    { "keys": ["f5"], "command": "unindent" },
+    { "keys": ["f6"], "command": "indent" },
+
+    // Comment 
+    { "keys": ["g", "c"], "command": "toggle_comment"},
+
+    // Formatting (Requires LSP)
+    { "keys": ["ctrl+y"], "command": "lsp_format_document" },
+
+    // Shortcuts
+    { "keys": [";"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    // { "keys": ["ctrl+a"], "command": "move_by", "args": {"amount": 1, "extend": false} },  // Incrementa una línea
+    { "keys": ["ctrl+u"], "command": "move_by", "args": {"amount": -1, "extend": false} },  // Decrementa una línea
+    
+    // Move selection up/down
+    //{ "keys": ["shift+down"], "command": "move_text_down" },
+    //{ "keys": ["shift+up"], "command": "move_text_up" },
+
+    // Bracket wrapping
+    { "keys": ["("], "command": "insert_snippet", "args": {"contents": "(${SELECTION})"} },
+
+    // Run 
+    { "keys": ["ctrl+b"], "command": "build"}
+]
+
