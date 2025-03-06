@@ -1,0 +1,13 @@
+{
+	"bootstrapped": true,
+	"installed_packages":
+	[
+		"Clang Format",
+		"Ipynb Preview as Markdown",
+		"Package Control",
+		"SideBarEnhancements",
+	],
+	"in_process_packages":
+	[
+	],
+}

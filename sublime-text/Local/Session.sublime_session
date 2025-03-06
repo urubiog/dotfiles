@@ -1,0 +1,1261 @@
+{
+	"file_history":
+	[
+		"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/uri/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+		"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+		"/home/uri/.config/sublime-text/Packages/Formatter/Example.sublime-keymap",
+		"/home/uri/.config/sublime-text/Packages/Formatter/modules/_summary.txt",
+		"/home/uri/.config/sublime-text/Packages/User/Formatter.sublime-settings",
+		"/home/uri/.config/sublime-text/Packages/Formatter/Formatter.sublime-settings",
+		"/home/uri/.config/sublime-text/Packages/Theme - Default/Adaptive.sublime-theme",
+		"/home/uri/.config/sublime-text/Packages/User/Adaptive.sublime-theme",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+		"/home/uri/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+		"/home/uri/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/37.py",
+		"/home/uri/Downloads/Varietats Català.md",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/33-to-do.py",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/18-to-do.py",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/42.py",
+		"/home/uri/42.py",
+		"/home/uri/OneDrive/CS/Coding/C/DSs/src/binary_search_tree.c",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/48.py",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/tmp.py",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/45.py",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/1.py",
+		"/home/uri/temp.py",
+		"/home/uri/OneDrive/CS/main.py",
+		"/home/uri/OneDrive/CS/ToDo.md",
+		"/home/uri/.config/sublime-text/Packages/Theme - Default/Default.sublime-theme",
+		"/home/uri/.config/sublime-text/Packages/User/Default.sublime-theme"
+	],
+	"folder_history":
+	[
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler",
+		"/home/uri/OneDrive/CS/Coding/C/DSs",
+		"/home/uri",
+		"/home/uri/OneDrive/CS"
+	],
+	"last_version": 4192,
+	"last_window_id": 37,
+	"log_indexing": false,
+	"next_update_check": 1741293758,
+	"settings":
+	{
+		"new_window_full_screen": false,
+		"new_window_height": 0.0,
+		"new_window_maximized": true,
+		"new_window_position":
+		[
+			0.0,
+			46.0
+		],
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"proj",
+						"Proj_m"
+					],
+					[
+						"mat",
+						"mat_mul"
+					],
+					[
+						"co",
+						"cols"
+					],
+					[
+						"the",
+						"theta_z"
+					],
+					[
+						"tot",
+						"total_triangle_words"
+					],
+					[
+						"ma",
+						"max_val"
+					],
+					[
+						"S",
+						"STARTING_INDX"
+					]
+				]
+			},
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/C++/C Single File.sublime-build",
+							""
+						],
+						[
+							"Packages/C++/C Single File.sublime-build",
+							"Run"
+						],
+						[
+							"Packages/Makefile/Make.sublime-build",
+							""
+						],
+						[
+							"Packages/Makefile/Make.sublime-build",
+							"Clean"
+						]
+					],
+					[
+						"Packages/C++/C Single File.sublime-build",
+						"Run"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Python/Python.sublime-build",
+							""
+						],
+						[
+							"Packages/Python/Python.sublime-build",
+							"Syntax Check"
+						]
+					],
+					[
+						"Packages/Python/Python.sublime-build",
+						""
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"select color",
+						"UI: Select Color Scheme"
+					],
+					[
+						":package inst",
+						"Package Control: Install Package"
+					],
+					[
+						":package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"side bar",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"keyb",
+						"Preferences: Key Bindings"
+					],
+					[
+						"sta",
+						"View: Toggle Status Bar"
+					],
+					[
+						"bar",
+						"View: Toggle Status Bar"
+					],
+					[
+						":side b",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						":package control ",
+						"Package Control: Install Package"
+					],
+					[
+						":package control",
+						"Package Control: Upgrade Package"
+					],
+					[
+						":removep",
+						"Package Control: Remove Package"
+					],
+					[
+						":format",
+						"CMake Format: Format Selection"
+					],
+					[
+						":forma",
+						"CMake Format: Format Selection"
+					],
+					[
+						"format ",
+						"Preferences: Formatter Key Bindings"
+					],
+					[
+						"key",
+						"Preferences: Key Bindings"
+					],
+					[
+						"package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"format",
+						"Preferences: Formatter Key Bindings"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"packages install",
+						"Package Control: Install Package"
+					],
+					[
+						"instal lp",
+						"Package Control: Install Package"
+					],
+					[
+						":oackage ",
+						"Preferences: Browse Packages"
+					],
+					[
+						"color",
+						"UI: Select Color Scheme"
+					],
+					[
+						"package control remove ",
+						"Package Control: Remove Package"
+					],
+					[
+						"package control insta",
+						"Package Control: Advanced Install Packages"
+					],
+					[
+						"package control remove",
+						"Package Control: Remove Package"
+					],
+					[
+						":package control Insta",
+						"Package Control: Install Package"
+					],
+					[
+						"ui",
+						"UI: Select Color Scheme"
+					],
+					[
+						"packages",
+						"Preferences: Browse Packages"
+					],
+					[
+						"color theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"ui ",
+						"UI: Customize Theme"
+					],
+					[
+						":c sing",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c sin",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c si",
+						"Build With: C Single File - Run"
+					],
+					[
+						":spl",
+						"File: Split View"
+					],
+					[
+						":spli",
+						"File: Split View"
+					],
+					[
+						":split view",
+						"File: Split View"
+					],
+					[
+						"lsp",
+						"File: Split View"
+					],
+					[
+						"docu",
+						"Help: Documentation"
+					],
+					[
+						":c sing ",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c singl ",
+						"Build With: C Single File - Run"
+					],
+					[
+						"c sing",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c single",
+						"Build With: C Single File"
+					],
+					[
+						":c",
+						"Build With: C Single File"
+					],
+					[
+						"keybi",
+						"Preferences: Key Bindings"
+					],
+					[
+						":python",
+						"Set Syntax: Python"
+					],
+					[
+						":set syn",
+						"Set Syntax: reStructuredText"
+					],
+					[
+						":Python",
+						"Set Syntax: Python"
+					],
+					[
+						":go",
+						"Set Syntax: JSON (Go)"
+					],
+					[
+						":",
+						"Help: About"
+					],
+					[
+						":q",
+						"Set Syntax: SQL"
+					],
+					[
+						"settings",
+						"Preferences: Settings"
+					],
+					[
+						":mark",
+						"Set Syntax: Markdown"
+					],
+					[
+						":markdown",
+						"Set Syntax: Markdown (Go)"
+					],
+					[
+						":rename",
+						"File: Rename File"
+					],
+					[
+						"ke",
+						"Preferences: Key Bindings"
+					],
+					[
+						"pref",
+						"Preferences: Settings"
+					],
+					[
+						":w",
+						":w - Save"
+					],
+					[
+						"preferen",
+						"Preferences: Settings"
+					],
+					[
+						"scheme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorsc",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorch",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorsh",
+						"UI: Select Color Scheme"
+					],
+					[
+						"theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"comment",
+						"Toggle Comment"
+					],
+					[
+						"!",
+						"Snippet: #!/usr/bin/env"
+					],
+					[
+						"new file",
+						"File: New View into File"
+					],
+					[
+						"key b",
+						"Preferences: Key Bindings"
+					],
+					[
+						"close",
+						"File: Close All"
+					],
+					[
+						"python",
+						"Build With: Python"
+					],
+					[
+						"py",
+						"Build With: Python"
+					],
+					[
+						"file",
+						"View Package File"
+					],
+					[
+						"theme ",
+						"UI: Select Color Scheme"
+					],
+					[
+						"package ",
+						"Package Control: Add Channel"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 166.0,
+				"history":
+				[
+					"exit()",
+					"help()",
+					"help())",
+					"ls"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+				"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/uri/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/37.py",
+				"/home/uri/Downloads/Varietats Català.md",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/33-to-do.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/18-to-do.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/42.py",
+				"/home/uri/42.py",
+				"/home/uri/OneDrive/CS/Coding/C/DSs/src/binary_search_tree.c",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/48.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/tmp.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/45.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/1.py",
+				"/home/uri/temp.py",
+				"/home/uri/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/uri/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+				"/home/uri/OneDrive/CS/main.py",
+				"/home/uri/OneDrive/CS/ToDo.md"
+			],
+			"find":
+			{
+				"height": 36.0
+			},
+			"find_in_files":
+			{
+				"height": 150.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": true,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 50.0
+			},
+			"input":
+			{
+				"height": 50.0
+			},
+			"menu_visible": false,
+			"output.LSP Log Panel":
+			{
+				"height": 0.0
+			},
+			"output.diagnostics":
+			{
+				"height": 0.0
+			},
+			"output.exec":
+			{
+				"height": 311.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 68.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"to do",
+						"33-to-do.py"
+					],
+					[
+						"42",
+						"42.py"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": false,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 263.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"proj",
+						"Proj_m"
+					],
+					[
+						"mat",
+						"mat_mul"
+					],
+					[
+						"co",
+						"cols"
+					],
+					[
+						"the",
+						"theta_z"
+					],
+					[
+						"tot",
+						"total_triangle_words"
+					],
+					[
+						"ma",
+						"max_val"
+					],
+					[
+						"S",
+						"STARTING_INDX"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+					"settings":
+					{
+						"buffer_size": 4194,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+					]
+				},
+				{
+					"file": "/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+					"settings":
+					{
+						"buffer_size": 2259,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					},
+					"undo_stack":
+					[
+					]
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+				[
+					[
+						[
+							"Packages/C++/C Single File.sublime-build",
+							""
+						],
+						[
+							"Packages/C++/C Single File.sublime-build",
+							"Run"
+						],
+						[
+							"Packages/Makefile/Make.sublime-build",
+							""
+						],
+						[
+							"Packages/Makefile/Make.sublime-build",
+							"Clean"
+						]
+					],
+					[
+						"Packages/C++/C Single File.sublime-build",
+						"Run"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Python/Python.sublime-build",
+							""
+						],
+						[
+							"Packages/Python/Python.sublime-build",
+							"Syntax Check"
+						]
+					],
+					[
+						"Packages/Python/Python.sublime-build",
+						""
+					]
+				]
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"select color",
+						"UI: Select Color Scheme"
+					],
+					[
+						":package inst",
+						"Package Control: Install Package"
+					],
+					[
+						":package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"side bar",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						"keyb",
+						"Preferences: Key Bindings"
+					],
+					[
+						"sta",
+						"View: Toggle Status Bar"
+					],
+					[
+						"bar",
+						"View: Toggle Status Bar"
+					],
+					[
+						":side b",
+						"View: Toggle Open Files in Side Bar"
+					],
+					[
+						":package control ",
+						"Package Control: Install Package"
+					],
+					[
+						":package control",
+						"Package Control: Upgrade Package"
+					],
+					[
+						":removep",
+						"Package Control: Remove Package"
+					],
+					[
+						":format",
+						"CMake Format: Format Selection"
+					],
+					[
+						":forma",
+						"CMake Format: Format Selection"
+					],
+					[
+						"format ",
+						"Preferences: Formatter Key Bindings"
+					],
+					[
+						"key",
+						"Preferences: Key Bindings"
+					],
+					[
+						"package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"format",
+						"Preferences: Formatter Key Bindings"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"packages install",
+						"Package Control: Install Package"
+					],
+					[
+						"instal lp",
+						"Package Control: Install Package"
+					],
+					[
+						":oackage ",
+						"Preferences: Browse Packages"
+					],
+					[
+						"color",
+						"UI: Select Color Scheme"
+					],
+					[
+						"package control remove ",
+						"Package Control: Remove Package"
+					],
+					[
+						"package control insta",
+						"Package Control: Advanced Install Packages"
+					],
+					[
+						"package control remove",
+						"Package Control: Remove Package"
+					],
+					[
+						":package control Insta",
+						"Package Control: Install Package"
+					],
+					[
+						"ui",
+						"UI: Select Color Scheme"
+					],
+					[
+						"packages",
+						"Preferences: Browse Packages"
+					],
+					[
+						"color theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"ui ",
+						"UI: Customize Theme"
+					],
+					[
+						":c sing",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c sin",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c si",
+						"Build With: C Single File - Run"
+					],
+					[
+						":spl",
+						"File: Split View"
+					],
+					[
+						":spli",
+						"File: Split View"
+					],
+					[
+						":split view",
+						"File: Split View"
+					],
+					[
+						"lsp",
+						"File: Split View"
+					],
+					[
+						"docu",
+						"Help: Documentation"
+					],
+					[
+						":c sing ",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c singl ",
+						"Build With: C Single File - Run"
+					],
+					[
+						"c sing",
+						"Build With: C Single File - Run"
+					],
+					[
+						":c single",
+						"Build With: C Single File"
+					],
+					[
+						":c",
+						"Build With: C Single File"
+					],
+					[
+						"keybi",
+						"Preferences: Key Bindings"
+					],
+					[
+						":python",
+						"Set Syntax: Python"
+					],
+					[
+						":set syn",
+						"Set Syntax: reStructuredText"
+					],
+					[
+						":Python",
+						"Set Syntax: Python"
+					],
+					[
+						":go",
+						"Set Syntax: JSON (Go)"
+					],
+					[
+						":",
+						"Help: About"
+					],
+					[
+						":q",
+						"Set Syntax: SQL"
+					],
+					[
+						"settings",
+						"Preferences: Settings"
+					],
+					[
+						":mark",
+						"Set Syntax: Markdown"
+					],
+					[
+						":markdown",
+						"Set Syntax: Markdown (Go)"
+					],
+					[
+						":rename",
+						"File: Rename File"
+					],
+					[
+						"ke",
+						"Preferences: Key Bindings"
+					],
+					[
+						"pref",
+						"Preferences: Settings"
+					],
+					[
+						":w",
+						":w - Save"
+					],
+					[
+						"preferen",
+						"Preferences: Settings"
+					],
+					[
+						"scheme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorsc",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorch",
+						"UI: Select Color Scheme"
+					],
+					[
+						"colorsh",
+						"UI: Select Color Scheme"
+					],
+					[
+						"theme",
+						"UI: Select Color Scheme"
+					],
+					[
+						"comment",
+						"Toggle Comment"
+					],
+					[
+						"!",
+						"Snippet: #!/usr/bin/env"
+					],
+					[
+						"new file",
+						"File: New View into File"
+					],
+					[
+						"key b",
+						"Preferences: Key Bindings"
+					],
+					[
+						"close",
+						"File: Close All"
+					],
+					[
+						"python",
+						"Build With: Python"
+					],
+					[
+						"py",
+						"Build With: Python"
+					],
+					[
+						"file",
+						"View Package File"
+					],
+					[
+						"theme ",
+						"UI: Select Color Scheme"
+					],
+					[
+						"package ",
+						"Package Control: Add Channel"
+					]
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 166.0,
+				"history":
+				[
+					"exit()",
+					"help()",
+					"help())",
+					"ls"
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+				"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+				"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
+				"/home/uri/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/37.py",
+				"/home/uri/Downloads/Varietats Català.md",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/33-to-do.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/18-to-do.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/42.py",
+				"/home/uri/42.py",
+				"/home/uri/OneDrive/CS/Coding/C/DSs/src/binary_search_tree.c",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/48.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/tmp.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/45.py",
+				"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/1.py",
+				"/home/uri/temp.py",
+				"/home/uri/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+				"/home/uri/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
+				"/home/uri/OneDrive/CS/main.py",
+				"/home/uri/OneDrive/CS/ToDo.md"
+			],
+			"find":
+			{
+				"height": 36.0
+			},
+			"find_in_files":
+			{
+				"height": 150.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": true,
+				"scrollbar_highlights": true,
+				"show_context": true,
+				"use_buffer2": true,
+				"use_gitignore": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"groups":
+			[
+				{
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+							"selected": true,
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 4194,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										3580,
+										3580
+									]
+								],
+								"settings":
+								{
+									"colorcode": true,
+									"lsp_uri": "file:///home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+									"syntax": "Packages/Python/Python.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 2452.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"stack_multiselect": false,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 2259,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1443,
+										1443
+									]
+								],
+								"settings":
+								{
+									"lsp_uri": "file:///home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+									"syntax": "Packages/C++/C.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 1380.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"stack_multiselect": false,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 50.0
+			},
+			"input":
+			{
+				"height": 50.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": false,
+			"output.LSP Log Panel":
+			{
+				"height": 0.0
+			},
+			"output.diagnostics":
+			{
+				"height": 0.0
+			},
+			"output.exec":
+			{
+				"height": 311.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,1,0,0,0,0,0,1920,1002,1920,1080,0",
+			"project": "",
+			"replace":
+			{
+				"height": 68.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"to do",
+						"33-to-do.py"
+					],
+					[
+						"42",
+						"42.py"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+				"lsp_show_inlay_hints": false
+			},
+			"show_minimap": false,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 263.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 25,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

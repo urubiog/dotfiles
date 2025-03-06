@@ -1,0 +1,68 @@
+{
+    "variables": {
+        "background": "#FAF8F5",
+        "foreground": "#3E3D3A",
+        "caret": "#FF7F50",
+        "selection": "#E0D6CB",
+        "comment": "#A39E9B",
+        "string": "#D2691E",
+        "keyword": "#005F87",
+        "function": "#007A8A",
+        "number": "#A45A52",
+        "operator": "#333333",
+        "datatype": "#B58900"
+    },
+    "globals": {
+        "background": "var(background)",
+        "foreground": "var(foreground)",
+        "caret": "var(caret)",
+        "selection": "var(selection)",
+        "line_highlight": "#F0ECE6",
+        "misspelling": "#E74C3C"
+    },
+    "rules": 
+    [
+    	{
+            "scope": "comment",
+            "foreground": "var(comment)",
+            "font_style": "italic"
+    	},
+    	{
+            "scope": "string",
+            "foreground": "var(string)"
+    	},
+    	{
+            "scope": "constant.numeric",
+            "foreground": "var(number)"
+    	},
+    	{
+            "scope": "keyword",
+            "foreground": "var(keyword)"
+    	},
+    	{
+            "scope": "variable.function, entity.name.function",
+            "foreground": "var(function)"
+    	},
+    	{
+            "scope": "meta.function-call support.function",
+            "foreground": "var(function)"
+    	},
+    	{
+            "scope": "keyword.operator",
+            "foreground": "var(operator)"
+    	},
+    	{
+            "scope": "storage.type, support.type",
+            "foreground": "var(datatype)"
+    	},
+    	{
+            "scope": "meta.function-call punctuation.definition.arguments",
+            "foreground": "var(foreground)"
+    	},
+    	{
+            "scope": "meta.function-call meta.delimiter",
+            "foreground": "var(foreground)"
+    	},
+    ]
+}
+

@@ -1,0 +1,1572 @@
+[
+    {
+        "caption": "Formatter",
+        "id": "formatter",
+        "children": [
+            {
+                "caption": "☰ Quick Options",
+                "command": "quick_options"
+            },
+            {
+                "caption": "Auto Format File",
+                "command": "auto_format_file"
+            },
+            {
+                "caption": "-"
+            },
+            {
+                "caption": "AppleSwiftFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "appleswiftformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ASMfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "asmfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ArtisticStyle",
+                "command": "run_format",
+                "args": {
+                    "uid": "astyle",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Autopep8",
+                "command": "run_format",
+                "args": {
+                    "uid": "autopep8",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Beautysh",
+                "command": "run_format",
+                "args": {
+                    "uid": "beautysh",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "BibTeXTidy",
+                "command": "run_format",
+                "args": {
+                    "uid": "bibtextidy",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Biome",
+                "command": "run_format",
+                "args": {
+                    "uid": "biome",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Black",
+                "command": "run_format",
+                "args": {
+                    "uid": "black",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "BladeFormatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "bladeformatter",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "CabalFmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "cabalfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "CaddyFmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "caddyfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ClangFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "clangformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "CLJfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "cljfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "CMakeFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "cmakeformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Crystal",
+                "command": "run_format",
+                "args": {
+                    "uid": "crystal",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "CSScomb",
+                "command": "run_format",
+                "args": {
+                    "uid": "csscomb",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "D2Fmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "d2fmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "DartFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "dartformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Deno",
+                "command": "run_format",
+                "args": {
+                    "uid": "deno",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "DhallFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "dhallformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Docformatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "docformatter",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Dockfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "dockfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Dprint",
+                "command": "run_format",
+                "args": {
+                    "uid": "dprint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ErlangEfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "efmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ElixirMix",
+                "command": "run_format",
+                "args": {
+                    "uid": "elixirmix",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ElmFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "elmformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Erlfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "erlfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ESLint",
+                "command": "run_format",
+                "args": {
+                    "uid": "eslint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ESLintd",
+                "command": "run_format",
+                "args": {
+                    "uid": "eslintd",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Floskell",
+                "command": "run_format",
+                "args": {
+                    "uid": "floskell",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "FormatR",
+                "command": "run_format",
+                "args": {
+                    "uid": "formatr",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Fourmolu",
+                "command": "run_format",
+                "args": {
+                    "uid": "fourmolu",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Fprettify",
+                "command": "run_format",
+                "args": {
+                    "uid": "fprettify",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Gleam",
+                "command": "run_format",
+                "args": {
+                    "uid": "gleam",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Gofmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "gofmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Gofumpt",
+                "command": "run_format",
+                "args": {
+                    "uid": "gofumpt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Goimports",
+                "command": "run_format",
+                "args": {
+                    "uid": "goimports",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "GoogleJavaFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "googlejavaformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "HCLfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "hclfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Hindent",
+                "command": "run_format",
+                "args": {
+                    "uid": "hindent",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "HTMLTidy",
+                "command": "run_format",
+                "args": {
+                    "uid": "htmltidy",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Isort",
+                "command": "run_format",
+                "args": {
+                    "uid": "isort",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "JSBeautifier",
+                "command": "run_format",
+                "args": {
+                    "uid": "jsbeautifier",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "JSON",
+                "command": "run_format",
+                "args": {
+                    "uid": "jsonmax",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "JuliaFormatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "juliaformatter",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Ktlint",
+                "command": "run_format",
+                "args": {
+                    "uid": "ktlint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "LaTeXindent",
+                "command": "run_format",
+                "args": {
+                    "uid": "latexindent",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "LuaFormatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "luaformatter",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "NASMfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "nasmfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "NGINXfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "nginxfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "GroovyLint",
+                "command": "run_format",
+                "args": {
+                    "uid": "npmgroovylint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "OCamlformat",
+                "command": "run_format",
+                "args": {
+                    "uid": "ocamlformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "OCPIndent",
+                "command": "run_format",
+                "args": {
+                    "uid": "ocpindent",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Ormolu",
+                "command": "run_format",
+                "args": {
+                    "uid": "ormolu",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Perltidy",
+                "command": "run_format",
+                "args": {
+                    "uid": "perltidy",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PgFormatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "pgformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PHPCodeSniffer",
+                "command": "run_format",
+                "args": {
+                    "uid": "phpcbf",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PHPCSFixer",
+                "command": "run_format",
+                "args": {
+                    "uid": "phpcsfixer",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PlantumlASCII",
+                "command": "run_format",
+                "args": {
+                    "uid": "plantumlascii",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Prettier",
+                "command": "run_format",
+                "args": {
+                    "uid": "prettier",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Prettierd",
+                "command": "run_format",
+                "args": {
+                    "uid": "prettierd",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PrettyDiff",
+                "command": "run_format",
+                "args": {
+                    "uid": "prettydiffmax",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "PrettyTable",
+                "command": "run_format",
+                "args": {
+                    "uid": "prettytable",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Pyment",
+                "command": "run_format",
+                "args": {
+                    "uid": "pyment",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Racofmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "racofmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "RuboCop",
+                "command": "run_format",
+                "args": {
+                    "uid": "rubocop",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Rubyfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "rubyfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Ruff",
+                "command": "run_format",
+                "args": {
+                    "uid": "ruff",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Rufo",
+                "command": "run_format",
+                "args": {
+                    "uid": "rufo",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Rustfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "rustfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Scalafmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "scalafmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Scalariform",
+                "command": "run_format",
+                "args": {
+                    "uid": "scalariform",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "SemistandardJS",
+                "command": "run_format",
+                "args": {
+                    "uid": "semistandardjs",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "ShellCheck",
+                "command": "run_format",
+                "args": {
+                    "uid": "shellcheck",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Shfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "shfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "SQLFormatter",
+                "command": "run_format",
+                "args": {
+                    "uid": "sqlformatter",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "SQLparse",
+                "command": "run_format",
+                "args": {
+                    "uid": "sqlparse",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "StandardJS",
+                "command": "run_format",
+                "args": {
+                    "uid": "standardjs",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "StandardRB",
+                "command": "run_format",
+                "args": {
+                    "uid": "standardrb",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "StandardxJS",
+                "command": "run_format",
+                "args": {
+                    "uid": "standardxjs",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Stylefmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "stylefmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Stylelint",
+                "command": "run_format",
+                "args": {
+                    "uid": "stylelint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Styler",
+                "command": "run_format",
+                "args": {
+                    "uid": "styler",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "StylishHaskell",
+                "command": "run_format",
+                "args": {
+                    "uid": "stylishhaskell",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "StyLua",
+                "command": "run_format",
+                "args": {
+                    "uid": "stylua",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "SVGO",
+                "command": "run_format",
+                "args": {
+                    "uid": "svgomax",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "SwiftFormat",
+                "command": "run_format",
+                "args": {
+                    "uid": "swiftformat",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Taplo",
+                "command": "run_format",
+                "args": {
+                    "uid": "taplo",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "TerraformFmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "terraformfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Topiary",
+                "command": "run_format",
+                "args": {
+                    "uid": "topiary",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "TSfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "tsfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "TSStandard",
+                "command": "run_format",
+                "args": {
+                    "uid": "tsstandard",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Uncrustify",
+                "command": "run_format",
+                "args": {
+                    "uid": "uncrustify",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "YAMLfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "yamlfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "YAML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yamlmax",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "YAPF",
+                "command": "run_format",
+                "args": {
+                    "uid": "yapf",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Zigfmt",
+                "command": "run_format",
+                "args": {
+                    "uid": "zigfmt",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "Zprint",
+                "command": "run_format",
+                "args": {
+                    "uid": "zprint",
+                    "type": "beautifier"
+                }
+            },
+            {
+                "caption": "-"
+            },
+            {
+                "caption": "CleanCSS (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "cleancss",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "HTMLMinifier (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "htmlminifier",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "JSON (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "jsonmin",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "PrettyDiff (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "prettydiffmin",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "PythonMinifier (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "pythonminifier",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "Shfmt (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "shfmtmin",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "SQLMin (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sqlmin",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "SVGO (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "svgomin",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "Terser (min)",
+                "command": "run_format",
+                "args": {
+                    "uid": "terser",
+                    "type": "minifier"
+                }
+            },
+            {
+                "caption": "-"
+            },
+            {
+                "caption": "Sf BASE16 (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase16dec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE16 (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase16enc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE32 (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase32dec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE32 (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase32enc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE64 (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase64dec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE64 (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbase64enc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbasedec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BASE (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbaseenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BINARY (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbinarydec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BINARY (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbinaryenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BRAILLE (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbrailledec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf BRAILLE (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfbrailleenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf CHARCODE (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfcharcodedec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf CHARCODE (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfcharcodeenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf DECIMAL (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfdecimaldec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf DECIMAL (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfdecimalenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf DATES (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextractdates",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf EMAIL (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextractemailaddr",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf FILEPATHS (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextractfilepaths",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf IP (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextractipaddr",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf MAC (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextractmacaddr",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf URLS (extract)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfextracturls",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf GZIP (compress)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfgzipcompress",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf GZIP (decompress)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfgzipdecompress",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HEX (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhexdec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HEXDUMP (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhexdumpdec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HEXDUMP (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhexdumpenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HEX (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhexenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HTML (deentitize)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhtmldeentitize",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HTML (entitize)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhtmlentitize",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf HTML (strip tags)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfhtmlstriptags",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf LoremIpsum",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfloremipsum",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf LZMA (compress)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sflzmacompress",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf LZMA (decompress)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sflzmadecompress",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf OCTAL (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfoctaldec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf OCTAL (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfoctalenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf PUNYCODE (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfpunycodedec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf PUNYCODE (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfpunycodeenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf QP (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfquotedprintabledec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf QP (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfquotedprintableenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf REGEX (escape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfregexescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf REGEX (unescape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfregexunescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf ROMAN NUM (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfromannumeraldec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf ROMAN NUM (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfromannumeralenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf STRING (escape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfstringescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf STRING (unescape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfstringunescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf UNICODE (escape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfunicodeescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf UNICODE (unescape)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfunicodeunescape",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf TIMESTAMP (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfunixtimestampdec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf TIMESTAMP (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfunixtimestampenc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf URI (decode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfuridec",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf URI (encode)",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfurienc",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->ASM",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2asm",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->CRC32",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2crc32",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->Diacritics",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2diacritics",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->DISASM",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2disasm",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->MD5",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2md5",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->RANDPASS",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2randpass",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHA1",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2sha1",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHA256",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2sha256",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHA3_256",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2sha3256",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHA3_512",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2sha3512",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHA512",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2sha512",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHAKE256",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2shake256",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->SHAKE512",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2shake512",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Sf X->UUID",
+                "command": "run_format",
+                "args": {
+                    "uid": "sfx2uuid",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yj X->HCL",
+                "command": "run_format",
+                "args": {
+                    "uid": "yjx2hcl",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yj X->JSON",
+                "command": "run_format",
+                "args": {
+                    "uid": "yjx2json",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yj X->TOML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yjx2toml",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yj X->YAML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yjx2yaml",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->BASE64",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2base64",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->CSV",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2csv",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->JSON",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2json",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->LUA",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2lua",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->PROPS",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2props",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->SHELL",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2shell",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->TOML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2toml",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->TSV",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2tsv",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->URI",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2uri",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->XML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2xml",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "Yq X->YAML",
+                "command": "run_format",
+                "args": {
+                    "uid": "yqx2yaml",
+                    "type": "converter"
+                }
+            },
+            {
+                "caption": "-"
+            },
+            {
+                "caption": "D2",
+                "command": "run_format",
+                "args": {
+                    "uid": "d2",
+                    "type": "graphic"
+                }
+            },
+            {
+                "caption": "Drawio",
+                "command": "run_format",
+                "args": {
+                    "uid": "drawio",
+                    "type": "graphic"
+                }
+            },
+            {
+                "caption": "Graphviz",
+                "command": "run_format",
+                "args": {
+                    "uid": "graphviz",
+                    "type": "graphic"
+                }
+            },
+            {
+                "caption": "Mermaid",
+                "command": "run_format",
+                "args": {
+                    "uid": "mermaid",
+                    "type": "graphic"
+                }
+            },
+            {
+                "caption": "Plantuml",
+                "command": "run_format",
+                "args": {
+                    "uid": "plantuml",
+                    "type": "graphic"
+                }
+            }
+        ]
+    }
+]
