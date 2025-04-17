@@ -20,7 +20,13 @@ map("n", "<C-f>", "<cmd>Telescope live_grep<CR>")
 map('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 
 -- Signature help
-map("n", "<F3>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+map("n", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { noremap = true, silent = true })
+
+-- Code actions 
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = false })
+
+-- Lsp Hover 
+map("n", "<C-Space>", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 
 -- Lsp diagnostic
 map("n", "<F4>", "<cmd>lopen<CR>", { noremap = true, silent = true })

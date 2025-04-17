@@ -27,6 +27,10 @@ local nvim_version = vim.version()
 -- Join major, minor, and patch with "."
 local version_str = table.concat({nvim_version.major, nvim_version.minor, nvim_version.patch}, ".")
 
+M.base46 = {
+    transparency = true,
+}
+
 M.ui = {
   theme = "catppuccin",
   transparency=true,
@@ -86,7 +90,8 @@ if placeholderIndex then
     header[placeholderIndex] = string.gsub(header[placeholderIndex], placeholder, dateStr)
 end
 
-M.dap_mappings = require "mappings"
-M.plugins = "plugins.plugins"
+-- M.cmds = require "autocmd"
+-- M.dap_mappings = require "mappings"
+-- M.plugins = "plugins.plugins"
 
 return M
