@@ -5,6 +5,26 @@ local nvim_version = vim.version()
 local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_version.patch }, ".")
 
 local plugins = {
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        build = ":Copilot auth",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = {
+                    enabled = true,        -- Habilitar sugerencias
+                    auto_trigger = true,   -- Activar sugerencias automáticamente
+                    keymap = {
+                        accept = "<C-e>",
+                        next = "<M-]>",    -- Siguiente sugerencia con Alt + ]
+                        prev = "<M-[>",    -- Anterior sugerencia con Alt + [
+                    },
+                },
+                panel = { enabled = false }, -- Desactivar el panel flotante (opcional)
+            })
+        end,
+    },
     -- {
     --     "folke/todo-comments.nvim",
     --     dependencies = { "nvim-lua/plenary.nvim" },
@@ -440,9 +460,9 @@ local plugins = {
                             action = 'Telescope live_grep',
                         },
                         {
-                            icon = '  ',
-                            desc = 'Update Plugins                      ',
-                            action = 'Mason',
+                            icon = '🔧  ',
+                            desc = 'Config Files                        ',
+                            action = 'Telescope find_files cwd=~/.config/nvim',
                         },
                         {
                             icon = '💤  ',
