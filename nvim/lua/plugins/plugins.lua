@@ -249,6 +249,7 @@ local plugins = {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
+            max_width = 1,
             cmdline = {
                 format = {
                     search_down = false, -- Evita mostrar mensajes de búsqueda hacia abajo
@@ -263,6 +264,7 @@ local plugins = {
             messages = {
                 -- Configurar vistas para mensajes reducidos
                 enabled = true,
+                max_width = 1,
                 view_error = "notify",    -- Solo mostrar errores como notificaciones
                 view_warn = false,        -- Advertencias en miniatura
                 view_history = false,     -- No guardar historial de mensajes
@@ -280,6 +282,7 @@ local plugins = {
             notify = {
                 enabled = true, -- Solo mantener notificaciones importantes
                 view = "mini",  -- Usar una vista pequeña para notificaciones
+                max_width = 1,
                 filter = {
                     -- Filtrar solo mensajes importantes (errores, advertencias críticas)
                     event = "msg_show",
@@ -401,13 +404,6 @@ local plugins = {
                     header = {
                         "",
                         "",
-                        '                                     ,o""""o                                        ',
-                        '                                  ,o$"     o                                        ',
-                        '                               ,o$$$                                                ',
-                        '                             ,o$$$\'                                                 ',
-                        '                           ,o$"o$\'                                                  ',
-                        '                         ,o$$"$"\'                                                   ',
-                        '                      ,o$"$o"$"\'                                                    ',
                         '                   ,oo$"$"$"$"$$`                      ,oooo$$$$$$$$oooooo.         ',
                         '                ,o$$$"$"$"$"$"$"o$`..             ,$o$"$$"$"\'            `oo.o      ',
                         '             ,oo$$$o"$"$"$"$  $"$$$"$`o        ,o$$"o$$$o$\'                 `o      ',
@@ -434,29 +430,27 @@ local plugins = {
                         '                `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o          ',
                         '                   `$$"$"$o$$o$"$$"$ $$$  $ "           `$"$o            `o         ',
                         '                      `$$"o$o"$o"$o$ "  o $$$o            `$$"o          ,$         ',
-                        '                                                            `$$ooo     ,o$$         ',
-                        '                                                               `$o$$$o$"$\'          ',
                         "",
                     },
                     center = {
                         {
                             icon = '  ',
-                            desc = 'Find File                           ',
+                            desc = ' Find File                           ',
                             action = 'Telescope find_files',
                         },
                         {
                             icon = '  ',
-                            desc = 'New File                            ',
+                            desc = ' New File                            ',
                             action = 'enew',
                         },
                         {
                             icon = '  ',
-                            desc = 'Recently Opened Files               ',
+                            desc = ' Recently Opened Files               ',
                             action = 'Telescope oldfiles',
                         },
                         {
                             icon = '󰈭  ',
-                            desc = 'Search Text                         ',
+                            desc = ' Search Text                         ',
                             action = 'Telescope live_grep',
                         },
                         {

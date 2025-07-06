@@ -35,7 +35,7 @@ dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
 vim.g.browser = "wslview"
-vim.g.BROWSER = "firefox"
+vim.g.BROWSER = "wslview"
 
 require("nvim-tree").setup({
     auto_reload_on_write = true,
