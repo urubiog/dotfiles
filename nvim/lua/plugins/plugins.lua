@@ -319,6 +319,14 @@ local plugins = {
         }
     },
     {
+        "rcarriga/nvim-notify",
+        opts = {
+            -- other settings
+            top_down = false,
+            -- other settings
+        },
+    },
+    {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && yarn install",
