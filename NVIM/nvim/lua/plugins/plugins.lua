@@ -5,27 +5,26 @@ local nvim_version = vim.version()
 local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_version.patch }, ".")
 
 local plugins = {
-    {
-        "zbirenbaum/copilot.lua",
-        enabled = false,
-        cmd = "Copilot",
-        build = ":Copilot auth",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = {
-                    enabled = true,      -- Habilitar sugerencias
-                    auto_trigger = true, -- Activar sugerencias automáticamente
-                    keymap = {
-                        accept = "<C-e>",
-                        next = "<M-]>", -- Siguiente sugerencia con Alt + ]
-                        prev = "<M-[>", -- Anterior sugerencia con Alt + [
-                    },
-                },
-                panel = { enabled = false }, -- Desactivar el panel flotante (opcional)
-            })
-        end,
-    },
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     build = ":Copilot auth",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = {
+    --                 enabled = true,      -- Habilitar sugerencias
+    --                 auto_trigger = true, -- Activar sugerencias automáticamente
+    --                 keymap = {
+    --                     accept = "<C-e>",
+    --                     next = "<M-]>", -- Siguiente sugerencia con Alt + ]
+    --                     prev = "<M-[>", -- Anterior sugerencia con Alt + [
+    --                 },
+    --             },
+    --             panel = { enabled = false }, -- Desactivar el panel flotante (opcional)
+    --         })
+    --     end,
+    -- },
     -- {
     --     "folke/todo-comments.nvim",
     --     dependencies = { "nvim-lua/plenary.nvim" },
@@ -120,103 +119,7 @@ local plugins = {
             -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
             smear_insert_mode = true,
         },
-
-        config = function ()
-            require("smear-cursor")
-        end
     },
-    {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons", -- íconos opcionales
-        },
-        config = function()
-            require("nvim-tree").setup({
-                auto_reload_on_write = true,
-                disable_netrw = true,
-                hijack_netrw = true,
-                hijack_cursor = true,
-                hijack_unnamed_buffer_when_opening = true,
-                sort = {
-                    sorter = "name",
-                    folders_first = true,
-                },
-                view = {
-                    width = 60,
-                    side = "right",
-                    preserve_window_proportions = true,
-                    number = false,
-                    relativenumber = false,
-                    signcolumn = "yes",
-                },
-                renderer = {
-                    root_folder_label = function(path)
-                        return vim.fn.fnamemodify(path, ":t") -- Extrae solo el último segmento del path
-                    end,
-                    add_trailing = false,
-                    group_empty = true,
-                    highlight_git = true,
-                    highlight_opened_files = "name",
-                    indent_markers = {
-                        enable = true,
-                    },
-                    icons = {
-                        webdev_colors = true,
-                        git_placement = "before",
-                        padding = " ",
-                        symlink_arrow = " ➛ ",
-                        show = {
-                            file = true,
-                            folder = true,
-                            folder_arrow = true,
-                            git = true,
-                        },
-                    },
-                },
-                filters = {
-                    dotfiles = false,
-                    custom = { ".DS_Store", "thumbs.db" },
-                },
-                git = {
-                    enable = true,
-                    ignore = true,
-                    show_on_dirs = true,
-                    timeout = 400,
-                },
-                diagnostics = {
-                    enable = true,
-                    show_on_dirs = true,
-                    debounce_delay = 50,
-                    icons = {
-                        hint = "",
-                        info = "",
-                        warning = "",
-                        error = "",
-                    },
-                },
-                actions = {
-                    use_system_clipboard = true,
-                    change_dir = {
-                        enable = true,
-                        global = false,
-                    },
-                    open_file = {
-                        quit_on_open = true,
-                        resize_window = true,
-                    },
-                },
-                log = {
-                    enable = false,
-                    truncate = true,
-                    types = {
-                        diagnostics = true,
-                        git = false,
-                    },
-                },
-            })
-        end,
-    },
-
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -346,6 +249,20 @@ local plugins = {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
+            views = {
+                popupmenu = {
+                    relative = "editor",
+                    position = {
+                        row = -2,
+                        col = "50%",
+                    },
+                    size = {
+                        width = 60,
+                        height = 10,
+                    },
+                },
+            },
+            max_width = 1,
             cmdline = {
                 format = {
                     search_down = false, -- Evita mostrar mensajes de búsqueda hacia abajo
@@ -360,6 +277,7 @@ local plugins = {
             messages = {
                 -- Configurar vistas para mensajes reducidos
                 enabled = true,
+                max_width = 1,
                 view_error = "notify",    -- Solo mostrar errores como notificaciones
                 view_warn = false,        -- Advertencias en miniatura
                 view_history = false,     -- No guardar historial de mensajes
@@ -377,6 +295,7 @@ local plugins = {
             notify = {
                 enabled = true, -- Solo mantener notificaciones importantes
                 view = "mini",  -- Usar una vista pequeña para notificaciones
+                max_width = 1,
                 filter = {
                     -- Filtrar solo mensajes importantes (errores, advertencias críticas)
                     event = "msg_show",
@@ -504,64 +423,87 @@ local plugins = {
                 theme = 'doom',
                 config = {
                     header = {
-                        "",
-                        "",
-                        '                                     ,o""""o                                        ',
-                        '                                  ,o$"     o                                        ',
-                        '                               ,o$$$                                                ',
-                        '                             ,o$$$\'                                                 ',
-                        '                           ,o$"o$\'                                                  ',
-                        '                         ,o$$"$"\'                                                   ',
-                        '                      ,o$"$o"$"\'                                                    ',
-                        '                   ,oo$"$"$"$"$$`                      ,oooo$$$$$$$$oooooo.         ',
-                        '                ,o$$$"$"$"$"$"$"o$`..             ,$o$"$$"$"\'            `oo.o      ',
-                        '             ,oo$$$o"$"$"$"$  $"$$$"$`o        ,o$$"o$$$o$\'                 `o      ',
-                        '          ,o$"$"$o$"$"$"$  $"$$o$$o $$o`o   ,$$$$$o$"$$o\'                    $      ',
-                        '        ,o"$$"\'  `$"$o$" o$o$o"  $$$o$o$oo"$$$o$"$$"$o"\'                    $      ',
-                        '     ,o$""        `"$ "$$o$$" $"$o$o$$"$o$$o$o$o"$"$"`""o                   \'       ',
-                        '   ,o$\'          o$ `"$"$o "$o$$o$$$"$$$o"$o$$o"$$$    `$$                          ',
-                        '  ,o\'           (     `" o$"$o"$o$$$"$o$"$"$o$"$$"$ooo|  `                          ',
-                        ' $"$             `    (   `"o$$"$o$o$$ "o$o"   $o$o"$"$    )                        ',
-                        '(  `                   `    `o$"$$o$" "o$$     "o /|"$o"                            ',
-                        ' `                           `$o$$$$"" o$      "o$$|"$o\'                            ',
-                        '                              `$o"$"$ $ "       `"$"$o$                             ',
-                        '                               "$$"$$ "oo         ,$""$                             ',
-                        '                               $"$o$$""o"          ,o$"$                            ',
-                        '                               $$"$$"$ "o           `,",                            ',
-                        '                     ,oo$oo$$$$$$"$o$$$ ""o                                         ',
-                        '                  ,o$$"o"o$o$$o$$$"$o$$oo"oo                                        ',
-                        '                ,$"oo"$$$$o$$$$"$$$o"o$o"o"$o o                                     ',
-                        '               ,$$$""$$o$,      `$$$$"$$$o""$o $o                                   ',
-                        '               $o$o$"$,          `$o$"$o$o"$$o$ $$o                                 ',
-                        '              $$$o"o$$           ,$$$$o$$o"$"$$ $o$$oo      ,                       ',
-                        '              "$o$$$ $`.        ,"$$o$"o$""$$$$ `"$o$$oo    `o                      ',
-                        '              `$o$o$"$o$o`.  ,.$$"$o$$"$$"o$$$$   `$o$$ooo    $$ooooooo             ',
-                        '                `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o          ',
-                        '                   `$$"$"$o$$o$"$$"$ $$$  $ "           `$"$o            `o         ',
-                        '                      `$$"o$o"$o"$o$ "  o $$$o            `$$"o          ,$         ',
-                        '                                                            `$$ooo     ,o$$         ',
-                        '                                                               `$o$$$o$"$\'          ',
-                        "",
+                        "                                                                                                                                                           :::--",
+                        "                                                                                                                                                      :--------------",
+                        "===========-:                                                                                                                                    ------------------==",
+                        "==++++++++++++++===::                                                                                                                ::--===+==+=======-===========++",
+                        "===++++++++++++==+++++*#*++=====--::                                                                                          :-:::----=====+==========++*****+++****",
+                        "--==++==++++++++===========++****++++++++                                                                               ::---====-----======+++=-==+++*******###*****",
+                        "==+=======+++==+==-----========+++==+******                                                                         ::---========-========+++++====********###*##****",
+                        "+++====----=======--------======-====+=+++%*:                                                    ::::::::: ::--=============++============++**####%#******###**###***",
+                        "#*++==-------==+===--------==+===---====++++*%%+:                                           :--=++=======++=----===++++++++*++=====+=====+=+*##%%%%%########*********",
+                        "%%%#=+=--------======-----==++=++==-----==+++**+*%%##-                               :-------=++#%+++++++++-:-----=+#*####%+==-=+++========**#%%%%%%%%%##*+*****#####",
+                        "%%%%#+===--------========++*****++++===========+++**#%###=                       :----=++#######%%%########=--==+--=*%%%#*----==++++++++==+*##%%%%%%%%###########****",
+                        "%%%#%%=====-------=====++*#######*+++%======++=======++***#+                     -+###%#%%#-          -====+==+++#=-=*#%------=****++=++++*#%%%%%%%%%%%%%%%%%%%%#%%%%",
+                        "#%%%%@======---------===++*%%###=+#%%#+==++*%+=========+++###                                                -#%%###%**---====+*#%#*++***#%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+                        "%%%%+::==++++=====------==+*#%#%%%%%%%@@%%%@%@@@@#*+++=++=**#%-                                                 ##%%*---==+++*%%%%%###%##%%%%%%%%%%%%%%%%%%###%%%%%##",
+                        "+:      -=++++====-------==+%%@#:=%%%%@%@%@%@@@%%%%%%%%#++===*##                                              +%#=----=+**#%%%%%%%%%%%%%%%%%%%%%%%%%%%%#           :+",
+                        "         :==++*==*+=-----===*#%%=   %@%%%%@@@@@@%%%%%@@@%*++=++*%:                                           --======+*#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%=               ",
+                        "           :=**+%=#+=----==+***####  *%%%%@%%@@@@@@%%%@%%*-+*****%:                                        +=+===+#+%%%%%%%+++*%%%%%%%%%%%%%%%%%%%*                  ",
+                        "             :-++*#**===========+###%%%%@@%: *%#%%@@%%%@%@   ##**##-                                   :--==++++**#%%%%%%-=====*#%***%%%%%%%%%%%:                    ",
+                        "                        :-==++====++*#%%%%%*   :%%@%%%%%%%=   +***##                                  :++==+*-=+*##%#++*%%%====++*%#*+++**#%%%+                      ",
+                        "                             =+++++**+++#%@#     %@@%%%%@@@:    ****#:                                 :=+++=*###%#++++%%%%%%#****+*%#*+**:                          ",
+                        "                               :-++=+++***%%:    :%%@%%%%@@+                                              *%%%%%%++++*%%#   ++#%@%==++-:                             ",
+                        "                                  :=++**%%%%%     :@@@%%%%@%                                              =+*%%%++#%%%#    :++#%%                                    ",
+                        "                                    ***%#***%%      %@@%%%@@                                              =+*%%%++*+%#     +*%%%:                                    ",
+                        "                                    **#%%%*+#*-     %%@@%%%@:                                            :=##%%%+++##-    =#%%#:                                     ",
+                        "                                    *%*+ -**#:      =%@@ %%%%                                            :=*%%%+=*##=     -##%%-                                     ",
+                        "                                      ^+                                                                  ==+%%++#%#      :=++*-                                     ",
+                        "                                                                                                          -==##*==**       +==+                                      ",
+                        "                                                                                                           ==%#*==*:       :==:                                      ",
+                        "                                                                                                           :+#*:-=                                                   ",
+                        "                                                                                                                                                                     ",
                     },
+                    -- header = {
+                    --     "",
+                    --     "",
+                    --     '                   ,oo$"$"$"$"$$`                      ,oooo$$$$$$$$oooooo.         ',
+                    --     '                ,o$$$"$"$"$"$"$"o$`..             ,$o$"$$"$"\'            `oo.o      ',
+                    --     '             ,oo$$$o"$"$"$"$  $"$$$"$`o        ,o$$"o$$$o$\'                 `o      ',
+                    --     '          ,o$"$"$o$"$"$"$  $"$$o$$o $$o`o   ,$$$$$o$"$$o\'                    $      ',
+                    --     '        ,o"$$"\'  `$"$o$" o$o$o"  $$$o$o$oo"$$$o$"$$"$o"\'                    $      ',
+                    --     '     ,o$""        `"$ "$$o$$" $"$o$o$$"$o$$o$o$o"$"$"`""o                   \'       ',
+                    --     '   ,o$\'          o$ `"$"$o "$o$$o$$$"$$$o"$o$$o"$$$    `$$                          ',
+                    --     '  ,o\'           (     `" o$"$o"$o$$$"$o$"$"$o$"$$"$ooo|  `                          ',
+                    --     ' $"$             `    (   `"o$$"$o$o$$ "o$o"   $o$o"$"$    )                        ',
+                    --     '(  `                   `    `o$"$$o$" "o$$     "o /|"$o"                            ',
+                    --     ' `                           `$o$$$$"" o$      "o$$|"$o\'                            ',
+                    --     '                              `$o"$"$ $ "       `"$"$o$                             ',
+                    --     '                               "$$"$$ "oo         ,$""$                             ',
+                    --     '                               $"$o$$""o"          ,o$"$                            ',
+                    --     '                               $$"$$"$ "o           `,",                            ',
+                    --     '                     ,oo$oo$$$$$$"$o$$$ ""o                                         ',
+                    --     '                  ,o$$"o"o$o$$o$$$"$o$$oo"oo                                        ',
+                    --     '                ,$"oo"$$$$o$$$$"$$$o"o$o"o"$o o                                     ',
+                    --     '               ,$$$""$$o$,      `$$$$"$$$o""$o $o                                   ',
+                    --     '               $o$o$"$,          `$o$"$o$o"$$o$ $$o                                 ',
+                    --     '              $$$o"o$$           ,$$$$o$$o"$"$$ $o$$oo      ,                       ',
+                    --     '              "$o$$$ $`.        ,"$$o$"o$""$$$$ `"$o$$oo    `o                      ',
+                    --     '              `$o$o$"$o$o`.  ,.$$"$o$$"$$"o$$$$   `$o$$ooo    $$ooooooo             ',
+                    --     '                `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o          ',
+                    --     '                   `$$"$"$o$$o$"$$"$ $$$  $ "           `$"$o            `o         ',
+                    --     '                      `$$"o$o"$o"$o$ "  o $$$o            `$$"o          ,$         ',
+                    --     "",
+                    -- },
                     center = {
                         {
                             icon = '  ',
-                            desc = ' Find File                          ',
+                            desc = ' Find File                           ',
                             action = 'Telescope find_files',
                         },
                         {
                             icon = '  ',
-                            desc = ' New File                           ',
+                            desc = ' New File                            ',
                             action = 'enew',
                         },
                         {
                             icon = '  ',
-                            desc = ' Recently Opened Files              ',
+                            desc = ' Recently Opened Files               ',
                             action = 'Telescope oldfiles',
                         },
                         {
                             icon = '󰈭  ',
-                            desc = ' Search Text                     ',
+                            desc = ' Search Text                         ',
                             action = 'Telescope live_grep',
                         },
                         {
