@@ -63,6 +63,18 @@ map("v", "(", "c(<C-r>+)")
 -- Debugging 
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>")
 
+-- Folding
+local function toggle_all_folds()
+  -- foldlevel alto = todo abierto, foldlevel bajo = todo cerrado
+  if vim.wo.foldlevel > 0 then
+    vim.cmd("normal! zM")  -- Cierra todo
+  else
+    vim.cmd("normal! zR")  -- Abre todo
+  end
+end
+
+map("n", "zA", toggle_all_folds, { desc = "Toggle all folds in buffer" })
+
 local M = {}
 
 M.dap = {

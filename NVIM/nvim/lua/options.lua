@@ -11,6 +11,16 @@ o.tabstop = 4
 o.softtabstop = 4
 o.relativenumber = true
 
+-- Folding por indentación
+o.foldmethod = "indent"
+o.foldlevel = 99       -- Evita que se pliegue automáticamente al abrir
+o.foldenable = false   -- No activar folding al abrir
+
+opt.wrap = false
+
+g.browser = "wslview"
+g.BROWSER = "wslview"
+
 vim.g.copilot_filetypes = {
     ["*"] = true,
     ["markdown"] = true,

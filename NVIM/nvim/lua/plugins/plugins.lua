@@ -96,6 +96,8 @@ local plugins = {
     -- },
     {
         "sphamba/smear-cursor.nvim",
+        lazy = false,
+        event = "BufReadPost",
         opts = {
             stiffness = 0.8,                      -- 0.6      [0, 1]
             trailing_stiffness = 0.5,             -- 0.4      [0, 1]
@@ -120,10 +122,6 @@ local plugins = {
             -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
             smear_insert_mode = true,
         },
-
-        config = function ()
-            require("smear-cursor")
-        end
     },
     {
         "nvim-tree/nvim-tree.lua",
@@ -216,7 +214,6 @@ local plugins = {
             })
         end,
     },
-
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
