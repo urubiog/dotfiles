@@ -27,7 +27,7 @@ install_snap_package() {
 install_base_tools() {
     echo "Actualizando sistema y añadiendo herramientas básicas..."
     sudo apt update && sudo apt upgrade -y
-    for pkg in build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip cmatrix tmux fzf ninja-build latexmk zathura black; do
+    for pkg in build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip cmatrix tmux fzf ninja-build latexmk zathura black bat gettext; do
         install_package "$pkg"
     done
     cargo install exa || echo "Error instalando exa."
@@ -36,18 +36,38 @@ install_base_tools() {
 
 install_development_tools() {
     echo "Instalando herramientas de desarrollo..."
-    for pkg in gcc g++ make cmake python3 python3-pip openjdk-17-jdk nodejs npm docker.io docker-compose postgresql postgresql-contrib libpq-dev; do
+    for pkg in gcc g++ make cmake python3 python3-pip openjdk-17-jdk nodejs npm docker.io docker-compose postgresql postgresql-contrib libpq-dev virtualenv python3.12-env golang; do
         install_package "$pkg"
     done
     sudo snap install code --classic || echo "Error instalando Visual Studio Code."
 }
 
+create_virtualenv() {
+    base_path="/home/$(whoami)/Documents"
+
+    echo "Creando entorno virtual en $base_path..."
+
+    if ![ -d "$base_path" ]; then
+        mkdir $base_path
+    fi
+
+    cd base_path
+    mkdir Envs
+    cd !$
+    virtualenv general
+    source $base_path/Envs/general/bin/activate
+    pip install uv
+    source /home/$(whoami)/.bashrc
+}
+
 install_deep_learning_packages() {
     echo "Instalando paquetes y entornos para Deep Learning..."
-    pip3 install --upgrade pip
-    for pkg in numpy scipy matplotlib pandas scikit-learn tensorflow keras torch torchvision jupyter jupyterlab; do
-        pip3 install "$pkg" || echo "Error instalando $pkg."
+    source /home/$(whoami)/Documents/Envs/general/bin/activate
+    uv pip3 install --upgrade pip
+    for pkg in numpy scipy matplotlib pandas scikit-learn keras torch torchvision jupyter jupyterlab; do
+        uv pip3 install "$pkg" || echo "Error instalando $pkg."
     done
+    source /home/$(whoami)/.bashrc
 }
 
 install_productivity_tools() {
@@ -113,6 +133,7 @@ update_system() {
 # Ejecución de las funciones
 install_base_tools
 install_development_tools
+create_virtualenv
 install_deep_learning_packages
 install_productivity_tools
 install_multimedia_tools
@@ -121,7 +142,12 @@ setup_dotfiles
 
 # Abrir nvim
 echo "Abriendo nvim e instalando plugins (no toque nada)..."
-nvim -c 'Lazy' -c 'MasonInstallAll' -c 'q!'
+nvim -c 'Lazy' -c 'MasonInstallAll' -c 'TSInstall bash c clojure cpp css dart elixir elm go haskell html java javascript json kotlin lua markdown php python r ruby rust scala sql typescript vim yaml' -c 'q!'
+
+commit=7c51760
+
+cd "/home/$(whoami)/.local/share/nvim/lazy/ui/lua/nvchad"
+git checkout $commit
 
 install_markdown_preview
 clean_system

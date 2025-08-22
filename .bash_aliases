@@ -18,7 +18,7 @@ if [ -d "/mnt/c/Users" ]; then
     
 else
     # Linux environment
-    ACTIVATE=~/Documents/Envs/venv/bin/activate  # Ensures absolute path expansion for Linux
+    ACTIVATE=~/Documents/Envs/general/bin/activate  # Ensures absolute path expansion for Linux
 
     # File manager for Linux (nautilus) and fallback for other systems
     if command -v nautilus &>/dev/null; then
