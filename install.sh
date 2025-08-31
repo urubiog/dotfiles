@@ -27,7 +27,7 @@ install_snap_package() {
 install_base_tools() {
     echo "Actualizando sistema y añadiendo herramientas básicas..."
     sudo apt update && sudo apt upgrade -y
-    for pkg in build-essential curl wget git vim net-tools htop gnome-tweaks cargo unzip cmatrix tmux fzf ninja-build latexmk zathura black bat gettext; do
+    for pkg in build-essential curl wget git fastfetch zoxide vim net-tools htop gnome-tweaks cargo unzip cmatrix tmux fzf ninja-build latexmk zathura black bat gettext; do
         install_package "$pkg"
     done
     cargo install exa || echo "Error instalando exa."

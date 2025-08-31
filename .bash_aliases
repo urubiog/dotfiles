@@ -48,6 +48,7 @@ alias l='exa -F --icons'   # Simplified listing with icons
 alias cat='batcat --paging=always --color=always'  # Better cat command with syntax highlighting
 alias bat='batcat --paging=always --color=always '  # `bat` alias
 alias fzf='fzf --preview="batcat --color=always -n {}"'  # Fuzzy finder with preview
+alias fastfetch='fastfetch --config groups.jsonc --logo debian --logo-color-2 red' # Clean neofetch
 alias n='nvim'  # Neovim shortcut
 alias g='git'  # Git shortcut
 alias nfzf='n $(fzf)'  # Neovim with fzf for file searching

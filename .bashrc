@@ -161,3 +161,11 @@ fi
 # add GOPATH 
 GOPATH="/home/$(whoami)/go/bin:/usr/local/go/bin"
 export PATH=$PATH:$GOPATH
+
+# zoxide 
+eval "$(zoxide init bash)"
+
+fastfetch --pipe false | while IFS= read -r line; do
+    echo "$line"
+    sleep 0.03
+done

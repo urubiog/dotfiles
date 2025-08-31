@@ -1,4 +1,4 @@
-vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+im.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
 vim.g.mapleader = " "
 
 -- bootstrap lazy and all plugins
@@ -120,3 +120,11 @@ require("nvim-tree").setup({
 })
 
 require("smear_cursor")
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.markdownlint,
+    },
+})
