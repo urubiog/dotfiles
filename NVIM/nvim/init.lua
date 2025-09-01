@@ -25,6 +25,7 @@ require("lazy").setup({
             require "options"
             require "mappings"
             require "autocmd"
+            require "null-ls"
         end,
     },
 
@@ -120,11 +121,3 @@ require("nvim-tree").setup({
 })
 
 require("smear_cursor")
-
-local null_ls = require("null-ls")
-
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.markdownlint,
-    },
-})
