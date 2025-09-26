@@ -3,12 +3,12 @@
 # Ensuring that we handle environment variables and paths well
 # Working Directory (adjust path according to your needs)
 WORKDIR=~/OneDrive/CS/
+ACTIVATE=/mnt/d/Envs/general/bin/activate
 
 # Virtualenv activation path based on the system type
 if [ -d "/mnt/c/Users" ]; then
     # Windows Subsystem for Linux (WSL)
     USER=$(cmd.exe /c "echo %USERPROFILE%" 2>/dev/null | sed 's/.*\\//' | sed 's/\r//')
-    ACTIVATE="/mnt/c/Users/$USER/Documents/Envs/general/bin/activate"
     alias cdc="cd '/mnt/c/Users/$USER/'"  # Shortcuts for easier navigation in WSL
     
     # Define useful aliases for WSL/Windows environment
@@ -17,9 +17,6 @@ if [ -d "/mnt/c/Users" ]; then
     alias github="cmd.exe /C start https://github.com"  # Open GitHub in default browser
     
 else
-    # Linux environment
-    ACTIVATE=~/Documents/Envs/general/bin/activate  # Ensures absolute path expansion for Linux
-
     # File manager for Linux (nautilus) and fallback for other systems
     if command -v nautilus &>/dev/null; then
         alias explorer="nautilus"  # File Explorer for Linux
@@ -31,12 +28,8 @@ else
     alias github="firefox https://www.github.com/urubiog" 
 fi
 
-# Ensure `ACTIVATE` exists before sourcing it
-if [ -f "$ACTIVATE" ]; then
-    alias sourcenv="source $ACTIVATE"  # Shorter command to activate the virtual environment
-else
-    echo "Virtual environment activation script not found: $ACTIVATE"
-fi
+alias sourcenv="source $ACTIVATE"  # Shorter command to activate the virtual environment
+alias server="ssh -p 2222 uri@192.168.1.158"
 
 # Aliases for ls (listing files) with icons and formatting using exa
 alias ls='exa -F --icons'  # Display with file type icons
@@ -45,10 +38,11 @@ alias la='exa -a --icons'  # All files (including hidden)
 alias l='exa -F --icons'   # Simplified listing with icons
 
 # Enhance common commands
+alias copy='clip.exe'
 alias cat='batcat --paging=always --color=always'  # Better cat command with syntax highlighting
 alias bat='batcat --paging=always --color=always '  # `bat` alias
-alias fzf='fzf --preview="batcat --color=always -n {}"'  # Fuzzy finder with preview
 alias fastfetch='fastfetch --config groups.jsonc --logo debian --logo-color-2 red' # Clean neofetch
+alias fzf='fzf --preview="batcat --color=always -n {}"'  # Fuzzy finder with preview
 alias n='nvim'  # Neovim shortcut
 alias g='git'  # Git shortcut
 alias nfzf='n $(fzf)'  # Neovim with fzf for file searching
@@ -57,8 +51,8 @@ alias ..='cd ..'  # Go up one directory
 alias ....='cd ../..'  # Go up two directories
 
 # Network tools alias (commented out)
-# alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
-# alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
+alias nmapA="echo 'sudo nmap -p- --open -sS --min-rate 5000 -vvv -n -Pn -oG allPorts'"
+alias nmapB="echo 'sudo nmap -sCV -p(ports) (ip) -oN targeted'"
 
 # Enhanced Git log
 alias gitshow='git log --oneline --graph --all --decorate'  # Quick git history view
