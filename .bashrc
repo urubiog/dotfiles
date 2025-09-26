@@ -101,53 +101,18 @@ bind "TAB: menu-complete"
 
 export EDITOR=nvim
 
-# . "$HOME/.cargo/env"
+function pyscript() {
+    sourcenv && nvim /tmp/main.py && : > /tmp/main.py && source ~/.bashrc
+}
 
-# Here are some unused functions (commented out)
+function upc() {
+    explorer https://raco.fib.upc.edu/home/portada/uriel.rubio
+    explorer https://atenea.upc.edu/my/
+    explorer https://mail.google.com/mail/u/1/#inbox
 
-# function extractPorts(){
-# 	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-# 	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-# 	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-# 	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-# 	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-# 	echo $ports | tr -d '\n' | xclip -sel clip
-# 	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-# 	cat extractPorts.tmp; rm extractPorts.tmp
-# }
-
-# function mkt() {
-#     mkdir {nmap,content,exploits}
-# }
-
-# function tmuxc() {
-#     # Sesión
-#     tmux new-session -d -s Coding -c $WORKDIR -n Main
-#
-#     # Main
-#     # tmux split-window -h -c ~/Onedrive/DigitalWorld/Coding/Python/
-#     # tmux send-keys -t Coding:0.1 "n ~/Onedrive/DigitalWorld/Coding/Python/ToDo.md" C-m
-#
-#     # Src
-#     tmux new-window -t Coding:1 -n 'Src' -c $WORKDIR/src/easyAIs
-#     tmux send-keys -t Coding:1 "sourcenv; clear" C-l
-#
-#     # Package
-#     tmux new-window -t Coding:2 -n 'Package' -c $WORKDIR/src/easyAIs/core
-#     tmux send-keys -t Coding:2 "sourcenv; clear"
-#     tmux split-window -h -c $WORKDIR/src/easyAIs/core
-#     tmux send-keys -t Coding:2.1 "sourcenv; clear"
-#
-#     # Tests
-#     tmux new-window -t Coding:3 -n 'Test' -c $WORKDIR/tests
-#     tmux send-keys -t Coding:3 "sourcenv; clear"
-#     tmux split-window -h -c $WORKDIR/tests
-#     tmux send-keys -t Coding:3.1 "sourcenv; clear"
-#
-#     # Attach to first window
-#     tmux select-window -t Coding:0
-#     tmux attach -t Coding
-# }
+    cd /home/uri/NextCloud/DADES/
+    wt.exe -w 0 split-pane -p Debian wsl.exe --cd /home/uri/OneDrive/CS/
+}
 
 # fnm
 FNM_PATH="/home/uri/.local/share/fnm"
@@ -155,17 +120,20 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="$FNM_PATH:$PATH"
   eval "`fnm env`"
 fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pkill -USR1 -x sxhkd
-
-# add GOPATH 
-GOPATH="/home/$(whoami)/go/bin:/usr/local/go/bin"
-export PATH=$PATH:$GOPATH
+export PATH=$PATH:/usr/local/go/bin
 
 # zoxide 
 eval "$(zoxide init bash)"
 
 fastfetch --pipe false | while IFS= read -r line; do
-    echo "$line"
-    sleep 0.03
+    for (( i=0; i<${#line}; i++ )); do
+        printf "%s" "${line:$i:1}"
+    done
+    sleep 0.005
+    printf "\n"
 done
+
