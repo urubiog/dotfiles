@@ -18,10 +18,16 @@ M.base46 = {
 }
 
 M.ui = {
+    tabufline = {
+        enabled = true,
+        -- Para mostrar siempre, incluso con un buffer
+        show_numbers = false, -- opcional: mostrar números en los buffers
+        lazyload = false,  -- cargar perezosamente
+    },
     transparency = true,
     colorify = {
         enabled = false,
-    }
+    },
 }
 
 return M

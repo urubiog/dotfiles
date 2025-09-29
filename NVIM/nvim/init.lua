@@ -120,4 +120,5 @@ require("nvim-tree").setup({
     },
 })
 
+
 require("smear_cursor")

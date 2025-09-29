@@ -242,6 +242,13 @@ map("n", "<C-e>", "<C-u>zz", { desc = "Scroll up half page and center" })
 -- Window navigation
 map("n", "<A-Left>", "<C-w>h", { noremap = true, silent = true, desc = "Move to left window" })
 map("n", "<A-Right>", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })
+map("n", "<A-Up>", "<C-w>j", { noremap = true, silent = true, desc = "Move to up window" })
+map("n", "<A-Down>", "<C-w>k", { noremap = true, silent = true, desc = "Move to down window" })
+
+map("n", "<C-S-Left>", "<C-w><", { noremap = true, silent = true, desc = "Increment window size to left" })
+map("n", "<C-S-Right>", "<C-w>>", { noremap = true, silent = true, desc = "Increment window size to right" })
+map("n", "<C-S-Up>", "<C-w>+", { noremap = true, silent = true, desc = "Increment window vertical size" })
+map("n", "<C-S-Down>", "<C-w>-", { noremap = true, silent = true, desc = "Decrement window vertical size" })
 
 -- Sistema de marcas persistentes (SIMPLIFICADO)
 map("n", "m", function()
