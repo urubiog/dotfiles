@@ -81,44 +81,79 @@ end
 local previous_buffers = {}
 
 -- ===========================================================
--- BufEnter: manejar buffers "reales" y limpiar previos
+-- WinNew: crear buffer vacío en ventanas “reales”
 -- ===========================================================
+vim.api.nvim_create_autocmd("WinNew", {
+    callback = function()
+        vim.defer_fn(function()
+            local win = vim.api.nvim_get_current_win()
+
+            -- Ignorar ventanas flotantes
+            if is_floating_win(win) then
+                return
+            end
+
+            local buf = vim.api.nvim_win_get_buf(win)
+
+            -- Ignorar buffers protegidos
+            if is_protected_buffer(buf) then
+                return
+            end
+
+            local bufname = vim.fn.bufname(buf)
+            local line_count = vim.fn.line "$"
+            local first_line = vim.fn.getline(1)
+
+            -- Si el buffer tiene contenido real, registrar y abrir uno nuevo
+            if bufname ~= "" or line_count > 1 or first_line ~= "" then
+                previous_buffers[win] = buf
+                vim.cmd "enew"
+            end
+        end, 50) -- margen para que LSP configure floating windows
+    end,
+})
+
+-- =========================================
+-- BufEnter: limpiar buffer previo de la MISMA ventana
+-- =========================================
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
         local win = vim.api.nvim_get_current_win()
         local buf = vim.api.nvim_get_current_buf()
 
-        -- Ignorar ventanas flotantes
         if is_floating_win(win) then
             return
         end
 
-        -- Ignorar buffers protegidos
         if is_protected_buffer(buf) then
             return
         end
 
+        -- Solo limpiar el buffer previo de la misma ventana
         local prev_buf = previous_buffers[win]
-
-        -- Limpiar buffer previo si no está protegido y no tiene cambios
         if prev_buf and prev_buf ~= buf and vim.api.nvim_buf_is_valid(prev_buf) then
-            if not is_protected_buffer(prev_buf) and not vim.api.nvim_buf_get_option(prev_buf, "modified") then
+            -- Verificar que el buffer no esté visible en otras ventanas
+            local wins = vim.fn.win_findbuf(prev_buf)
+            local is_visible_elsewhere = false
+            for _, w in ipairs(wins) do
+                if w ~= win and vim.api.nvim_win_is_valid(w) then
+                    is_visible_elsewhere = true
+                    break
+                end
+            end
+
+            if
+                not is_protected_buffer(prev_buf)
+                and not vim.api.nvim_buf_get_option(prev_buf, "modified")
+                and not is_visible_elsewhere
+            then
                 pcall(function()
                     vim.api.nvim_buf_delete(prev_buf, { force = true })
                 end)
             end
         end
 
-        -- Guardar buffer actual como previo
         previous_buffers[win] = buf
-
-        -- Crear un buffer nuevo solo si estamos en un buffer "vacío real"
-        local bufname = vim.api.nvim_buf_get_name(buf)
-        local line_count = vim.fn.line("$")
-        local first_line = vim.fn.getline(1)
-        if bufname == "" and line_count == 1 and first_line == "" then
-            vim.cmd("enew")
-        end
     end,
 })
 
