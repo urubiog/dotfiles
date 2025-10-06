@@ -1,0 +1,144 @@
+require "nvchad.autocmds"
+
+local cmd = vim.cmd
+
+cmd("lua require('lazygit')")
+
+vim.api.nvim_create_autocmd("BufEnter", {
+    pattern = "*",
+    callback = function()
+        vim.schedule(function()
+            vim.cmd("colorscheme nvchad")
+        end)
+    end,
+})
+
+-- Mantener registro del buffer anterior por ventana
+local previous_buffers = {}
+
+-- Autocomando para cuando se crea una nueva ventana
+vim.api.nvim_create_autocmd("WinNew", {
+    callback = function()
+        -- Pequeño delay para que se complete la creación de la ventana
+        vim.defer_fn(function()
+            local current_win = vim.api.nvim_get_current_win()
+            local current_buf = vim.api.nvim_win_get_buf(current_win)
+
+            -- Solo crear nuevo buffer si el actual no es vacío
+            local bufname = vim.fn.bufname(current_buf)
+            if bufname ~= "" or vim.fn.line("$") > 1 or vim.fn.getline(1) ~= "" then
+                -- Guardar el buffer anterior antes de crear uno nuevo
+                previous_buffers[current_win] = current_buf
+
+                -- Crear nuevo buffer vacío en la ventana actual
+                vim.cmd("enew")
+
+                -- Limpiar el buffer anterior después de un breve delay
+                vim.defer_fn(function()
+                    if previous_buffers[current_win] and
+                        vim.api.nvim_buf_is_valid(previous_buffers[current_win]) then
+                        local old_buf = previous_buffers[current_win]
+
+                        -- Solo eliminar si no está visible en otras ventanas y no tiene cambios
+                        local windows_with_old_buf = vim.fn.win_findbuf(old_buf)
+                        if #windows_with_old_buf == 0 and
+                            not vim.api.nvim_buf_get_option(old_buf, "modified") then
+                            vim.api.nvim_buf_delete(old_buf, { force = true })
+                        end
+                        previous_buffers[current_win] = nil
+                    end
+                end, 50)
+            end
+        end, 10)
+    end,
+})
+
+-- Manejar cuando un buffer entra en una ventana (navegación entre buffers)
+vim.api.nvim_create_autocmd("BufEnter", {
+    callback = function()
+        local current_win = vim.api.nvim_get_current_win()
+        local current_buf = vim.api.nvim_get_current_buf()
+        local prev_buf = previous_buffers[current_win]
+
+        -- Si hay un buffer anterior registrado para esta ventana y es diferente al actual
+        if prev_buf and prev_buf ~= current_buf and vim.api.nvim_buf_is_valid(prev_buf) then
+            -- Solo eliminar si no está visible en otras ventanas y no tiene cambios
+            local windows_with_prev_buf = vim.fn.win_findbuf(prev_buf)
+            if #windows_with_prev_buf == 0 and
+                not vim.api.nvim_buf_get_option(prev_buf, "modified") then
+                vim.api.nvim_buf_delete(prev_buf, { force = true })
+            end
+            previous_buffers[current_win] = nil
+        end
+    end,
+})
+
+-- Limpiar buffer anterior cuando se cambia a un nuevo buffer en la misma ventana
+vim.api.nvim_create_autocmd("BufLeave", {
+    callback = function(args)
+        local buf = args.buf
+        local current_win = vim.api.nvim_get_current_win()
+
+        -- Solo registrar como buffer anterior si no es un buffer vacío
+        local bufname = vim.fn.bufname(buf)
+        if bufname ~= "" or vim.fn.line("$") > 1 or vim.fn.getline(1) ~= "" then
+            previous_buffers[current_win] = buf
+        end
+    end,
+})
+
+-- Limpiar registro cuando se cierra una ventana
+vim.api.nvim_create_autocmd("WinClosed", {
+    callback = function(args)
+        local win_id = tonumber(args.match)
+        previous_buffers[win_id] = nil
+    end,
+})
+
+vim.api.nvim_create_autocmd("WinClosed", {
+    callback = function(args)
+        local win_id = tonumber(args.match)
+        local buf = vim.api.nvim_win_get_buf(win_id)
+
+        vim.defer_fn(function()
+            if not vim.api.nvim_buf_is_valid(buf) then return end
+
+            local bufname = vim.api.nvim_buf_get_name(buf)
+            local filename = bufname ~= "" and vim.fn.fnamemodify(bufname, ":t") or "Buffer " .. buf
+
+            if vim.api.nvim_buf_get_option(buf, "modified") then
+                -- Usar vim.ui.select si está disponible (con plugins como telescope, fzf, etc.)
+                if vim.ui then
+                    vim.ui.select({
+                        "💾 Save file",
+                        "❌ Close anyways",
+                        "🔙 Go back"
+                    }, {
+                        prompt = "File '" .. filename .. "' Unsaved changes:",
+                        format_item = function(item)
+                            return item
+                        end,
+                    }, function(choice)
+                        if choice == "💾 Save file" then
+                            vim.api.nvim_buf_call(buf, function()
+                                vim.cmd("w")
+                            end)
+                            vim.api.nvim_buf_delete(buf, { force = true })
+                        elseif choice == "❌ Close anyways" then
+                            vim.api.nvim_buf_delete(buf, { force = true })
+                        end
+                        -- Si es "Cancelar", no hacer nada
+                    end)
+                else
+                    -- Fallback al método nativo
+                    vim.schedule(function()
+                        vim.api.nvim_buf_delete(buf, { force = false }) -- force=false muestra confirmación nativa
+                    end)
+                end
+            else
+                -- No tiene cambios, cerrar directamente
+                vim.api.nvim_buf_delete(buf, { force = true })
+            end
+        end, 10)
+    end,
+})

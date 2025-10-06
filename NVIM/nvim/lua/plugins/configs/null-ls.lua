@@ -7,29 +7,26 @@ end
 local b = null_ls.builtins
 
 local sources = {
-    -- webdev stuff
-    b.formatting.deno_fmt,                                      -- choosed deno for ts/js files cuz its very fast!
-    b.formatting.prettier.with { filetypes = { "html", "css" } }, -- so prettier works only on these filetypes
 
-    -- markdown
+    -- webdev stuff
+    b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
+    -- b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+
     b.formatting.markdownlint,
 
-    -- bash
-    null_ls.builtins.formatting.beautysh,
-
-    -- Lua
-    b.formatting.stylua,
-
-    -- cpp
-    b.formatting.clang_format,
-
-    -- python
+    -- -- Lua
+    -- b.formatting.stylua,
+    --
+    -- -- cpp
+    -- b.formatting.clang_format,
+    --
+    -- -- python
     -- b.formatting.black,
-
-    -- rust
-    b.formatting.rustfmt,
-
-    -- go
+    --
+    -- -- rust
+    -- b.formatting.rustfmt,
+    --
+    -- -- go
     -- b.formatting.gofmt,
     -- b.formatting.goimports,
 }

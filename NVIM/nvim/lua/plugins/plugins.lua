@@ -12,9 +12,9 @@ local plugins = {
         build = ":Copilot auth",
         event = "InsertEnter",
         config = function()
-            require("copilot").setup {
+            require("copilot").setup({
                 suggestion = {
-                    enabled = true, -- Habilitar sugerencias
+                    enabled = true,      -- Habilitar sugerencias
                     auto_trigger = true, -- Activar sugerencias automáticamente
                     keymap = {
                         accept = "<C-e>",
@@ -23,7 +23,7 @@ local plugins = {
                     },
                 },
                 panel = { enabled = false }, -- Desactivar el panel flotante (opcional)
-            }
+            })
         end,
     },
     -- {
@@ -99,11 +99,11 @@ local plugins = {
         lazy = false,
         event = "BufReadPost",
         opts = {
-            stiffness = 0.8,                -- 0.6      [0, 1]
-            trailing_stiffness = 0.5,       -- 0.4      [0, 1]
-            stiffness_insert_mode = 0.6,    -- 0.4      [0, 1]
+            stiffness = 0.8,                      -- 0.6      [0, 1]
+            trailing_stiffness = 0.5,             -- 0.4      [0, 1]
+            stiffness_insert_mode = 0.6,          -- 0.4      [0, 1]
             trailing_stiffness_insert_mode = 0.6, -- 0.4      [0, 1]
-            distance_stop_animating = 0.5,  -- 0.1      > 0
+            distance_stop_animating = 0.5,        -- 0.1      > 0
             -- Smear cursor when switching buffers or windows.
             smear_between_buffers = true,
 
@@ -129,7 +129,7 @@ local plugins = {
             "nvim-tree/nvim-web-devicons", -- íconos opcionales
         },
         config = function()
-            require("nvim-tree").setup {
+            require("nvim-tree").setup({
                 auto_reload_on_write = true,
                 disable_netrw = true,
                 hijack_netrw = true,
@@ -211,7 +211,7 @@ local plugins = {
                         git = false,
                     },
                 },
-            }
+            })
         end,
     },
     {
@@ -226,14 +226,14 @@ local plugins = {
             {
                 "<leader>?",
                 function()
-                    require("which-key").show { global = false }
+                    require("which-key").show({ global = false })
                 end,
                 desc = "Buffer Keymaps (which-key)",
             },
             {
                 "<c-w><space>",
                 function()
-                    require("which-key").show { keys = "<c-w>", loop = true }
+                    require("which-key").show({ keys = "<c-w>", loop = true })
                 end,
                 desc = "Window Hydra Mode (which-key)",
             },
@@ -253,11 +253,11 @@ local plugins = {
         init = function()
             -- VimTeX configuration goes here, e.g.
             vim.g.vimtex_view_method = "zathura"
-        end,
+        end
     },
     {
         "hedyhli/markdown-toc.nvim",
-        ft = "markdown", -- Lazy load on markdown filetype
+        ft = "markdown",  -- Lazy load on markdown filetype
         cmd = { "Mtoc" }, -- Or, lazy load on "Mtoc" command
         opts = {
             -- Your configuration here (optional)
@@ -276,7 +276,7 @@ local plugins = {
                 -- These fence texts are wrapped within "<!-- % -->", where the '%' is
                 -- substituted with the text.
                 start_text = "mtoc-start",
-                end_text = "mtoc-end",
+                end_text = "mtoc-end"
                 -- An empty line is inserted on top and below the ToC list before the being
                 -- wrapped with the fence texts, same as vim-markdown-toc.
             },
@@ -289,7 +289,7 @@ local plugins = {
                 -- If cycle_markers = false and markers is a list, only the first is used.
                 -- You can set to '1.' to use a automatically numbered list for ToC (if
                 -- your markdown render supports it).
-                markers = "*",
+                markers = '*',
                 cycle_markers = false,
                 -- Example config for cycling markers:
                 ----- markers = {'*', '+', '-'},
@@ -303,15 +303,15 @@ local plugins = {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
             "antoinemadec/FixCursorHold.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
+            "nvim-treesitter/nvim-treesitter"
+        }
     },
     {
         "rcarriga/nvim-dap-ui",
         dependencies = "mfussenegger/nvim-dap",
         config = function()
-            local dap = require "dap"
-            local dapui = require "dapui"
+            local dap = require("dap")
+            local dapui = require("dapui")
             dapui.setup()
             dap.listeners.after.event_initialized["dapui_config"] = function()
                 dapui.open()
@@ -332,7 +332,7 @@ local plugins = {
         ft = "python",
         dependencies = {
             "mfussenegger/nvim-dap",
-            "rcarriga/nvim-dap-ui",
+            "rcarriga/nvim-dap-ui"
         },
         config = function(_, opts)
             local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
@@ -343,11 +343,24 @@ local plugins = {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {
+            presets = {
+                bottom_search = false,
+                command_palette = {
+                    views = {
+                        popupmenu = {
+                            position = {
+                                row = "80%",
+                                col = "50%",
+                            },
+                        },
+                    },
+                },
+            },
             cmdline = {
                 format = {
                     search_down = false, -- Evita mostrar mensajes de búsqueda hacia abajo
-                    search_up = false, -- Evita mostrar mensajes de búsqueda hacia arriba
-                    filter = false, -- No mostrar filtros innecesarios
+                    search_up = false,   -- Evita mostrar mensajes de búsqueda hacia arriba
+                    filter = false,      -- No mostrar filtros innecesarios
                 },
             },
             popupmenu = {
@@ -357,25 +370,23 @@ local plugins = {
             messages = {
                 -- Configurar vistas para mensajes reducidos
                 enabled = true,
-                view_error = "notify", -- Solo mostrar errores como notificaciones
-                view_warn = false, -- Advertencias en miniatura
-                view_history = false, -- No guardar historial de mensajes
+                view_error = "notify",    -- Solo mostrar errores como notificaciones
+                view_warn = false,        -- Advertencias en miniatura
+                view_history = false,     -- No guardar historial de mensajes
                 view_cmdline = "cmdline", -- Solo comandos en la línea de comando
-                filter = {        -- Filtrar aún más los mensajes
+                filter = {                -- Filtrar aún más los mensajes
                     event = {
-                        "msg_show",
-                        "msg_clear",
-                        "cmdline",
+                        "msg_show", "msg_clear", "cmdline"
                     },
                     kind = {
-                        "", -- Filtrar cualquier mensaje sin categoría
+                        "",      -- Filtrar cualquier mensaje sin categoría
                     },
                     skip = true, -- Evitar mostrar estos tipos de mensajes
                 },
             },
             notify = {
                 enabled = true, -- Solo mantener notificaciones importantes
-                view = "mini", -- Usar una vista pequeña para notificaciones
+                view = "mini",  -- Usar una vista pequeña para notificaciones
                 filter = {
                     -- Filtrar solo mensajes importantes (errores, advertencias críticas)
                     event = "msg_show",
@@ -383,10 +394,10 @@ local plugins = {
                 },
             },
             lsp = {
-                progress = { enabled = false }, -- No mostrar progreso del LSP
-                hover = { enabled = false }, -- No mostrar mensajes de hover
+                progress = { enabled = true },   -- No mostrar progreso del LSP
+                hover = { enabled = false },     -- No mostrar mensajes de hover
                 signature = { enabled = false }, -- No mostrar mensajes de firma
-                message = { enabled = false }, -- Ocultar mensajes LSP generales
+                message = { enabled = false },   -- Ocultar mensajes LSP generales
             },
             routes = {
                 -- Redirigir salida de los comandos a la barra de notificaciones predeterminada
@@ -404,12 +415,12 @@ local plugins = {
                     opts = { skip = true },
                 },
             },
-            background_colour = "#000000",
+            background_colour = "#000000"
         },
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
-        },
+        }
     },
     {
         "rcarriga/nvim-notify",
@@ -424,7 +435,7 @@ local plugins = {
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
         build = "cd app && yarn install",
         init = function()
-            vim.g.mkdp_theme = "light"
+            vim.g.mkdp_theme = 'light'
             vim.g.mkdp_filetypes = { "markdown" }
         end,
         ft = { "markdown" },
@@ -435,39 +446,39 @@ local plugins = {
         config = function()
             -- Configuración principal
             require("gitsigns").setup {
-                signs = {
-                    add = { text = "│" },
-                    change = { text = "│" },
-                    delete = { text = "_" },
-                    topdelete = { text = "‾" },
+                signs                   = {
+                    add          = { text = "│" },
+                    change       = { text = "│" },
+                    delete       = { text = "_" },
+                    topdelete    = { text = "‾" },
                     changedelete = { text = "~" },
                 },
-                signcolumn = true,
-                numhl = false,
-                linehl = false,
-                word_diff = false,
-                watch_gitdir = {
+                signcolumn              = true,
+                numhl                   = false,
+                linehl                  = false,
+                word_diff               = false,
+                watch_gitdir            = {
                     interval = 1000,
-                    follow_files = true,
+                    follow_files = true
                 },
-                attach_to_untracked = true,
-                current_line_blame = true,
+                attach_to_untracked     = true,
+                current_line_blame      = true,
                 current_line_blame_opts = {
                     virt_text = true,
-                    virt_text_pos = "eol",
+                    virt_text_pos = 'eol',
                     delay = 500,
                     ignore_whitespace = false,
                 },
                 -- current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
-                sign_priority = 6,
-                update_debounce = 100,
-                max_file_length = 40000,
-                preview_config = {
-                    border = "rounded",
-                    style = "minimal",
-                    relative = "cursor",
+                sign_priority           = 6,
+                update_debounce         = 100,
+                max_file_length         = 40000,
+                preview_config          = {
+                    border = 'rounded',
+                    style = 'minimal',
+                    relative = 'cursor',
                     row = 0,
-                    col = 1,
+                    col = 1
                 },
             }
 
@@ -498,18 +509,18 @@ local plugins = {
         "nvimdev/dashboard-nvim",
         event = "VimEnter",
         config = function()
-            local db = require "dashboard"
+            local db = require('dashboard')
             db.setup {
-                theme = "doom",
+                theme = 'doom',
                 config = {
                     header = {
                         "",
                         "",
                         '                                     ,o""""o                                        ',
                         '                                  ,o$"     o                                        ',
-                        "                               ,o$$$                                                ",
-                        "                             ,o$$$'                                                 ",
-                        "                           ,o$\"o$'                                                  ",
+                        '                               ,o$$$                                                ',
+                        '                             ,o$$$\'                                                 ',
+                        '                           ,o$"o$\'                                                  ',
                         '                         ,o$$"$"\'                                                   ',
                         '                      ,o$"$o"$"\'                                                    ',
                         '                   ,oo$"$"$"$"$$`                      ,oooo$$$$$$$$oooooo.         ',
@@ -527,68 +538,80 @@ local plugins = {
                         '                               "$$"$$ "oo         ,$""$                             ',
                         '                               $"$o$$""o"          ,o$"$                            ',
                         '                               $$"$$"$ "o           `,",                            ',
-                        "",
+                        '                     ,oo$oo$$$$$$"$o$$$ ""o                                         ',
+                        '                  ,o$$"o"o$o$$o$$$"$o$$oo"oo                                        ',
+                        '                ,$"oo"$$$$o$$$$"$$$o"o$o"o"$o o                                     ',
+                        '               ,$$$""$$o$,      `$$$$"$$$o""$o $o                                   ',
+                        '               $o$o$"$,          `$o$"$o$o"$$o$ $$o                                 ',
+                        '              $$$o"o$$           ,$$$$o$$o"$"$$ $o$$oo      ,                       ',
+                        '              "$o$$$ $`.        ,"$$o$"o$""$$$$ `"$o$$oo    `o                      ',
+                        '              `$o$o$"$o$o`.  ,.$$"$o$$"$$"o$$$$   `$o$$ooo    $$ooooooo             ',
+                        '                `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o          ',
+                        '                   `$$"$"$o$$o$"$$"$ $$$  $ "           `$"$o            `o         ',
+                        '                      `$$"o$o"$o"$o$ "  o $$$o            `$$"o          ,$         ',
+                        '                                                            `$$ooo     ,o$$         ',
+                        '                                                               `$o$$$o$"$\'          ',
                         "",
                     },
                     center = {
                         {
-                            icon = "  ",
-                            desc = " Find File                          ",
-                            action = "Telescope find_files",
+                            icon = '  ',
+                            desc = ' Find File                          ',
+                            action = 'Telescope find_files',
                         },
                         {
-                            icon = "  ",
-                            desc = " New File                           ",
-                            action = "enew",
+                            icon = '  ',
+                            desc = ' New File                           ',
+                            action = 'enew',
                         },
                         {
-                            icon = "  ",
-                            desc = " Recently Opened Files              ",
-                            action = "Telescope oldfiles",
+                            icon = '  ',
+                            desc = ' Recently Opened Files              ',
+                            action = 'Telescope oldfiles',
                         },
                         {
-                            icon = "󰈭  ",
-                            desc = " Search Text                     ",
-                            action = "Telescope live_grep",
+                            icon = '󰈭  ',
+                            desc = ' Search Text                     ',
+                            action = 'Telescope live_grep',
                         },
                         {
-                            icon = "🔧  ",
-                            desc = "Config Files                        ",
-                            action = "Telescope find_files cwd=~/.config/nvim",
+                            icon = '🔧  ',
+                            desc = 'Config Files                        ',
+                            action = 'Telescope find_files cwd=~/.config/nvim',
                         },
                         {
-                            icon = "💤  ",
-                            desc = "Lazy                                ",
-                            action = "Lazy",
+                            icon = '💤  ',
+                            desc = 'Lazy                                ',
+                            action = 'Lazy',
                         },
                         {
-                            icon = "❌  ",
-                            desc = "Close                               ",
-                            action = "bd",
+                            icon = '❌  ',
+                            desc = 'Close                               ',
+                            action = 'bd',
                         },
                     },
                     footer = {
                         "",
                         "Bienvenido señor.\tNvim " .. version_str,
-                    },
-                },
+                    }
+                }
             }
         end,
-        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
     },
     {
         "mhartington/formatter.nvim",
         event = "VeryLazy",
         opts = function()
             return require "plugins.configs.formatter"
-        end,
+        end
     },
     {
         "mfussenegger/nvim-lint",
         event = "VeryLazy",
         config = function()
             require "plugins.configs.lint"
-        end,
+        end
     },
     {
         "christoomey/vim-tmux-navigator",
@@ -669,13 +692,13 @@ local plugins = {
             "nvim-lua/plenary.nvim",
         },
         config = function()
-            vim.api.nvim_set_keymap("n", "<leader>gg", ":LazyGit<CR>", { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', { noremap = true, silent = true })
         end,
     },
     {
         "ray-x/lsp_signature.nvim",
         config = function()
-            require("lsp_signature").setup {
+            require("lsp_signature").setup({
                 bind = true, -- This is mandatory, otherwise border config won't get registered.
                 doc_lines = 20, -- How many lines of documentation to show.
                 floating_window = true, -- Use a floating window instead of virtual text.
@@ -688,11 +711,11 @@ local plugins = {
                 max_height = 12, -- Max height of signature floating window.
                 max_width = 120, -- Max width of signature floating window.
                 handler_opts = {
-                    border = "single", -- Double, single, shadow, none.
+                    border = "single" -- Double, single, shadow, none.
                 },
-                extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
-            }
-        end,
+                extra_trigger_chars = {} -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
+            })
+        end
     },
     {
         "stevearc/conform.nvim",
@@ -701,5 +724,6 @@ local plugins = {
             require "configs.conform"
         end,
     },
+
 }
 return plugins
