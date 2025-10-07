@@ -145,10 +145,9 @@ setup_dotfiles
 echo "Abriendo nvim e instalando plugins (no toque nada)..."
 nvim -c 'Lazy' -c 'MasonInstallAll' -c 'TSInstall bash c clojure cpp css dart elixir elm go haskell html java javascript json kotlin lua markdown php python r ruby rust scala sql typescript vim yaml' -c 'q!'
 
-commit=7c51760
-
-cd "/home/$(whoami)/.local/share/nvim/lazy/ui/lua/nvchad"
-git checkout $commit
+# Set nvchad ui commit
+# cd "/home/$(whoami)/.local/share/nvim/lazy/ui/lua/nvchad"
+# git checkout 7c51760
 
 install_markdown_preview
 clean_system
