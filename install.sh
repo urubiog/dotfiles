@@ -113,7 +113,8 @@ install_markdown_preview() {
     path="/home/$(whoami)/.local/share/nvim/lazy/markdown-preview.nvim/app"
     if [ -d "$path" ]; then
         cd "$path"
-        npm install || echo "Error instalando dependencias de markdown-preview."
+        chmod +x install.sh
+        ./install.sh || echo "Error instalando dependencias de markdown-preview."
     else
         echo "El directorio de markdown-preview no existe."
     fi
