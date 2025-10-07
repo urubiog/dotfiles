@@ -13,24 +13,26 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+-- Importa los plugins desde el archivo externo
+local plugins = require("plugins_fixed")
+
 -- load plugins
 require("lazy").setup({
-    {
-        "NvChad/NvChad",
-        lazy = false,
-        auto_update = false,
-        -- branch = "v2.5",
-        commit = "29ebe31ea6a4edf351968c76a93285e6e108ea08".
-        import = "nvchad.plugins",
-        config = function()
-            require "options"
-            require "mappings"
-            require "autocmd"
-        end,
-    },
-
-    { import = "plugins" },
-}, lazy_config)
+        {
+            "NvChad/NvChad",
+            commit = "29ebe31ea6a4edf351968c76a93285e6e108ea08",
+            lazy = false,
+            auto_update = false,
+            import = "nvchad.plugins",
+            config = function()
+                require "options"
+                require "mappings"
+                require "autocmd"
+            end,
+        },
+        { import = "plugins" },
+        plugins },
+    lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
