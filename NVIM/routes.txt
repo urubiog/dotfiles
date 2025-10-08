@@ -1,3 +1,0 @@
-nvim: ~/.config/nvim
-lazy: ~/.local/share/nvim/lazy
-nvimUsr: /usr/share/nvim
