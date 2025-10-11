@@ -95,6 +95,18 @@ local plugins = {
     --     }
     -- },
     {
+        "hat0uma/doxygen-previewer.nvim",
+        opts = {},
+        dependencies = { "hat0uma/prelive.nvim" },
+        cmd = {
+            "DoxygenOpen",
+            "DoxygenUpdate",
+            "DoxygenStop",
+            "DoxygenLog",
+            "DoxygenTempDoxyfileOpen"
+        },
+    },
+    {
         "sphamba/smear-cursor.nvim",
         lazy = false,
         event = "BufReadPost",
@@ -708,8 +720,8 @@ local plugins = {
                     border = 'rounded', -- bordes redondeados
                 },
                 lightbulb = {
-                    enable = false, -- esto desactiva la bombilla
-                    sign = false, -- opcional, si no quieres signos en la gutter
+                    enable = false,       -- esto desactiva la bombilla
+                    sign = false,         -- opcional, si no quieres signos en la gutter
                     virtual_text = false, -- opcional, si no quieres texto inline
                 },
             })

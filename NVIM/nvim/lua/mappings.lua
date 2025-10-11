@@ -290,7 +290,7 @@ map("n", "<C-f>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = tru
 
 -- LSP
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true, desc = "Rename symbol" })
-map("n", "<C-Space>", "<cmd>Lspsaga hover_do<CR>",
+map("n", "<C-Space>", "<cmd>Lspsaga hover_doc<CR>",
     { noremap = true, silent = true, desc = "Signature help" })
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true, desc = "Code actions" })
 
