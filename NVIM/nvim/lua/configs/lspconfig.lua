@@ -8,6 +8,17 @@ local base_on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "●",  -- Puede usar →, ▸, etc.
+        spacing = 2,
+    },
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+})
+
+
 -- Definir un on_attach que incluya lsp_signature
 local on_attach = function(client, bufnr)
     -- Llamar al on_attach base de NvChad
