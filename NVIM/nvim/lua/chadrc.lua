@@ -23,7 +23,7 @@ M.ui = {
         enabled = false,
     },
     tabufline = {
-        enabled = true,
+        enabled = false,
     },
 }
 
