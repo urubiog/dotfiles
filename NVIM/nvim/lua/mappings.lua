@@ -290,7 +290,7 @@ map("n", "<C-f>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = tru
 
 -- LSP
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true, desc = "Rename symbol" })
-map("n", "<C-Space>", "<cmd>lua vim.lsp.buf.signature_help()<CR>",
+map("n", "<C-Space>", "<cmd>Lspsaga hover_do<CR>",
     { noremap = true, silent = true, desc = "Signature help" })
 map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true, desc = "Code actions" })
 
@@ -325,7 +325,7 @@ map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "
 -- Bracket wrapping
 map("v", "(", "c(<C-r>+)", { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
 
--- Markdown writting 
+-- Markdown writting
 map("i", "<C-i>", "**<Left>", { noremap = true, silent = true, desc = "Italic text" })
 map("i", "<C-b>", "****<Left><Left>", { noremap = true, silent = true, desc = "Bold text" })
 map("i", "<C-t>", "~~<Left>", { noremap = true, silent = true, desc = "Strikethrough text" })
@@ -335,6 +335,9 @@ map("v", "<C-t>", "c~<C-r>+~", { noremap = true, silent = true, desc = "Striketh
 
 -- Debugging
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true, desc = "Toggle breakpoint" })
+
+-- LspSaga
+map("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { noremap = true, silent = true, desc = "Peek definition" })
 
 -- Folding
 local function toggle_all_folds()

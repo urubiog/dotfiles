@@ -18,6 +18,8 @@ o.foldenable = false   -- No activar folding al abrir
 
 opt.wrap = false
 
+vim.o.showtabline = 0
+
 g.browser = "wslview"
 g.BROWSER = "wslview"
 

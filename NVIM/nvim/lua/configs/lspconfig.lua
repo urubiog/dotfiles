@@ -8,17 +8,6 @@ local base_on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-vim.diagnostic.config({
-    virtual_text = {
-        prefix = "●",  -- Puede usar →, ▸, etc.
-        spacing = 2,
-    },
-    signs = true,
-    underline = true,
-    update_in_insert = false,
-})
-
-
 -- Definir un on_attach que incluya lsp_signature
 local on_attach = function(client, bufnr)
     -- Llamar al on_attach base de NvChad
@@ -33,6 +22,26 @@ local on_attach = function(client, bufnr)
         hint_enable = false,
     }, bufnr)
 end
+
+vim.lsp.handlers["textDocument/hover"] =  vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "rounded",   -- bordes redondeados
+    max_width = 80,       -- ancho máximo
+    max_height = 20,      -- altura máxima
+  }
+)
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = "●", -- Puede usar →, ▸, etc.
+        spacing = 2,
+    },
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+})
+
 
 -- Servidores que usan configuración predeterminada
 local default_servers = {

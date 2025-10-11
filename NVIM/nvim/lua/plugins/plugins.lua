@@ -698,6 +698,28 @@ local plugins = {
         end,
     },
     {
+        'nvimdev/lspsaga.nvim',
+        event = "LspAttach",
+        config = function()
+            require('lspsaga').setup({
+                hover = {
+                    max_width = 80,     -- ancho máximo de la ventana
+                    open_link = 'glow', -- si quieres abrir links con glow
+                    border = 'rounded', -- bordes redondeados
+                },
+                lightbulb = {
+                    enable = false, -- esto desactiva la bombilla
+                    sign = false, -- opcional, si no quieres signos en la gutter
+                    virtual_text = false, -- opcional, si no quieres texto inline
+                },
+            })
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        },
+    },
+    {
         "kdheepak/lazygit.nvim",
         requires = {
             "nvim-lua/plenary.nvim",
