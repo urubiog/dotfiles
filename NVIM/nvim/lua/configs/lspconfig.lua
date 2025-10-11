@@ -1,180 +1,59 @@
-local on_attach = require("nvchad.configs.lspconfig").on_attach
+-- ~/.config/nvim/lua/configs/lspconfig.lua
+
+local util = require("lspconfig.util")
+local lsp_signature = require("lsp_signature")
+
+-- Configuraciones predeterminadas de NvChad
+local base_on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
-local servers = {
-    "html", "cssls", "clangd", "rust_analyzer", "gopls",
-    "pyright", "yamlls", "dockerls", "clojure_lsp", "cmake",
-    "terraformls", "vimls", "lua_ls", "jsonls"
-}
-local util = "lspconfig/util"
+-- Definir un on_attach que incluya lsp_signature
+local on_attach = function(client, bufnr)
+    -- Llamar al on_attach base de NvChad
+    base_on_attach(client, bufnr)
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup {
+    -- Activar lsp_signature
+    lsp_signature.on_attach({
+        bind = true,
+        handler_opts = { border = "rounded" },
+        floating_window_above_cur_line = true,
+        hint_prefix = "",
+        hint_enable = false,
+    }, bufnr)
+end
+
+-- Servidores que usan configuración predeterminada
+local default_servers = {
+    "html", "cssls", "pyright", "lua_ls",
+    "marksman", "jdtls", "texlab", "yamlls",
+    "dockerls", "clojure_lsp", "cmake",
+    "terraformls", "vimls", "rust_analyzer", "jsonls", "clangd"
+}
+
+for _, server in ipairs(default_servers) do
+    vim.lsp.config(server, {
         on_attach = on_attach,
         on_init = on_init,
         capabilities = capabilities,
-    }
+    })
+    vim.lsp.enable(server)
 end
 
--- -- typescript
--- lspconfig.ts_ls.setup {
---   on_attach = on_attach,
---   capabilities = capabilities,
---   init_option = {
---     preferences = {
---       disableSuggestions = true,
---     }
---   }
--- }
+-- Configuraciones especiales de servidores
 
--- Agregar esto a tu configuración LSP
-lspconfig.jsonls.setup {
+-- gopls
+vim.lsp.config('gopls', {
     on_attach = on_attach,
     capabilities = capabilities,
-    filetypes = { "json" },
-    settings = {
-        json = {
-            schemas = {
-                -- Puedes definir tus esquemas JSON aquí
-                -- Un ejemplo: Si tienes un archivo 'package.json'
-                {
-                    fileMatch = { "package.json" },
-                    url = "https://json.schemastore.org/package.json"
-                },
-            },
-            validate = { enable = true }, -- Habilitar la validación
-        },
-    },
-}
-
--- lua
-lspconfig.lua_ls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "lua" }
-}
-
--- html
-lspconfig.html.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "html" }
-}
-
--- css
-lspconfig.cssls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "css" }
-}
-
--- Markdown
-lspconfig.marksman.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "markdown" }
-}
-
--- python
-lspconfig.pyright.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "python" },
-})
-
--- C, C++
-lspconfig.clangd.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "c", "cpp" }, -- Asegúrate de incluir C++
-    init_options = {
-        usePlaceholders = true,
-        completion = {
-            enableSnippets = true,
-        },
-    },
-    root_dir = function(fname)
-        -- Intenta encontrar el directorio que contiene .clang-format, .git, etc.
-        local dir = lspconfig.util.root_pattern(".clang-format", ".git", "compile_commands.json", "CMakeLists.txt")(
-            fname)
-
-        -- Retornar el directorio encontrado o la ruta al directorio que contiene .clang-format
-        if dir then
-            return dir
-        else
-            -- Retornar el directorio del usuario que contiene el archivo .clang-format
-            return vim.fn.expand("~/") -- Esto retorna el directorio del HOME
-        end
-    end,
-}
-
--- java
-lspconfig.jdtls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "java" },
-}
---
--- lspconfig.omnisharp.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"csharp"}  -- Limit the LSP to C# files
--- }
---
-lspconfig.gopls.setup {
-    on_attach = on_attach,       -- Replace with your custom on_attach function
-    capabilities = capabilities, -- Replace with your custom capabilities table
-    cmd = { "gopls" },           -- Limit the LSP to Go files
+    cmd = { "gopls" },
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
     settings = {
         gopls = {
             completeUnimported = true,
             usePlaceholders = true,
-            analyses = {
-                unusedparams = true,
-            },
+            analyses = { unusedparams = true },
         },
     },
-}
-
---
--- lspconfig.rust_analyzer.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"rust"}  -- Limit the LSP to Rust files
--- }
---
--- lspconfig.sqls.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"sql"}  -- Limit the LSP to SQL files
--- }
---
--- lspconfig.clangd.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"c", "cpp"}  -- Limit the LSP to C and C++ files
--- }
---
--- lspconfig.solargraph.setup {
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"ruby"}  -- Limit the LSP to Ruby files
--- }
--- lspconfig.sumneko_lua.setup {
---   cmd = {"lua-language-server"},  -- Replace with path to your lua-language-server executable
---   on_attach = on_attach,  -- Replace with your custom on_attach function
---   capabilities = capabilities,  -- Replace with your custom capabilities table
---   filetypes = {"markdown"}  -- Limit the LSP to Markdown files
--- }
-
--- LaTeX
-lspconfig.texlab.setup {
-    on_attach = on_attach,       -- Replace with your custom on_attach function
-    capabilities = capabilities, -- Replace with your custom capabilities table
-    filetypes = { "tex" }        -- Limit the LSP to LaTeX files
-}
+})
+vim.lsp.enable('gopls')

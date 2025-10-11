@@ -14,13 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_config = require "configs.lazy"
 
 -- Importa los plugins desde el archivo externo
-local plugins = require("plugins_fixed")
+-- local plugins = require("plugins_fixed")
 
 -- load plugins
 require("lazy").setup({
         {
             "NvChad/NvChad",
-            commit = "29ebe31ea6a4edf351968c76a93285e6e108ea08",
+            -- commit = "29ebe31ea6a4edf351968c76a93285e6e108ea08",
             lazy = false,
             auto_update = false,
             import = "nvchad.plugins",
@@ -30,105 +30,9 @@ require("lazy").setup({
                 require "autocmd"
             end,
         },
-        { import = "plugins" },
-        plugins },
+        { import = "plugins" }, },
     lazy_config)
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
-
-require("nvim-tree").setup({
-    auto_reload_on_write = true,
-    disable_netrw = true,
-    hijack_netrw = true,
-    hijack_cursor = true,
-    hijack_unnamed_buffer_when_opening = true,
-    sort = {
-        sorter = "name",
-        folders_first = true,
-    },
-    view = {
-        width = 40,
-        side = "right",
-        preserve_window_proportions = true,
-        number = false,
-        relativenumber = false,
-        signcolumn = "yes",
-    },
-    renderer = {
-        root_folder_label = function(path)
-            return vim.fn.fnamemodify(path, ":t") -- Extrae solo el último segmento del path
-        end,
-        add_trailing = false,
-        group_empty = true,
-        highlight_git = true,
-        highlight_opened_files = "name",
-        indent_markers = {
-            enable = true,
-        },
-        icons = {
-            webdev_colors = true,
-            git_placement = "before",
-            padding = " ",
-            symlink_arrow = " ➛ ",
-            show = {
-                file = true,
-                folder = true,
-                folder_arrow = true,
-                git = true,
-            },
-        },
-    },
-    filters = {
-        dotfiles = false,
-        custom = { ".DS_Store", "thumbs.db" },
-    },
-    git = {
-        enable = true,
-        ignore = true,
-        show_on_dirs = true,
-        timeout = 400,
-    },
-    diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        debounce_delay = 50,
-        icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
-        },
-    },
-    actions = {
-        use_system_clipboard = true,
-        change_dir = {
-            enable = true,
-            global = false,
-        },
-        open_file = {
-            quit_on_open = true,
-            resize_window = true,
-        },
-    },
-    log = {
-        enable = false,
-        truncate = true,
-        types = {
-            diagnostics = true,
-            git = false,
-        },
-    },
-})
-
-require("smear_cursor")
-
-local null_ls = require("null-ls")
-
-null_ls.setup({
-    sources = {
-        null_ls.builtins.formatting.markdownlint,
-    },
-})
-

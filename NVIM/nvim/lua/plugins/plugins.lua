@@ -681,6 +681,17 @@ local plugins = {
         },
     },
     {
+        "ray-x/lsp_signature.nvim",
+        event = "BufRead",
+        config = function()
+            require("lsp_signature").setup({
+                bind = true, -- enlaza automáticamente con LSP
+                handler_opts = { border = "rounded" },
+                hint_enable = false,
+            })
+        end,
+    },
+    {
         "neovim/nvim-lspconfig",
         config = function()
             require "configs.lspconfig"

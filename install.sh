@@ -86,22 +86,33 @@ install_multimedia_tools() {
 }
 
 install_neovim() {
-    echo "Instalando neovim v.10..."
+    echo "Instalando Neovim v0.11.4..."
+    cd /tmp || exit
+
+    # Descargar el tar.gz de Neovim
+    wget https://github.com/neovim/neovim/releases/download/v0.11.4/nvim-linux-x86_64.tar.gz -O nvim-linux-x86_64.tar.gz
+
+    # Extraer el archivo
+    tar xzf nvim-linux-x86_64.tar.gz
+
+    # Mover los binarios al directorio adecuado
+    sudo mv nvim-linux-x86_64 /usr/local/share/nvim
+
+    # Crear enlaces simbólicos para neovim
+    sudo ln -sf /usr/local/share/nvim/bin/nvim /usr/bin/nvim
+    sudo ln -sf /usr/local/share/nvim/bin/nvim /usr/local/bin/nvim
+
+    # Limpiar
+    rm -f nvim-linux-x86_64.tar.gz
     cd ~
-    git clone https://github.com/neovim/neovim.git
-    cd neovim
-    git checkout v0.10.0
-    make CMAKE_BUILD_TYPE=Release
-    sudo make install || echo "Error instalando Neovim."
-    rm -rf ~/neovim
-    cd ~
+    echo "Neovim v0.11.4 instalado correctamente."
 }
 
 setup_dotfiles() {
     echo "Descargando y configurando dotfiles..."
     git clone https://github.com/urubiog/dotfiles
     cd dotfiles
-    for file in .bashrc .gitconfig .clang-format .tmux.conf; do
+    for file in .bashrc .bash_aliases .gitconfig .clang-format .tmux.conf; do
         mv "$file" ~/
     done
     mv nvim ~/.config/nvim/

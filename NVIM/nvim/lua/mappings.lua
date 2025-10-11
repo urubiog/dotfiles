@@ -325,6 +325,14 @@ map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "
 -- Bracket wrapping
 map("v", "(", "c(<C-r>+)", { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
 
+-- Markdown writting 
+map("i", "<C-i>", "**<Left>", { noremap = true, silent = true, desc = "Italic text" })
+map("i", "<C-b>", "****<Left><Left>", { noremap = true, silent = true, desc = "Bold text" })
+map("i", "<C-t>", "~~<Left>", { noremap = true, silent = true, desc = "Strikethrough text" })
+map("v", "<C-i>", "c*<C-r>+*", { noremap = true, silent = true, desc = "Italic text" })
+map("v", "<C-b>", "c**<C-r>+**", { noremap = true, silent = true, desc = "Bold text" })
+map("v", "<C-t>", "c~<C-r>+~", { noremap = true, silent = true, desc = "Strikethrough text" })
+
 -- Debugging
 map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true, desc = "Toggle breakpoint" })
 
