@@ -1,16 +1,41 @@
 {
 	"file_history":
 	[
+		"/C/Users/privu/AppData/Local/Sublime Text/Package Storage/LSP-pyright/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/builtins.pyi",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/privu/OneDrive/CS/Coding/Python/ToDo.md",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP-pyright/LSP-pyright.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP-pyright.sublime-settings",
+		"/C/Users/privu/OneDrive/CS/Projects/ML notebooks/test.py",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP/LSP.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Python General.sublime-build",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/virtualenv",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Virtualenv.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Terminus/Terminus.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Terminus.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/README.md",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Terminal.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Terminal/Terminal.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/Virtualenv.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Package Control.sublime-settings",
+		"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Package Control/Package Control.sublime-settings",
+		"/C/Users/privu/OneDrive/CS/Coding/C++/Learn/functions.cpp",
+		"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+		"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
 		"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
 		"/home/uri/.config/sublime-text/Packages/User/Default (Linux).sublime-keymap",
-		"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
+		"/home/uri/.config/sublime-text/Packages/A File Icon/A File Icon.sublime-settings",
+		"/home/uri/.config/sublime-text/Packages/User/A File Icon.sublime-settings",
 		"/home/uri/.config/sublime-text/Packages/Formatter/Example.sublime-keymap",
 		"/home/uri/.config/sublime-text/Packages/Formatter/modules/_summary.txt",
 		"/home/uri/.config/sublime-text/Packages/User/Formatter.sublime-settings",
 		"/home/uri/.config/sublime-text/Packages/Formatter/Formatter.sublime-settings",
 		"/home/uri/.config/sublime-text/Packages/Theme - Default/Adaptive.sublime-theme",
 		"/home/uri/.config/sublime-text/Packages/User/Adaptive.sublime-theme",
-		"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
 		"/home/uri/.config/sublime-text/Packages/Default/Preferences.sublime-settings",
 		"/home/uri/.config/sublime-text/Packages/User/Preferences.sublime-settings",
 		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler/37.py",
@@ -32,24 +57,25 @@
 	],
 	"folder_history":
 	[
+		"/C/Users/privu/OneDrive/CS/Coding/Python",
 		"/home/uri/OneDrive/CS/Coding/Python/Dev/PEuler",
 		"/home/uri/OneDrive/CS/Coding/C/DSs",
 		"/home/uri",
 		"/home/uri/OneDrive/CS"
 	],
-	"last_version": 4192,
-	"last_window_id": 37,
+	"last_version": 4200,
+	"last_window_id": 53,
 	"log_indexing": false,
-	"next_update_check": 1741293758,
+	"next_update_check": 1772148619,
 	"settings":
 	{
 		"new_window_full_screen": false,
-		"new_window_height": 0.0,
-		"new_window_maximized": true,
+		"new_window_height": 754.0,
+		"new_window_maximized": false,
 		"new_window_position":
 		[
-			0.0,
-			46.0
+			101.0,
+			94.0
 		],
 		"new_window_settings":
 		{
@@ -126,6 +152,26 @@
 					],
 					[
 						"Packages/Python/Python.sublime-build",
+						"Syntax Check"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Python/Python.sublime-build",
+							""
+						],
+						[
+							"Packages/Python/Python.sublime-build",
+							"Syntax Check"
+						],
+						[
+							"Packages/Virtualenv/Python + Virtualenv.sublime-build",
+							""
+						]
+					],
+					[
+						"Packages/Virtualenv/Python + Virtualenv.sublime-build",
 						""
 					]
 				]
@@ -137,6 +183,210 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"goto ",
+						"LSP: Goto Diagnostic"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"package ninsta",
+						"Package Control: Install Package"
+					],
+					[
+						"keyb",
+						"Preferences: Key Bindings"
+					],
+					[
+						"prefer",
+						"Preferences: Settings"
+					],
+					[
+						"settings",
+						"Preferences: Settings"
+					],
+					[
+						"min",
+						"View: Toggle Minimap"
+					],
+					[
+						"minim",
+						"View: Toggle Minimap"
+					],
+					[
+						"toggle",
+						"View: Toggle Side Bar"
+					],
+					[
+						"togle ta",
+						"View: Toggle Tabs"
+					],
+					[
+						"terminus",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"remove pack",
+						"Package Control: Remove Package"
+					],
+					[
+						"remove packa",
+						"Package Control: Remove Channel"
+					],
+					[
+						"terminus open",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"package ins",
+						"Package Control: Install Package"
+					],
+					[
+						"virtual",
+						"Build With: Python + Virtualenv"
+					],
+					[
+						"packages list",
+						"Package Control: List Packages"
+					],
+					[
+						"terminus ope",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"build ",
+						"Build With: Python + Virtualenv"
+					],
+					[
+						"open default",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"package control ",
+						"Package Control: Install Package"
+					],
+					[
+						"install pa",
+						"Package Control: Install Package"
+					],
+					[
+						"install p",
+						"Package Control: Install Package"
+					],
+					[
+						"install package contro",
+						"Package Control: Advanced Install Packages"
+					],
+					[
+						"ter",
+						"Terminality: Browse Commands..."
+					],
+					[
+						"termin",
+						"Terminality: Browse Commands..."
+					],
+					[
+						"package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"terminal",
+						"Preferences: Terminal Settings"
+					],
+					[
+						"termina",
+						"Terminal: Open"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"new",
+						"Build: New Build System"
+					],
+					[
+						"package setti",
+						"Preferences: Package Control Settings"
+					],
+					[
+						"prefere",
+						"Preferences: Settings"
+					],
+					[
+						"install pack",
+						"Package Control: Install Package"
+					],
+					[
+						"key",
+						"Preferences: Key Bindings"
+					],
+					[
+						"packages",
+						"Preferences: Browse Packages"
+					],
+					[
+						"isnta",
+						"Package Control: Install Package"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"inst",
+						"Package Control: Install Package"
+					],
+					[
+						"instal p",
+						"Package Control: Install Package"
+					],
+					[
+						"package",
+						"Preferences: Browse Packages"
+					],
+					[
+						"new file",
+						"File: New File"
+					],
+					[
+						"format",
+						"Clang Format: Format Selection"
+					],
+					[
+						"remove pa",
+						"Package Control: Remove Package"
+					],
+					[
+						"cmake",
+						"CMake Format: Format Selection"
+					],
+					[
+						"instal lpa",
+						"Package Control: Install Package"
+					],
+					[
+						":move ",
+						"File: Move"
+					],
+					[
+						"a file icon",
+						"Preferences: A File Icon Settings"
+					],
+					[
+						":remove pa",
+						"Package Control: Remove Package"
+					],
+					[
+						":remove packa",
+						"Package Control: Remove Package"
+					],
+					[
+						":select colo",
+						"UI: Select Color Scheme"
+					],
 					[
 						"select color",
 						"UI: Select Color Scheme"
@@ -152,10 +402,6 @@
 					[
 						"side bar",
 						"View: Toggle Open Files in Side Bar"
-					],
-					[
-						"keyb",
-						"Preferences: Key Bindings"
 					],
 					[
 						"sta",
@@ -194,22 +440,6 @@
 						"Preferences: Formatter Key Bindings"
 					],
 					[
-						"key",
-						"Preferences: Key Bindings"
-					],
-					[
-						"package insta",
-						"Package Control: Install Package"
-					],
-					[
-						"format",
-						"Preferences: Formatter Key Bindings"
-					],
-					[
-						"package remove",
-						"Package Control: Remove Package"
-					],
-					[
 						"packages install",
 						"Package Control: Install Package"
 					],
@@ -244,10 +474,6 @@
 					[
 						"ui",
 						"UI: Select Color Scheme"
-					],
-					[
-						"packages",
-						"Preferences: Browse Packages"
 					],
 					[
 						"color theme",
@@ -338,10 +564,6 @@
 						"Set Syntax: SQL"
 					],
 					[
-						"settings",
-						"Preferences: Settings"
-					],
-					[
 						":mark",
 						"Set Syntax: Markdown"
 					],
@@ -398,10 +620,6 @@
 						"Snippet: #!/usr/bin/env"
 					],
 					[
-						"new file",
-						"File: New View into File"
-					],
-					[
 						"key b",
 						"Preferences: Key Bindings"
 					],
@@ -454,6 +672,22 @@
 			},
 			"file_history":
 			[
+				"/C/Users/privu/AppData/Local/Sublime Text/Package Storage/LSP-pyright/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/builtins.pyi",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Default (Windows).sublime-keymap",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Default (Windows).sublime-keymap",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP-pyright/LSP-pyright.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP-pyright.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP/LSP.sublime-settings",
+				"/C/Users/privu/OneDrive/CS/Projects/ML notebooks/test.py",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Python General.sublime-build",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/virtualenv",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Virtualenv.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/README.md",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/Virtualenv.sublime-settings",
+				"/C/Users/privu/OneDrive/CS/Coding/C++/Learn/functions.cpp",
 				"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
 				"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
 				"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
@@ -477,7 +711,7 @@
 			],
 			"find":
 			{
-				"height": 36.0
+				"height": 34.0
 			},
 			"find_in_files":
 			{
@@ -499,7 +733,7 @@
 				"replace_history":
 				[
 				],
-				"reverse": true,
+				"reverse": false,
 				"scrollbar_highlights": true,
 				"show_context": true,
 				"use_buffer2": true,
@@ -518,24 +752,73 @@
 			"menu_visible": false,
 			"output.LSP Log Panel":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"output.SublimeLinter":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 2":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 3":
+			{
+				"height": 419.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 4":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
 			},
 			"output.diagnostics":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
 			},
 			"output.exec":
 			{
-				"height": 311.0
+				"height": 378.0,
+				"history":
+				[
+					"ls",
+					"print(\"helo\")"
+				]
 			},
 			"output.find_results":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
 			},
-			"pinned_build_system": "",
+			"pinned_build_system": "Packages/User/Python General.sublime-build",
 			"replace":
 			{
-				"height": 68.0
+				"height": 64.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -573,7 +856,7 @@
 				],
 				"width": 0.0
 			},
-			"show_minimap": false,
+			"show_minimap": true,
 			"show_open_files": true,
 			"show_tabs": true,
 			"side_bar_visible": true,
@@ -583,7 +866,7 @@
 			{
 			}
 		},
-		"new_window_width": 0.0
+		"new_window_width": 1470.0
 	},
 	"windows":
 	[
@@ -625,22 +908,10 @@
 			"buffers":
 			[
 				{
-					"file": "/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+					"file": "/C/Users/privu/OneDrive/CS/Coding/Python/Learn/Conceptos/functions.py",
 					"settings":
 					{
-						"buffer_size": 4194,
-						"encoding": "UTF-8",
-						"line_ending": "Unix"
-					},
-					"undo_stack":
-					[
-					]
-				},
-				{
-					"file": "/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
-					"settings":
-					{
-						"buffer_size": 2259,
+						"buffer_size": 8242,
 						"encoding": "UTF-8",
 						"line_ending": "Unix"
 					},
@@ -689,6 +960,26 @@
 					],
 					[
 						"Packages/Python/Python.sublime-build",
+						"Syntax Check"
+					]
+				],
+				[
+					[
+						[
+							"Packages/Python/Python.sublime-build",
+							""
+						],
+						[
+							"Packages/Python/Python.sublime-build",
+							"Syntax Check"
+						],
+						[
+							"Packages/Virtualenv/Python + Virtualenv.sublime-build",
+							""
+						]
+					],
+					[
+						"Packages/Virtualenv/Python + Virtualenv.sublime-build",
 						""
 					]
 				]
@@ -700,6 +991,210 @@
 				"last_filter": "",
 				"selected_items":
 				[
+					[
+						"goto ",
+						"LSP: Goto Diagnostic"
+					],
+					[
+						"package remove",
+						"Package Control: Remove Package"
+					],
+					[
+						"package ninsta",
+						"Package Control: Install Package"
+					],
+					[
+						"keyb",
+						"Preferences: Key Bindings"
+					],
+					[
+						"prefer",
+						"Preferences: Settings"
+					],
+					[
+						"settings",
+						"Preferences: Settings"
+					],
+					[
+						"min",
+						"View: Toggle Minimap"
+					],
+					[
+						"minim",
+						"View: Toggle Minimap"
+					],
+					[
+						"toggle",
+						"View: Toggle Side Bar"
+					],
+					[
+						"togle ta",
+						"View: Toggle Tabs"
+					],
+					[
+						"terminus",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"remove pack",
+						"Package Control: Remove Package"
+					],
+					[
+						"remove packa",
+						"Package Control: Remove Channel"
+					],
+					[
+						"terminus open",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"package ins",
+						"Package Control: Install Package"
+					],
+					[
+						"virtual",
+						"Build With: Python + Virtualenv"
+					],
+					[
+						"packages list",
+						"Package Control: List Packages"
+					],
+					[
+						"terminus ope",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"build ",
+						"Build With: Python + Virtualenv"
+					],
+					[
+						"open default",
+						"Terminus: Open Default Shell in Panel"
+					],
+					[
+						"package control ",
+						"Package Control: Install Package"
+					],
+					[
+						"install pa",
+						"Package Control: Install Package"
+					],
+					[
+						"install p",
+						"Package Control: Install Package"
+					],
+					[
+						"install package contro",
+						"Package Control: Advanced Install Packages"
+					],
+					[
+						"ter",
+						"Terminality: Browse Commands..."
+					],
+					[
+						"termin",
+						"Terminality: Browse Commands..."
+					],
+					[
+						"package insta",
+						"Package Control: Install Package"
+					],
+					[
+						"terminal",
+						"Preferences: Terminal Settings"
+					],
+					[
+						"termina",
+						"Terminal: Open"
+					],
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"new",
+						"Build: New Build System"
+					],
+					[
+						"package setti",
+						"Preferences: Package Control Settings"
+					],
+					[
+						"prefere",
+						"Preferences: Settings"
+					],
+					[
+						"install pack",
+						"Package Control: Install Package"
+					],
+					[
+						"key",
+						"Preferences: Key Bindings"
+					],
+					[
+						"packages",
+						"Preferences: Browse Packages"
+					],
+					[
+						"isnta",
+						"Package Control: Install Package"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"inst",
+						"Package Control: Install Package"
+					],
+					[
+						"instal p",
+						"Package Control: Install Package"
+					],
+					[
+						"package",
+						"Preferences: Browse Packages"
+					],
+					[
+						"new file",
+						"File: New File"
+					],
+					[
+						"format",
+						"Clang Format: Format Selection"
+					],
+					[
+						"remove pa",
+						"Package Control: Remove Package"
+					],
+					[
+						"cmake",
+						"CMake Format: Format Selection"
+					],
+					[
+						"instal lpa",
+						"Package Control: Install Package"
+					],
+					[
+						":move ",
+						"File: Move"
+					],
+					[
+						"a file icon",
+						"Preferences: A File Icon Settings"
+					],
+					[
+						":remove pa",
+						"Package Control: Remove Package"
+					],
+					[
+						":remove packa",
+						"Package Control: Remove Package"
+					],
+					[
+						":select colo",
+						"UI: Select Color Scheme"
+					],
 					[
 						"select color",
 						"UI: Select Color Scheme"
@@ -715,10 +1210,6 @@
 					[
 						"side bar",
 						"View: Toggle Open Files in Side Bar"
-					],
-					[
-						"keyb",
-						"Preferences: Key Bindings"
 					],
 					[
 						"sta",
@@ -757,22 +1248,6 @@
 						"Preferences: Formatter Key Bindings"
 					],
 					[
-						"key",
-						"Preferences: Key Bindings"
-					],
-					[
-						"package insta",
-						"Package Control: Install Package"
-					],
-					[
-						"format",
-						"Preferences: Formatter Key Bindings"
-					],
-					[
-						"package remove",
-						"Package Control: Remove Package"
-					],
-					[
 						"packages install",
 						"Package Control: Install Package"
 					],
@@ -807,10 +1282,6 @@
 					[
 						"ui",
 						"UI: Select Color Scheme"
-					],
-					[
-						"packages",
-						"Preferences: Browse Packages"
 					],
 					[
 						"color theme",
@@ -901,10 +1372,6 @@
 						"Set Syntax: SQL"
 					],
 					[
-						"settings",
-						"Preferences: Settings"
-					],
-					[
 						":mark",
 						"Set Syntax: Markdown"
 					],
@@ -961,10 +1428,6 @@
 						"Snippet: #!/usr/bin/env"
 					],
 					[
-						"new file",
-						"File: New View into File"
-					],
-					[
 						"key b",
 						"Preferences: Key Bindings"
 					],
@@ -1015,8 +1478,30 @@
 				"side_bar_visible": false,
 				"status_bar_visible": false
 			},
+			"expanded_folders":
+			[
+				"/C/Users/privu/OneDrive/CS/Coding/Python",
+				"/C/Users/privu/OneDrive/CS/Coding/Python/Learn",
+				"/C/Users/privu/OneDrive/CS/Coding/Python/Learn/Conceptos"
+			],
 			"file_history":
 			[
+				"/C/Users/privu/AppData/Local/Sublime Text/Package Storage/LSP-pyright/language-server/node_modules/pyright/dist/typeshed-fallback/stdlib/builtins.pyi",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Default (Windows).sublime-keymap",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Default (Windows).sublime-keymap",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP-pyright/LSP-pyright.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP-pyright.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/LSP.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/LSP/LSP.sublime-settings",
+				"/C/Users/privu/OneDrive/CS/Projects/ML notebooks/test.py",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Python General.sublime-build",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/virtualenv",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/User/Virtualenv.sublime-settings",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/README.md",
+				"/C/Users/privu/AppData/Roaming/Sublime Text/Packages/Virtualenv/Virtualenv.sublime-settings",
+				"/C/Users/privu/OneDrive/CS/Coding/C++/Learn/functions.cpp",
 				"/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
 				"/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
 				"/home/uri/.config/sublime-text/Packages/Default/Default (Linux).sublime-keymap",
@@ -1040,7 +1525,7 @@
 			],
 			"find":
 			{
-				"height": 36.0
+				"height": 34.0
 			},
 			"find_in_files":
 			{
@@ -1062,7 +1547,7 @@
 				"replace_history":
 				[
 				],
-				"reverse": true,
+				"reverse": false,
 				"scrollbar_highlights": true,
 				"show_context": true,
 				"use_buffer2": true,
@@ -1070,6 +1555,12 @@
 				"whole_word": false,
 				"wrap": true
 			},
+			"folders":
+			[
+				{
+					"path": "C:\\Users\\privu\\OneDrive\\CS\\Coding\\Python"
+				}
+			],
 			"groups":
 			[
 				{
@@ -1077,67 +1568,52 @@
 					[
 						{
 							"buffer": 0,
-							"file": "/home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+							"file": "/C/Users/privu/OneDrive/CS/Coding/Python/Learn/Conceptos/functions.py",
 							"selected": true,
 							"semi_transient": false,
 							"settings":
 							{
-								"buffer_size": 4194,
+								"buffer_size": 8242,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										3580,
-										3580
+										2617,
+										2617
 									]
 								],
 								"settings":
 								{
-									"colorcode": true,
-									"lsp_uri": "file:///home/uri/OneDrive/CS/Coding/Python/Dev/Programs/cube.py",
+									"auto_complete_triggers":
+									[
+										{
+											"characters": "<",
+											"selector": "text.html, text.xml"
+										},
+										{
+											"rhs_empty": true,
+											"selector": "punctuation.accessor"
+										},
+										{
+											"characters": ".[\"'",
+											"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+											"server": "LSP-pyright"
+										}
+									],
+									"lsp_active": true,
+									"lsp_uri": "file:///C:/Users/privu/OneDrive/CS/Coding/Python/Learn/Conceptos/functions.py",
+									"show_definitions": false,
 									"syntax": "Packages/Python/Python.sublime-syntax",
 									"tab_size": 4,
 									"translate_tabs_to_spaces": true
 								},
 								"translation.x": 0.0,
-								"translation.y": 2452.0,
+								"translation.y": 1626.0,
 								"zoom_level": 1.0
 							},
 							"stack_index": 0,
-							"stack_multiselect": false,
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
-							"semi_transient": false,
-							"settings":
-							{
-								"buffer_size": 2259,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1443,
-										1443
-									]
-								],
-								"settings":
-								{
-									"lsp_uri": "file:///home/uri/OneDrive/CS/Coding/C/Programs/Spinning-Cube/cube.c",
-									"syntax": "Packages/C++/C.sublime-syntax",
-									"tab_size": 4,
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 1380.0,
-								"zoom_level": 1.0
-							},
-							"stack_index": 1,
 							"stack_multiselect": false,
 							"type": "text"
 						}
@@ -1177,26 +1653,75 @@
 			"menu_visible": false,
 			"output.LSP Log Panel":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"output.SublimeLinter":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 2":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 3":
+			{
+				"height": 419.0,
+				"history":
+				[
+				]
+			},
+			"output.Terminus 4":
+			{
+				"height": 166.0,
+				"history":
+				[
+				]
 			},
 			"output.diagnostics":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
 			},
 			"output.exec":
 			{
-				"height": 311.0
+				"height": 378.0,
+				"history":
+				[
+					"ls",
+					"print(\"helo\")"
+				]
 			},
 			"output.find_results":
 			{
-				"height": 0.0
+				"height": 0.0,
+				"history":
+				[
+				]
 			},
-			"pinned_build_system": "",
-			"position": "0,1,0,0,0,0,0,1920,1002,1920,1080,0",
+			"pinned_build_system": "Packages/User/Python General.sublime-build",
+			"position": "0,0,1,-1,-1,-1,-1,898,101,94,1571,a33faed8715dce4ead2b9b5a59a2222a",
 			"project": "",
 			"replace":
 			{
-				"height": 68.0
+				"height": 64.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -1239,7 +1764,7 @@
 			{
 				"lsp_show_inlay_hints": false
 			},
-			"show_minimap": false,
+			"show_minimap": true,
 			"show_open_files": true,
 			"show_tabs": true,
 			"side_bar_visible": true,
@@ -1248,7 +1773,7 @@
 			"template_settings":
 			{
 			},
-			"window_id": 25,
+			"window_id": 53,
 			"workspace_name": ""
 		}
 	],

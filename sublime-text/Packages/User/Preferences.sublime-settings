@@ -13,4 +13,5 @@
 	"highlight_line": true,
 	"index_files": true,
 	"console_max_history_lines": 3000,
+	"draw_minimap_border": true,
 }

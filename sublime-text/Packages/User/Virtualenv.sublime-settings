@@ -1,0 +1,19 @@
+// Default settings for Virtualenv plugin:
+{
+    "default_venv": "C:\\Users\\privu\\Documents\\Envs\\general"
+
+    // Assuming virtualenv installed on default python prefix.
+    // Depending on your setup you might want to change this to something like:
+    // "virtualenv", "virtualenv-3.3", "python3 -m virtualenv" ...
+    //"executable": "python -m venv",
+
+    // Directory paths searched for virtualenvs.
+    // First one will be used as default destination for new virtualenvs.
+    //"virtualenv_directories": [
+    //    "C:\Users\privu\Documents\Envs\general",  // virtualenvwrapper $WORKON_HOME
+    //],
+
+    // Additonal paths searched for python installations.
+    // Portable pythons? Perhaps?
+    //"extra_paths": []
+}

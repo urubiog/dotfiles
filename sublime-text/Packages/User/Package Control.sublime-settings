@@ -3,11 +3,25 @@
 	"installed_packages":
 	[
 		"Clang Format",
+		"Gomod",
 		"Ipynb Preview as Markdown",
+		"LSP",
+		"LSP-clangd",
+		"LSP-gopls",
+		"LSP-ltex-ls",
+		"LSP-pyright",
+		"LSP-TexLab",
 		"Package Control",
 		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-chktex",
+		"Terminus",
 	],
 	"in_process_packages":
 	[
+	],
+	"repositories":
+	[
+		"https://github.com/randy3k/Terminus"
 	],
 }
