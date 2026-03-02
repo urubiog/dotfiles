@@ -23,13 +23,13 @@ local on_attach = function(client, bufnr)
     }, bufnr)
 end
 
-vim.lsp.handlers["textDocument/hover"] =  vim.lsp.with(
-  vim.lsp.handlers.hover,
-  {
-    border = "rounded",   -- bordes redondeados
-    max_width = 80,       -- ancho máximo
-    max_height = 20,      -- altura máxima
-  }
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    {
+        border = "rounded", -- bordes redondeados
+        max_width = 80,     -- ancho máximo
+        max_height = 20,    -- altura máxima
+    }
 )
 
 vim.diagnostic.config({
@@ -61,6 +61,15 @@ for _, server in ipairs(default_servers) do
 end
 
 -- Configuraciones especiales de servidores
+vim.lsp.config("marksman", {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { "marksman", "server" },
+    filetypes = { "markdown", "md" },
+    root_dir = util.root_pattern(".git", ".marksman.toml", "README.md"),
+})
+
+vim.lsp.enable("marksman")
 
 -- gopls
 vim.lsp.config('gopls', {
