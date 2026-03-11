@@ -16,12 +16,24 @@ o.foldmethod = "indent"
 o.foldlevel = 99       -- Evita que se pliegue automáticamente al abrir
 o.foldenable = false   -- No activar folding al abrir
 
-opt.wrap = false
+o.showtabline = 0
 
--- o.showtabline = 0
+opt.wrap = false
 
 g.browser = "wslview"
 g.BROWSER = "wslview"
+
+vim.g.clipboard = {
+  name = 'WslClipboard',
+  copy = {
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
+  },
+  paste = {
+    ['+'] = 'powershell.exe -Command Get-Clipboard',
+    ['*'] = 'powershell.exe -Command Get-Clipboard',
+  },
+}
 
 vim.g.copilot_filetypes = {
     ["*"] = true,

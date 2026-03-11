@@ -14,14 +14,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function(data)
-    local directory = vim.fn.isdirectory(data.file) == 1
+    callback = function(data)
+        local directory = vim.fn.isdirectory(data.file) == 1
 
-    if directory then
-      vim.cmd.cd(data.file)
-      require("nvim-tree.api").tree.open()
-    end
-  end,
+        if directory then
+            vim.cmd.cd(data.file)
+            require("nvim-tree.api").tree.open()
+        end
+    end,
 })
 
 -- -- Mantener registro del buffer anterior por ventana

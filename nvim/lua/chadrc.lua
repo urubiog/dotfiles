@@ -22,7 +22,7 @@ M.ui = {
     colorify = {
         enabled = false,
     },
-    tabuffline = {
+    tabufline = {
         enabled = false,
     },
 }

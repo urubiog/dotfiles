@@ -48,7 +48,8 @@ local default_servers = {
     "html", "cssls", "pyright", "lua_ls",
     "marksman", "jdtls", "texlab", "yamlls",
     "dockerls", "clojure_lsp", "cmake",
-    "terraformls", "vimls", "rust_analyzer", "jsonls", "clangd"
+    "terraformls", "vimls", "rust_analyzer",
+    "jsonls", "clangd", "black"
 }
 
 for _, server in ipairs(default_servers) do
@@ -61,15 +62,6 @@ for _, server in ipairs(default_servers) do
 end
 
 -- Configuraciones especiales de servidores
-vim.lsp.config("marksman", {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "marksman", "server" },
-    filetypes = { "markdown", "md" },
-    root_dir = util.root_pattern(".git", ".marksman.toml", "README.md"),
-})
-
-vim.lsp.enable("marksman")
 
 -- gopls
 vim.lsp.config('gopls', {

@@ -305,27 +305,10 @@ map("i", "<F6>", ">", { noremap = true, silent = true, desc = "Insert greater th
 map("v", "<F5>", "<", { noremap = true, silent = true, desc = "Shift left" })
 map("v", "<F6>", ">", { noremap = true, silent = true, desc = "Shift right" })
 
--- Formatting or linting
-map("n", "<C-y>", function()
-    local buf = vim.api.nvim_get_current_buf()
-    local ext = vim.fn.expand("%:e")
+-- Formatting
+map("n", "<C-y>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true, desc = "Format buffer" })
 
-    if ext == "md" then
-        -- Guardamos primero para asegurarnos de que el archivo existe en disco
-        vim.cmd("w")
-        local file_path = vim.fn.expand("%:p")
-
-        -- Ejecuta markdownlint para formatear el archivo en disco
-        vim.fn.system("markdownlint -f " .. vim.fn.shellescape(file_path))
-
-        -- Forzamos a Neovim a recargar el archivo desde disco
-        vim.cmd("edit!")
-    else
-        -- LSP normal para otros tipos de archivo
-        vim.lsp.buf.format({ async = true, bufnr = buf })
-    end
-end, { noremap = true, silent = true, desc = "Format or lint buffer" })
-
+-- Shortcuts
 map("n", ";", ":", { noremap = true, desc = "Enter command mode" })
 map("n", "<leader>a", "ggVG", { noremap = true, silent = true, desc = "Select all" })
 map("v", "<leader>dd", '"_dd', { noremap = true, silent = true, desc = "Delete selection without yanking" })
@@ -340,7 +323,7 @@ map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc =
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
 
 -- Bracket wrapping
-map("v", "(", "c(<C-r>+)", { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
+map("v", "(", "c(<C-r>\")", { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
 
 -- Markdown writting
 map("i", "<C-i>", "**<Left>", { noremap = true, silent = true, desc = "Italic text" })
