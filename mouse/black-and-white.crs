@@ -1,0 +1,42 @@
+﻿[Arrow]
+Path=Black And White Arrow.cur
+
+[Crosshair]
+Path=Black Cross.cur
+
+[IBeam]
+Path=Black And White Text.cur
+
+[UpArrow]
+Path=Alternate.cur
+
+[SizeWE]
+Path=aero_ew_black.cur
+
+[SizeNS]
+Path=aero_ns_black.cur
+
+[SizeNESW]
+Path=aero_nesw_black.cur
+
+[SizeNWSE]
+Path=aero_nwse_black.cur
+
+[Wait]
+Path=Busy Black And White.ani
+
+[Hand]
+Path=Link select Black And White.cur
+
+[NWPen]
+Path=Pen.cur
+
+[SizeAll]
+Path=Move.cur
+
+[Help]
+Path=Help Black And White.cur
+
+[No]
+Path=Unaveible.cur
+
