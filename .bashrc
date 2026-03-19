@@ -129,7 +129,7 @@ export PATH=$PATH:/usr/local/go/bin
 # zoxide 
 eval "$(zoxide init bash)"
 
-fastfetch --pipe false | while IFS= read -r line; do
+fastfetch --logo-type file --logo ~/.tmp --pipe false | while IFS= read -r line; do
     for (( i=0; i<${#line}; i++ )); do
         printf "%s" "${line:$i:1}"
     done
