@@ -1,6 +1,6 @@
 -- ~/.config/nvim/lua/configs/lspconfig.lua
 
-local util = require("lspconfig.util")
+-- local util = require("lspconfig.util")
 local lsp_signature = require("lsp_signature")
 
 -- Configuraciones predeterminadas de NvChad
@@ -45,11 +45,12 @@ vim.diagnostic.config({
 
 -- Servidores que usan configuración predeterminada
 local default_servers = {
-    "html", "cssls", "pyright", "lua_ls",
+    "html", "cssls", "ruff", "pyright", "lua_ls",
     "marksman", "jdtls", "texlab", "yamlls",
     "dockerls", "clojure_lsp", "cmake",
     "terraformls", "vimls", "rust_analyzer",
-    "jsonls", "clangd", "black"
+    "jsonls", "clangd", "gopls", "eslint-lsp",
+    "prettierd", "mdformat"
 }
 
 for _, server in ipairs(default_servers) do
@@ -64,17 +65,17 @@ end
 -- Configuraciones especiales de servidores
 
 -- gopls
-vim.lsp.config('gopls', {
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "gopls" },
-    filetypes = { "go", "gomod", "gowork", "gotmpl" },
-    settings = {
-        gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-            analyses = { unusedparams = true },
-        },
-    },
-})
-vim.lsp.enable('gopls')
+-- vim.lsp.config('gopls', {
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { "gopls" },
+--     filetypes = { "go", "gomod", "gowork", "gotmpl" },
+--     settings = {
+--         gopls = {
+--             completeUnimported = true,
+--             usePlaceholders = true,
+--             analyses = { unusedparams = true },
+--         },
+--     },
+-- })
+-- vim.lsp.enable('gopls')

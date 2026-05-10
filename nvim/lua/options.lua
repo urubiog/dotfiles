@@ -23,17 +23,7 @@ opt.wrap = false
 g.browser = "wslview"
 g.BROWSER = "wslview"
 
-vim.g.clipboard = {
-  name = 'WslClipboard',
-  copy = {
-    ['+'] = 'clip.exe',
-    ['*'] = 'clip.exe',
-  },
-  paste = {
-    ['+'] = 'powershell.exe -Command Get-Clipboard',
-    ['*'] = 'powershell.exe -Command Get-Clipboard',
-  },
-}
+vim.g.clipboard = "xclip"
 
 vim.g.copilot_filetypes = {
     ["*"] = true,

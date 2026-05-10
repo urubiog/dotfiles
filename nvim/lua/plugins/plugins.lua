@@ -188,13 +188,6 @@ local plugins = {
         },
     },
     {
-        "stevearc/conform.nvim",
-        -- event = 'BufWritePre', -- uncomment for format on save
-        config = function()
-            require "configs.conform"
-        end,
-    },
-    {
         "lervag/vimtex",
         lazy = false, -- we don't want to lazy load VimTeX
         -- tag = "v2.15", -- uncomment to pin to a specific release
@@ -342,7 +335,7 @@ local plugins = {
                 },
             },
             lsp = {
-                progress = { enabled = true },   -- No mostrar progreso del LSP
+                progress = { enabled = false },   -- No mostrar progreso del LSP
                 hover = { enabled = false },     -- No mostrar mensajes de hover
                 signature = { enabled = false }, -- No mostrar mensajes de firma
                 message = { enabled = false },   -- Ocultar mensajes LSP generales
@@ -462,9 +455,6 @@ local plugins = {
                 theme = 'doom',
                 config = {
                     header = {
-                        '                                        ..                                     ',
-                        '                                     ,o""""o                                   ',
-                        '                                  ,o$"     o                                   ',
                         '                               ,o$$$                                           ',
                         '                             ,o$$$`                                            ',
                         '                           ,o$"o$`                                             ',
@@ -494,11 +484,6 @@ local plugins = {
                         '              "$o$$$ $`.        ,"$$o$"o$""$$$$ `"$o$$oo    `o                 ',
                         '              `$o$o$"$o$o`.  ,.$$"$o$$"$$"o$$$$   `$o$$ooo    $$ooooooo        ',
                         '                `$o$"$o"$"$$"$$"$"$$o$$o"$$o"        `"$o$o            `"o     ',
-                        '                   `$$"$"$o$$o$"$$"$"$`                 `$"$o            `o    ',
-                        '                      `$$"o$o"$o"$                        `$$"o          ,$    ',
-                        '                                                            `$$ooo     ,o$$    ',
-                        '                                                               `$o$$$o$"$`     ',
-                        '',
                         '',
                     },
                     center = {
@@ -548,13 +533,6 @@ local plugins = {
         dependencies = { { 'nvim-tree/nvim-web-devicons' } }
     },
     {
-        "mhartington/formatter.nvim",
-        event = "VeryLazy",
-        opts = function()
-            return require "plugins.configs.formatter"
-        end
-    },
-    {
         "mfussenegger/nvim-lint",
         event = "VeryLazy",
         config = function()
@@ -564,13 +542,6 @@ local plugins = {
     {
         "christoomey/vim-tmux-navigator",
         lazy = false,
-    },
-    {
-        "nvimtools/none-ls.nvim",
-        ft = { "python" },
-        opts = function()
-            return require "plugins.configs.none-ls"
-        end,
     },
     {
         "williamboman/mason.nvim",
@@ -627,17 +598,6 @@ local plugins = {
                 "sqlfluff",
             },
         },
-    },
-    {
-        "ray-x/lsp_signature.nvim",
-        event = "BufRead",
-        config = function()
-            require("lsp_signature").setup({
-                bind = true, -- enlaza automáticamente con LSP
-                handler_opts = { border = "rounded" },
-                hint_enable = false,
-            })
-        end,
     },
     {
         "neovim/nvim-lspconfig",
@@ -699,79 +659,93 @@ local plugins = {
         end
     },
     {
-        "stevearc/conform.nvim",
-        -- event = 'BufWritePre', -- uncomment for format on save
-        config = function()
-            require "configs.conform"
-        end,
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        opts = {
+            signs = true,      -- show icons in the signs column
+            sign_priority = 8, -- sign priority
+            -- keywords recognized as todo comments
+            keywords = {
+                FIX = {
+                    icon = "´åê ",                              -- icon used for the sign, and in search results
+                    color = "error",                            -- can be a hex color, or a named color (see below)
+                    alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+                    -- signs = false, -- configure signs for some keywords individually
+                },
+                TODO = { icon = "´Çî ", color = "info" },
+                HACK = { icon = "´ÆÉ ", color = "warning" },
+                WARN = { icon = "´ü▒ ", color = "warning", alt = { "WARNING", "XXX" } },
+                PERF = { icon = "´É║ ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+                NOTE = { icon = "¯®┤ ", color = "hint", alt = { "INFO" } },
+                TEST = { icon = "ÔÅ▓ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+            },
+            gui_style = {
+                fg = "NONE",       -- The gui style to use for the fg highlight group.
+                bg = "BOLD",       -- The gui style to use for the bg highlight group.
+            },
+            merge_keywords = true, -- when true, custom keywords will be merged with the defaults
+            -- highlighting of the line containing the todo comment
+            -- * before: highlights before the keyword (typically comment characters)
+            -- * keyword: highlights of the keyword
+            -- * after: highlights after the keyword (todo text)
+            highlight = {
+                multiline = false,               -- enable multine todo comments
+                multiline_pattern = "^.",        -- lua pattern to match the next multiline from the start of the matched keyword
+                multiline_context = 10,          -- extra lines that will be re-evaluated when changing a line
+                before = "",                     -- "fg" or "bg" or empty
+                keyword = "wide",                -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
+                after = "fg",                    -- "fg" or "bg" or empty
+                pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlighting (vim regex)
+                comments_only = true,            -- uses treesitter to match keywords in comments only
+                max_line_len = 400,              -- ignore lines longer than this
+                exclude = {},                    -- list of file types to exclude highlighting
+            },
+            -- list of named colors where we try to extract the guifg from the
+            -- list of highlight groups or use the hex color if hl not found as a fallback
+            colors = {
+                error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+                warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+                info = { "DiagnosticInfo", "#2563EB" },
+                hint = { "DiagnosticHint", "#10B981" },
+                default = { "Identifier", "#7C3AED" },
+                test = { "Identifier", "#FF00FF" }
+            },
+            search = {
+                command = "rg",
+                args = {
+                    "--color=never",
+                    "--no-heading",
+                    "--with-filename",
+                    "--line-number",
+                    "--column",
+                },
+                -- regex that will be used to match keywords.
+                -- don't replace the (KEYWORDS) placeholder
+                pattern = [[\b(KEYWORDS):]], -- ripgrep regex
+                -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
+            },
+        }
     },
     -- {
-    --     "folke/todo-comments.nvim",
-    --     dependencies = { "nvim-lua/plenary.nvim" },
-    --     opts = {
-    --         signs = true, -- show icons in the signs column
-    --         sign_priority = 8, -- sign priority
-    --         -- keywords recognized as todo comments
-    --         keywords = {
-    --             FIX = {
-    --                 icon = "´åê ", -- icon used for the sign, and in search results
-    --                 color = "error", -- can be a hex color, or a named color (see below)
-    --                 alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
-    --                 -- signs = false, -- configure signs for some keywords individually
-    --             },
-    --             TODO = { icon = "´Çî ", color = "info" },
-    --             HACK = { icon = "´ÆÉ ", color = "warning" },
-    --             WARN = { icon = "´ü▒ ", color = "warning", alt = { "WARNING", "XXX" } },
-    --             PERF = { icon = "´É║ ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-    --             NOTE = { icon = "¯®┤ ", color = "hint", alt = { "INFO" } },
-    --             TEST = { icon = "ÔÅ▓ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-    --         },
-    --         gui_style = {
-    --             fg = "NONE", -- The gui style to use for the fg highlight group.
-    --             bg = "BOLD", -- The gui style to use for the bg highlight group.
-    --         },
-    --         merge_keywords = true, -- when true, custom keywords will be merged with the defaults
-    --         -- highlighting of the line containing the todo comment
-    --         -- * before: highlights before the keyword (typically comment characters)
-    --         -- * keyword: highlights of the keyword
-    --         -- * after: highlights after the keyword (todo text)
-    --         highlight = {
-    --             multiline = true,    -- enable multine todo comments
-    --             multiline_pattern = "^.", -- lua pattern to match the next multiline from the start of the matched keyword
-    --             multiline_context = 10, -- extra lines that will be re-evaluated when changing a line
-    --             before = "",         -- "fg" or "bg" or empty
-    --             keyword = "wide",    -- "fg", "bg", "wide", "wide_bg", "wide_fg" or empty. (wide and wide_bg is the same as bg, but will also highlight surrounding characters, wide_fg acts accordingly but with fg)
-    --             after = "fg",        -- "fg" or "bg" or empty
-    --             pattern = [[.*<(KEYWORDS)\s*:]], -- pattern or table of patterns, used for highlighting (vim regex)
-    --             comments_only = true, -- uses treesitter to match keywords in comments only
-    --             max_line_len = 400,  -- ignore lines longer than this
-    --             exclude = {},        -- list of file types to exclude highlighting
-    --         },
-    --         -- list of named colors where we try to extract the guifg from the
-    --         -- list of highlight groups or use the hex color if hl not found as a fallback
-    --         colors = {
-    --             error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-    --             warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-    --             info = { "DiagnosticInfo", "#2563EB" },
-    --             hint = { "DiagnosticHint", "#10B981" },
-    --             default = { "Identifier", "#7C3AED" },
-    --             test = { "Identifier", "#FF00FF" }
-    --         },
-    --         search = {
-    --             command = "rg",
-    --             args = {
-    --                 "--color=never",
-    --                 "--no-heading",
-    --                 "--with-filename",
-    --                 "--line-number",
-    --                 "--column",
-    --             },
-    --             -- regex that will be used to match keywords.
-    --             -- don't replace the (KEYWORDS) placeholder
-    --             pattern = [[\b(KEYWORDS):]], -- ripgrep regex
-    --             -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
-    --         },
-    --     }
+    --     "stevearc/conform.nvim",
+    --     -- event = 'BufWritePre', -- uncomment for format on save
+    --     config = function()
+    --         require "configs.conform"
+    --     end,
+    -- },
+    -- {
+    --     "mhartington/formatter.nvim",
+    --     event = "VeryLazy",
+    --     opts = function()
+    --         return require "plugins.configs.formatter"
+    --     end
+    -- },
+    -- {
+    --     "nvimtools/none-ls.nvim",
+    --     ft = { "python" },
+    --     opts = function()
+    --         return require "plugins.configs.none-ls"
+    --     end,
     -- },
     -- {
     --     "3rd/image.nvim",
