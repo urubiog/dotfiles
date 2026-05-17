@@ -23,9 +23,10 @@ opt.wrap = false
 g.browser = "firefox"
 g.BROWSER = "firefox"
 
-vim.g.clipboard = "xclip"
+g.clipboard = "xclip"
 
-vim.g.copilot_filetypes = {
+
+g.copilot_filetypes = {
     ["*"] = true,
     ["markdown"] = true,
     ["bash"] = true,
@@ -33,3 +34,5 @@ vim.g.copilot_filetypes = {
     ["help"] = false,
     ["TelescopePrompt"] = false,
 }
+
+g.mkdp_theme = "dark"

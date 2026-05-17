@@ -6,6 +6,13 @@ local version_str = table.concat({ nvim_version.major, nvim_version.minor, nvim_
 
 local plugins = {
   {
+    "windwp/nvim-ts-autotag",
+    ft = { "html", "javascriptreact", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     "zbirenbaum/copilot.lua",
     enabled = false,
     cmd = "Copilot",
