@@ -13,15 +13,15 @@ o.relativenumber = true
 
 -- Folding por indentación
 o.foldmethod = "indent"
-o.foldlevel = 99       -- Evita que se pliegue automáticamente al abrir
-o.foldenable = false   -- No activar folding al abrir
+o.foldlevel = 99     -- Evita que se pliegue automáticamente al abrir
+o.foldenable = false -- No activar folding al abrir
 
 o.showtabline = 0
 
 opt.wrap = false
 
-g.browser = "wslview"
-g.BROWSER = "wslview"
+g.browser = "firefox"
+g.BROWSER = "firefox"
 
 vim.g.clipboard = "xclip"
 

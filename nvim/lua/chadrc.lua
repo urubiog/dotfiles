@@ -18,7 +18,6 @@ M.base46 = {
 }
 
 M.ui = {
-    transparency = true,
     colorify = {
         enabled = false,
     },

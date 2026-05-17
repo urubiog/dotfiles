@@ -27,15 +27,21 @@ map("n", "<C-S-Down>", "<C-w>-", { noremap = true, silent = true, desc = "Decrea
 -- Telescope
 map("n", "<C-p>", "<cmd>Telescope find_files<CR>", { noremap = true, silent = true, desc = "Find files" })
 map("n", "<C-f>", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true, desc = "Live grep" })
+map("n", "<C-c>", function()
+  require("telescope.builtin").find_files {
+    cwd = vim.fn.stdpath "config",
+  }
+end, { desc = "Neovim config files" })
 
 -- LSP
 map("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true, desc = "Rename symbol" })
-map("n", "<C-Space>", "<cmd>Lspsaga hover_doc<CR>",
-    { noremap = true, silent = true, desc = "Signature help" })
-map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true, desc = "Code actions" })
-
--- Diagnostics
-map("n", "<F4>", "<cmd>lopen<CR>", { noremap = true, silent = true, desc = "Open location list" })
+map("n", "<C-Space>", "<cmd>Lspsaga hover_doc<CR>", { noremap = true, silent = true, desc = "Signature help" })
+map(
+  "n",
+  "<leader>ca",
+  "<cmd>lua vim.lsp.buf.code_action()<CR>",
+  { noremap = true, silent = true, desc = "Code actions" }
+)
 
 -- Indentation
 map("n", "<F5>", "<cmd><<CR>", { noremap = true, silent = true, desc = "Decrease indent" })
@@ -46,7 +52,7 @@ map("v", "<F5>", "<", { noremap = true, silent = true, desc = "Shift left" })
 map("v", "<F6>", ">", { noremap = true, silent = true, desc = "Shift right" })
 
 -- Formatting
-map("n", "<C-y>", "<cmd>lua vim.lsp.buf.format()<CR>", { noremap = true, silent = true, desc = "Format buffer" })
+map("n", "<C-y>", "<cmd>lua require('conform').format()<CR>", { noremap = true, silent = true, desc = "Format buffer" })
 
 -- Shortcuts
 map("n", ";", ":", { noremap = true, desc = "Enter command mode" })
@@ -63,7 +69,7 @@ map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc =
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
 
 -- Bracket wrapping
-map("v", "(", "c(<C-r>\")", { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
+map("v", "(", 'c(<C-r>")', { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
 
 -- Markdown writting
 map("i", "<C-i>", "**<Left>", { noremap = true, silent = true, desc = "Italic text" })
@@ -73,45 +79,16 @@ map("v", "<C-i>", "c*<C-r>+*", { noremap = true, silent = true, desc = "Italic t
 map("v", "<C-b>", "c**<C-r>+**", { noremap = true, silent = true, desc = "Bold text" })
 map("v", "<C-t>", "c~<C-r>+~", { noremap = true, silent = true, desc = "Strikethrough text" })
 
--- Debugging
-map("n", "<leader>db", "<cmd>DapToggleBreakpoint<CR>", { noremap = true, silent = true, desc = "Toggle breakpoint" })
-
 -- LspSaga
 map("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>", { noremap = true, silent = true, desc = "Peek definition" })
 
 -- Folding
 local function toggle_all_folds()
-    if vim.wo.foldlevel > 0 then
-        vim.cmd("normal! zM") -- Cierra todo
-    else
-        vim.cmd("normal! zR") -- Abre todo
-    end
+  if vim.wo.foldlevel > 0 then
+    vim.cmd "normal! zM" -- Cierra todo
+  else
+    vim.cmd "normal! zR" -- Abre todo
+  end
 end
 
 map("n", "zA", toggle_all_folds, { noremap = true, silent = true, desc = "Toggle all folds in buffer" })
-
-local M = {}
-
-M.dap = {
-    plugin = true,
-    n = {
-        ["<leader>db"] = {
-            "<cmd> DapToggleBreakpoint <CR>",
-            { noremap = true, silent = true, desc = "Toggle breakpoint" }
-        }
-    }
-}
-
-M.dap_python = {
-    plugin = true,
-    n = {
-        ["<leader>drp"] = {
-            function()
-                require("dap-python").test_method()
-            end,
-            { noremap = true, silent = true, desc = "Debug Python test method" }
-        }
-    }
-}
-
-return M
