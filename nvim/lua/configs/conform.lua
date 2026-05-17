@@ -15,6 +15,14 @@ conform.setup {
       "ruff_format",
       "black",
       "autopep8",
+      "docformatter",
+    },
+
+    -- =========================
+    -- PYTHON PROJECT CONFIG
+    -- =========================
+    toml = {
+      "pyproject_fmt",
     },
 
     -- =========================
@@ -39,6 +47,8 @@ conform.setup {
     -- =========================
     go = {
       "goimports",
+      "goimports_reviser",
+      "gomodifytags",
       "gofmt",
       "golines",
     },
@@ -83,9 +93,9 @@ conform.setup {
     -- =========================
     -- SHELL
     -- =========================
-    sh = { "shfmt" },
-    bash = { "shfmt" },
-    zsh = { "shfmt" },
+    sh = { "shfmt", "beautysh" },
+    bash = { "shfmt", "beautysh" },
+    zsh = { "shfmt", "beautysh" },
 
     -- =========================
     -- TERRAFORM
@@ -99,9 +109,11 @@ conform.setup {
     -- =========================
     c = {
       "clang_format",
+      "cmakelang",
     },
     cpp = {
       "clang_format",
+      "cmakelang",
     },
 
     -- =========================

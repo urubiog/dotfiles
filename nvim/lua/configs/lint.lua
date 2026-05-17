@@ -10,6 +10,11 @@ lint.linters_by_ft = {
     "mypy",
     "flake8",
     "pylint",
+
+    "flakeheaven",
+    "pyflakes",
+    "pydocstyle",
+    "vulture",
   },
 
   -- =========================
@@ -36,9 +41,14 @@ lint.linters_by_ft = {
   -- =========================
   html = {
     "htmlhint",
+
+    "markuplint",
+    "djlint",
   },
   css = {
     "stylelint",
+
+    "csskit",
   },
 
   -- =========================

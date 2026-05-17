@@ -525,6 +525,12 @@ local plugins = {
         "clang-format",
         "latexindent",
         "sql-formatter",
+        "docformatter",
+        "pyproject-fmt",
+        "goimports-reviser",
+        "gomodifytags",
+        "beautysh    ",
+        "cmakelang   ",
 
         -- =========================
         -- LINTERS
