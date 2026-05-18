@@ -635,28 +635,29 @@ local plugins = {
   },
   {
     "folke/todo-comments.nvim",
+    lazy = false,
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       signs = true, -- show icons in the signs column
       sign_priority = 8, -- sign priority
       -- keywords recognized as todo comments
-      keywords = {
-        FIX = {
-          icon = "´åê ", -- icon used for the sign, and in search results
-          color = "error", -- can be a hex color, or a named color (see below)
-          alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
-          -- signs = false, -- configure signs for some keywords individually
-        },
-        TODO = { icon = "´Çî ", color = "info" },
-        HACK = { icon = "´ÆÉ ", color = "warning" },
-        WARN = { icon = "´ü▒ ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = "´É║ ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-        NOTE = { icon = "¯®┤ ", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "ÔÅ▓ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-      },
+      -- keywords = {
+      -- FIX = {
+      --   icon = "F", -- icon used for the sign, and in search results
+      --   color = "error", -- can be a hex color, or a named color (see below)
+      --   alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+      --   -- signs = false, -- configure signs for some keywords individually
+      -- },
+      -- TODO = { icon = "T", color = "#949494" },
+      -- HACK = { icon = "H", color = "#A60000" },
+      -- WARN = { icon = "W", color = "#FF8900", alt = { "WARNING", "XXX" } },
+      -- PERF = { icon = "P", color = "#00A6A6", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+      -- NOTE = { icon = "N", color = "#7A7A7A", alt = { "INFO" } },
+      -- TEST = { icon = "T", color = "#0F5200", alt = { "TESTING", "PASSED", "FAILED" } },
+      -- },
       gui_style = {
         fg = "NONE", -- The gui style to use for the fg highlight group.
-        bg = "BOLD", -- The gui style to use for the bg highlight group.
+        bg = "NONE", -- The gui style to use for the bg highlight group.
       },
       merge_keywords = true, -- when true, custom keywords will be merged with the defaults
       -- highlighting of the line containing the todo comment
@@ -677,14 +678,14 @@ local plugins = {
       },
       -- list of named colors where we try to extract the guifg from the
       -- list of highlight groups or use the hex color if hl not found as a fallback
-      colors = {
-        error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
-        warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
-        info = { "DiagnosticInfo", "#2563EB" },
-        hint = { "DiagnosticHint", "#10B981" },
-        default = { "Identifier", "#7C3AED" },
-        test = { "Identifier", "#FF00FF" },
-      },
+      -- colors = {
+      --   error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+      --   warning = { "DiagnosticWarn", "WarningMsg", "#FF8900" },
+      --   info = { "DiagnosticInfo", "#BFBFBF" },
+      --   hint = { "DiagnosticHint", "#7A7A7A" },
+      --   default = { "Identifier", "#808080" },
+      --   test = { "Identifier", "#0F5200" },
+      -- },
       search = {
         command = "rg",
         args = {

@@ -19,11 +19,12 @@ M.base46 = {
 
 M.ui = {
     colorify = {
-        enabled = false,
+        enabled = true,
     },
     tabufline = {
         enabled = false,
     },
+    theme = "nvchad",
 }
 
 return M
