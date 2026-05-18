@@ -67,6 +67,8 @@ map("i", "<C-H>", "<C-w>", { noremap = true, silent = true, desc = "Delete word 
 -- Visual mode line moving
 map("v", "<S-Down>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
 map("v", "<S-Up>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
+map("v", "<S-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection down" })
+map("v", "<S-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move selection up" })
 
 -- Bracket wrapping
 map("v", "(", 'c(<C-r>")', { noremap = true, silent = true, desc = "Wrap selection in parentheses" })
